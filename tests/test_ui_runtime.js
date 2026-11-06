@@ -264,12 +264,43 @@ FakeXHR.prototype.send = function (rawBody) {
 };
 
 var timerId = 0;
+var timers = {};
 var window = {
   location: { search: "" },
-  setTimeout: function () { timerId += 1; return timerId; },
-  clearTimeout: function () {},
+  setTimeout: function (callback) {
+    timerId += 1;
+    timers[timerId] = callback;
+    return timerId;
+  },
+  clearTimeout: function (id) { delete timers[id]; },
   addEventListener: function () {}
 };
+
+function fireNextTimer() {
+  var keys = Object.keys(timers);
+  assert.ok(keys.length, "The client should schedule its next poll.");
+  var id = keys[0];
+  var callback = timers[id];
+  delete timers[id];
+  callback();
+}
+
+function matchWithTask(kind, sequenceNo, subphase, taskContent, myState) {
+  var match = initialMatch();
+  match.phase_label = kind;
+  match.current_task = {
+    kind: kind,
+    status: "active",
+    subphase: subphase,
+    round_in_phase: 2,
+    rounds_in_phase: 6,
+    task_sequence: sequenceNo,
+    remaining_seconds: 40,
+    content: taskContent,
+    my_state: myState
+  };
+  return match;
+}
 
 var source = fs.readFileSync("web/js/app.js", "utf8");
 vm.runInNewContext(source, {
@@ -314,4 +345,78 @@ assert.deepStrictEqual(lastAction, {
 assert.ok(elementText(elements.arenaContent).indexOf("انكشفت الإجابة") >= 0);
 assert.ok(elementText(elements.arenaContent).indexOf("الأزرق") >= 0);
 
-process.stdout.write("Browser client smoke test passed: profile save, lobby readiness, match start, task action and reveal.\n");
+/* Exercise the renderers for the remaining phases through the real polling loop. */
+matchState = matchWithTask("mystery", 42, "guess", {
+  title_ar: "سر صغير",
+  story_ar: "هناك رسالة من أحد أفراد العائلة.",
+  revealed_clues: [{ level: 1, text_ar: "يحب الأماكن الهادئة." }]
+}, { can_guess: true, can_answer: false, has_submitted: false });
+fireNextTimer();
+assert.ok(elementText(elements.arenaContent).indexOf("سر صغير") >= 0);
+assert.ok(elementText(elements.arenaContent).indexOf("يحب الأماكن الهادئة") >= 0);
+assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 3);
+
+matchState = matchWithTask("player_question", 43, "answer", {
+  question: { text_ar: "ما النشاط الذي تحبه؟", options: [{ id: "o1", text_ar: "القراءة" }, { id: "o2", text_ar: "الرياضة" }] }
+}, { can_answer: true, can_guess: false, has_submitted: false });
+fireNextTimer();
+assert.ok(elementText(elements.arenaContent).indexOf("أنت المجيب هذه المرة") >= 0);
+assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 2);
+
+matchState = matchWithTask("player_question", 44, "guess", {
+  question: { text_ar: "ما النشاط الذي تحبه؟", options: [{ id: "o1", text_ar: "القراءة" }, { id: "o2", text_ar: "الرياضة" }] }
+}, { can_answer: false, can_guess: true, has_submitted: false });
+fireNextTimer();
+assert.ok(elementText(elements.arenaContent).indexOf("ما الإجابة التي اختارها المجيب؟") >= 0);
+assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 2);
+
+matchState = matchWithTask("live_choice", 45, "answer", {
+  question: { text_ar: "اختر أمسيتك المثالية", options: [{ id: "o1", text_ar: "البيت" }, { id: "o2", text_ar: "الخروج" }] }
+}, { can_answer: true, can_guess: false, has_submitted: false });
+fireNextTimer();
+assert.ok(elementText(elements.arenaContent).indexOf("اختر أمسيتك المثالية") >= 0);
+assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 2);
+
+matchState = matchWithTask("live_choice", 46, "guess", {
+  question: { text_ar: "اختر أمسيتك المثالية", options: [] }
+}, { can_answer: false, can_guess: true, has_submitted: false });
+matchState.current_task.anonymous_answer = "البيت";
+matchState.current_task.live_guess_number = 2;
+matchState.current_task.live_guess_total = 3;
+fireNextTimer();
+assert.ok(elementText(elements.arenaContent).indexOf("البيت") >= 0);
+assert.ok(elementText(elements.arenaContent).indexOf("من صاحب الإجابة المجهولة رقم 2") >= 0);
+assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 3);
+
+matchState = matchWithTask("finale", 47, "guess", {
+  text_ar: "شخص يحب البحر ويختار المغامرة، من هو؟"
+}, { can_answer: false, can_guess: true, has_submitted: false });
+fireNextTimer();
+assert.ok(elementText(elements.arenaContent).indexOf("شخص يحب البحر") >= 0);
+assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 3);
+
+/* The final screen can return to the lobby without reopening the same result. */
+matchState = {
+  id: "match-test",
+  status: "completed",
+  phase: "completed",
+  scoreboard: initialMatch().scoreboard,
+  final_standings: [
+    { player_id: "p1", name: "مريم", score: 8 },
+    { player_id: "p2", name: "سامي", score: 5 },
+    { player_id: "p3", name: "ليلى", score: 3 }
+  ]
+};
+fireNextTimer();
+assert.ok(elementText(elements.arenaContent).indexOf("أحسنتم يا عائلة") >= 0);
+var returnButtons = elements.arenaContent.getElementsByTagName("button");
+assert.strictEqual(returnButtons.length, 1);
+returnButtons[0].onclick();
+assert.ok(elements.room.className.indexOf("hidden") === -1);
+fireNextTimer();
+assert.ok(elements.arena.className.indexOf("hidden") >= 0);
+assert.strictEqual(elements.startButton.disabled, false);
+elements.startButton.onclick();
+assert.ok(elements.arena.className.indexOf("hidden") === -1);
+
+process.stdout.write("Browser client smoke test passed: profile, lobby, all five phase renderers, result, return and restart.\n");
