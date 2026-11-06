@@ -683,6 +683,7 @@ function renderPlayers(root, scores, action, sequence) {
   var i;
   for (i = 0; i < scores.length; i++) {
     var player = scores[i];
+    if (player.player_id === playerId) { continue; }
     var button = make("button", "choice-button", player.name);
     button.type = "button";
     button.onclick = makeSubmit(action, player.player_id, sequence);
