@@ -56,5 +56,21 @@ class NaneUiContractTests(unittest.TestCase):
         self.assertIn("touch-action:manipulation", self.css)
 
 
+
+    def test_match_options_and_live_timer_are_prominent_and_readable(self):
+        self.assertIn('role="timer"', self.html)
+        self.assertIn("position:sticky", self.css)
+        self.assertRegex(self.css, r"\.choice-button\s*\{[^}]*font-size:17px")
+        self.assertRegex(self.css, r"\.choice-button\s*\{[^}]*min-height:62px")
+        self.assertIn("z-index:30", self.css)
+
+    def test_phase_guidance_is_role_aware_and_viewport_is_preserved(self):
+        for phrase in (
+            "appendGuidance", "دورك: خمّن إجابة", "هذه الرسالة تتعلق بك",
+            "انتظر المجيب المختار سرًا", "إجابتك السرية محفوظة",
+            "هذه إجابتك أنت", "هذه المواجهة عنك أنت", "preserveViewport",
+            "mine.has_submitted"
+        ):
+            self.assertIn(phrase, self.js)
 if __name__ == "__main__":
     unittest.main()
