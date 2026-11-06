@@ -44,7 +44,7 @@ class NaneUiContractTests(unittest.TestCase):
     def test_browser_script_uses_es5_syntax_for_ios_9_safari(self):
         self.assertNotIn("=>", self.js)
         self.assertNotIn("`", self.js)
-        self.assertIsNone(re.search(r"\\b(?:const|let)\\s+[A-Za-z_$]", self.js))
+        self.assertIsNone(re.search(r"\b(?:const|let)\s+[A-Za-z_$]", self.js))
         self.assertNotIn("fetch(", self.js)
         self.assertNotIn("Promise", self.js)
 
