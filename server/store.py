@@ -172,6 +172,57 @@ class NaneStore:
                 CREATE INDEX IF NOT EXISTS idx_players_room ON players(room_id, seat);
                 CREATE INDEX IF NOT EXISTS idx_sessions_player ON sessions(player_id);
                 CREATE INDEX IF NOT EXISTS idx_rooms_created ON rooms(created_at);
+                
+                CREATE TABLE IF NOT EXISTS player_profiles (
+                    player_id TEXT PRIMARY KEY REFERENCES players(id) ON DELETE CASCADE,
+                    answers_json TEXT NOT NULL DEFAULT '{}',
+                    completed_count INTEGER NOT NULL DEFAULT 0 CHECK (completed_count BETWEEN 0 AND 21),
+                    version INTEGER NOT NULL DEFAULT 1,
+                    created_at INTEGER NOT NULL,
+                    updated_at INTEGER NOT NULL
+                );
+
+                CREATE TABLE IF NOT EXISTS matches (
+                    id TEXT PRIMARY KEY,
+                    room_id TEXT NOT NULL REFERENCES rooms(id) ON DELETE CASCADE,
+                    status TEXT NOT NULL CHECK (status IN ('active', 'completed', 'abandoned')),
+                    phase TEXT NOT NULL,
+                    state_json TEXT NOT NULL,
+                    seed INTEGER NOT NULL,
+                    created_at INTEGER NOT NULL,
+                    updated_at INTEGER NOT NULL,
+                    finished_at INTEGER
+                );
+
+                CREATE TABLE IF NOT EXISTS match_players (
+                    match_id TEXT NOT NULL REFERENCES matches(id) ON DELETE CASCADE,
+                    player_id TEXT NOT NULL REFERENCES players(id) ON DELETE CASCADE,
+                    seat INTEGER NOT NULL,
+                    display_name TEXT NOT NULL,
+                    score INTEGER NOT NULL DEFAULT 0 CHECK (score >= 0),
+                    correct_guesses INTEGER NOT NULL DEFAULT 0 CHECK (correct_guesses >= 0),
+                    answered_count INTEGER NOT NULL DEFAULT 0 CHECK (answered_count >= 0),
+                    PRIMARY KEY (match_id, player_id),
+                    UNIQUE (match_id, seat)
+                );
+
+                CREATE TABLE IF NOT EXISTS match_submissions (
+                    id TEXT PRIMARY KEY,
+                    match_id TEXT NOT NULL REFERENCES matches(id) ON DELETE CASCADE,
+                    task_index INTEGER NOT NULL,
+                    player_id TEXT NOT NULL REFERENCES players(id) ON DELETE CASCADE,
+                    kind TEXT NOT NULL CHECK (kind IN ('answer', 'guess')),
+                    attempt_no INTEGER NOT NULL DEFAULT 0,
+                    payload_json TEXT NOT NULL,
+                    created_at INTEGER NOT NULL,
+                    UNIQUE (match_id, task_index, player_id, kind, attempt_no)
+                );
+
+                CREATE INDEX IF NOT EXISTS idx_matches_room_status ON matches(room_id, status, created_at);
+                CREATE UNIQUE INDEX IF NOT EXISTS idx_one_active_match_per_room
+                    ON matches(room_id) WHERE status = 'active';
+                CREATE INDEX IF NOT EXISTS idx_match_submissions_lookup
+                    ON match_submissions(match_id, task_index, kind, attempt_no);
                 """
             )
             db.execute("DELETE FROM rooms WHERE created_at < ?", (_now() - ROOM_TTL_SECONDS,))
