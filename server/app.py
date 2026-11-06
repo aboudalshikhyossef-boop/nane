@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any, Dict, Optional
 from urllib.parse import parse_qs, urlparse
 from .store import InvalidInput, NaneStore, StoreError
+from .game.service import MatchService
 
 ROOT = Path(__file__).resolve().parent.parent
 WEB = ROOT / "web"
@@ -86,7 +87,8 @@ def safe_origin(handler):
     host = handler.headers.get("Host", "").lower()
     return bool(parsed.netloc) and parsed.netloc.lower() == host and parsed.scheme in ("http", "https")
 
-def make_handler(store, bus, limiter):
+def make_handler(store, bus, limiter, match_service=None):
+    match_service = match_service or MatchService(store)
     class Handler(BaseHTTPRequestHandler):
         server_version = "NaneFamily/1.0"
         sys_version = ""
@@ -153,6 +155,20 @@ def make_handler(store, bus, limiter):
                     return self.json_response(200, store.public_session_snapshot(session))
                 except StoreError as exc:
                     return self.error(exc)
+            profile_match = re.fullmatch(r"/api/rooms/([A-Za-z0-9]+)/profile", path)
+            if profile_match:
+                try:
+                    result = match_service.get_profile(profile_match.group(1), session_cookie(self))
+                    return self.json_response(200, result)
+                except StoreError as exc:
+                    return self.error(exc)
+            match_match = re.fullmatch(r"/api/rooms/([A-Za-z0-9]+)/match", path)
+            if match_match:
+                try:
+                    result = match_service.get_match(match_match.group(1), session_cookie(self))
+                    return self.json_response(200, result)
+                except StoreError as exc:
+                    return self.error(exc)
             match = re.fullmatch(r"/api/rooms/([A-Za-z0-9]+)/?", path)
             if match:
                 try:
@@ -182,6 +198,22 @@ def make_handler(store, bus, limiter):
                     if not message or len(message) > 120:
                         raise InvalidInput("اكتب رسالة من حرف واحد إلى 120 حرفًا.")
                     return self.json_response(201, {"ok": True, "stored_by_server": True, "message": bus.publish(message)})
+                profile_match = re.fullmatch(r"/api/rooms/([A-Za-z0-9]+)/profile", path)
+                if profile_match:
+                    result = match_service.save_profile(
+                        profile_match.group(1), token, data.get("answers")
+                    )
+                    return self.json_response(200, result)
+                start_match = re.fullmatch(r"/api/rooms/([A-Za-z0-9]+)/match/start", path)
+                if start_match:
+                    result = match_service.start_match(start_match.group(1), token)
+                    return self.json_response(201, result)
+                action_match = re.fullmatch(r"/api/rooms/([A-Za-z0-9]+)/match/action", path)
+                if action_match:
+                    result = match_service.submit_action(
+                        action_match.group(1), token, data.get("action"), data.get("value")
+                    )
+                    return self.json_response(200, result)
                 if path == "/api/rooms":
                     result = store.create_room(data.get("name"), token)
                     return self.json_response(201, {"ok": True, "player_id": result["player_id"], "invite_code": result["invite_code"], "room": result["room"]}, token=result["session_token"])
@@ -210,10 +242,12 @@ def create_server(host="127.0.0.1", port=8765, database_path=None):
     store = NaneStore(database_path)
     bus = MessageBus()
     limiter = RateLimiter()
-    server = NaneHTTPServer((host, port), make_handler(store, bus, limiter))
+    match_service = MatchService(store)
+    server = NaneHTTPServer((host, port), make_handler(store, bus, limiter, match_service))
     server.nane_store = store
     server.message_bus = bus
     server.rate_limiter = limiter
+    server.match_service = match_service
     return server
 
 def main():
