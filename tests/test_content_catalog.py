@@ -39,6 +39,13 @@ class ContentCatalogTests(unittest.TestCase):
             self.assertEqual([clue["level"] for clue in template["clues"]], [1, 2, 3])
             self.assertEqual([clue["field_id"] for clue in template["clues"]], template["required_fields"])
 
+    def test_catalog_lookup_returns_a_copy(self):
+        catalog = load_catalogs()
+        item = catalog.question(catalog.questions[0]["id"])
+        original = catalog.questions[0]["options"][0]["text_ar"]
+        item["options"][0]["text_ar"] = "قيمة معدّلة للاختبار"
+        self.assertEqual(catalog.questions[0]["options"][0]["text_ar"], original)
+
     def test_loader_rejects_duplicate_profile_field(self):
         source = Path(__file__).resolve().parents[1] / "server" / "content" / "data"
         with tempfile.TemporaryDirectory() as temp:
