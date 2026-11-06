@@ -11,7 +11,7 @@ from typing import Any, Callable, Dict, Iterable, List, Mapping, Optional
 from ..content import ContentEngine, ContentSelectionError, load_catalogs
 from ..store import (
     InvalidInput, NaneStore, NotFound, RoomNotOpen, StoreError, Unauthorized,
-    _hash_token, _normalize_code,
+    _hash_token, _normalize_code, _has_active_match,
 )
 from .engine import PHASES, PHASE_LABELS, MatchPlanningError, build_phase_tasks
 
@@ -133,7 +133,7 @@ class MatchService:
         with closing(self.store._connect()) as db:
             db.execute("BEGIN IMMEDIATE")
             player_id, room_id = self._actor(db, invite_code, token)
-            if self.store._has_active_match(db, room_id):
+            if _has_active_match(db, room_id):
                 raise RoomNotOpen("لا يمكن تعديل ملف الشخصية أثناء مباراة جارية.")
             existing = self._profile_row(db, player_id)
             merged = json.loads(existing["answers_json"]) if existing else {}
@@ -500,7 +500,7 @@ class MatchService:
         all_done = self._eligible_submissions_complete(
             db, match_id, task_index, task["eligible_guesser_ids"], "guess", level
         )
-        if success or all_done or now >= task["deadline_at"]:
+        if all_done or now >= task["deadline_at"]:
             if success or level >= 3:
                 self._resolve_mystery(db, match_id, state, task, task_index, now)
             else:
@@ -510,20 +510,27 @@ class MatchService:
     def _advance_live_target(self, db, match_id: str, state: Dict[str, Any],
                              task: Dict[str, Any], task_index: int, now: int) -> None:
         order = task["private"]["target_order"]
-        target_index = task["live_target_index"]
-        target = order[target_index]
-        eligible = [player_id for player_id in order if player_id != target]
-        attempt = target_index + 1
-        done = self._eligible_submissions_complete(
-            db, match_id, task_index, eligible, "guess", attempt
-        )
-        if done or now >= task["deadline_at"]:
-            next_index = target_index + 1
-            if next_index >= len(order):
-                self._resolve_live_choice(db, match_id, state, task, task_index, now)
-            else:
-                task["live_target_index"] = next_index
+        while task["live_target_index"] < len(order):
+            target_index = task["live_target_index"]
+            target = order[target_index]
+            answer = self._find_submission_value(
+                self._submissions(db, match_id, task_index, "answer", 0),
+                target, "answer", 0
+            )
+            if answer is None:
+                task["live_target_index"] = target_index + 1
+                continue
+            eligible = [player_id for player_id in order if player_id != target]
+            attempt = target_index + 1
+            done = self._eligible_submissions_complete(
+                db, match_id, task_index, eligible, "guess", attempt
+            )
+            if not done and now < task["deadline_at"]:
+                return
+            task["live_target_index"] = target_index + 1
+            if task["live_target_index"] < len(order):
                 task["deadline_at"] = now + self.timings["live_guess"]
+        self._resolve_live_choice(db, match_id, state, task, task_index, now)
 
     def _switch_player_question_to_guess(self, task: Dict[str, Any], now: int) -> None:
         task["subphase"] = "guess"
@@ -609,7 +616,7 @@ class MatchService:
         elif kind == "live_choice":
             if task["subphase"] == "answer":
                 self._switch_live_to_guess(task, now)
-                task["private"]["target_order"] = list(task["private"]["target_order"])
+                self._advance_live_target(db, match_row["id"], state, task, index, now)
             else:
                 self._advance_live_target(db, match_row["id"], state, task, index, now)
         elif kind == "finale":
