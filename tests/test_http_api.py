@@ -7,6 +7,7 @@ from urllib.error import HTTPError
 from urllib.request import Request, build_opener
 
 from server.app import create_server
+from server.content import load_catalogs
 
 
 class NaneHttpApiTests(unittest.TestCase):
@@ -82,6 +83,78 @@ class NaneHttpApiTests(unittest.TestCase):
         self.assertEqual(status, 200)
         self.assertEqual(room["room"]["occupied"], 3)
         self.assertTrue(room["room"]["all_ready"])
+
+
+    def test_profile_and_match_endpoints_keep_private_answers_server_side(self):
+        status, created, h1 = self.call("POST", "/api/rooms", {"name": "A"})
+        self.assertEqual(status, 201)
+        code = created["invite_code"]
+        cookies = [self.cookie(h1)]
+        for name in ("B", "C"):
+            status, joined, headers = self.call(
+                "POST", "/api/rooms/%s/join" % code, {"name": name}
+            )
+            self.assertEqual(status, 201)
+            cookies.append(self.cookie(headers))
+
+        catalog = load_catalogs()
+        answers = {
+            item["field_id"]: item["options"][0]["id"]
+            for item in catalog.profile_questions
+        }
+        for cookie in cookies:
+            status, saved, _ = self.call(
+                "POST", "/api/rooms/%s/profile" % code,
+                {"answers": answers}, cookie=cookie
+            )
+            self.assertEqual(status, 200)
+            self.assertEqual(saved["profile"]["completed_count"], 21)
+            status, own_profile, _ = self.call(
+                "GET", "/api/rooms/%s/profile" % code, cookie=cookie
+            )
+            self.assertEqual(status, 200)
+            self.assertEqual(own_profile["profile"]["answers"], answers)
+
+        for cookie in cookies:
+            status, ready, _ = self.call(
+                "POST", "/api/rooms/%s/ready" % code, {"ready": True}, cookie=cookie
+            )
+            self.assertEqual(status, 200)
+
+        status, started, _ = self.call(
+            "POST", "/api/rooms/%s/match/start" % code, {}, cookie=cookies[0]
+        )
+        self.assertEqual(status, 201)
+        self.assertEqual(started["match"]["status"], "active")
+        self.assertEqual(started["match"]["phase"], "knowledge")
+
+        status, current, _ = self.call(
+            "GET", "/api/rooms/%s/match" % code, cookie=cookies[1]
+        )
+        self.assertEqual(status, 200)
+        public_json = json.dumps(current["match"]["current_task"], ensure_ascii=False)
+        self.assertNotIn("correct_option_id", public_json)
+        self.assertNotIn("private_answer", public_json)
+        self.assertNotIn("field_id", public_json)
+
+    def test_start_match_api_rejects_missing_profiles(self):
+        status, created, h1 = self.call("POST", "/api/rooms", {"name": "A"})
+        self.assertEqual(status, 201)
+        code = created["invite_code"]
+        cookies = [self.cookie(h1)]
+        for name in ("B", "C"):
+            status, joined, headers = self.call(
+                "POST", "/api/rooms/%s/join" % code, {"name": name}
+            )
+            self.assertEqual(status, 201)
+            cookies.append(self.cookie(headers))
+        for cookie in cookies:
+            self.call("POST", "/api/rooms/%s/ready" % code, {"ready": True}, cookie=cookie)
+        status, result, _ = self.call(
+            "POST", "/api/rooms/%s/match/start" % code, {}, cookie=cookies[0]
+        )
+        self.assertEqual(status, 409)
+        self.assertIn("21", result["error"])
 
     def test_cross_origin_write_is_rejected(self):
         status, result, _ = self.call(
