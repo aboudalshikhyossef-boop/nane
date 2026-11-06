@@ -226,6 +226,12 @@ class ContentEngine:
         question = self.catalog.question(question_id)
         if question is None or "player_question" not in question["use_in"]:
             raise ContentSelectionError("السؤال المختار غير موجود أو غير صالح لهذه المرحلة.")
+        normalized_ids = [
+            player.get("id") if isinstance(player, Mapping) else player
+            for player in player_ids
+        ]
+        if asker_player_id not in normalized_ids:
+            raise ContentSelectionError("صاحب السؤال غير موجود في قائمة اللاعبين.")
         target = self.choose_target(
             player_ids,
             excluded_player_ids={asker_player_id},
