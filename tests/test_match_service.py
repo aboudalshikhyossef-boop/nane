@@ -317,7 +317,7 @@ class MatchServiceTests(unittest.TestCase):
                     with closing(self.store._connect()) as db:
                         answer = db.execute(
                             "SELECT payload_json FROM match_submissions WHERE match_id = ? AND task_index = ? AND player_id = ? AND kind = 'answer'",
-                            (row["id"], state["current_task_index"], target["id"])
+                            (row["id"], task["sequence_no"], target["id"])
                         ).fetchone()
                     value = json.loads(answer["payload_json"])["value"]
                     for player in self.players:
@@ -372,8 +372,9 @@ class MatchServiceTests(unittest.TestCase):
             self.clock.advance(task.get("deadline_at", self.clock()) - self.clock() + 2)
             self.service.get_match(self.code, self.players[0]["token"])
         self.assertEqual(self.raw_match()["status"], "completed")
-        # In a real room every player keeps polling; refresh their presence after
-        # the accelerated fake-clock timeout simulation before starting again.
+        # Reset the accelerated test clock, then refresh all player sessions as
+        # the real clients would do through their normal room polling.
+        self.clock.value = int(time.time())
         for player in self.players:
             self.store.get_session(player["token"])
         next_match = self.service.start_match(self.code, self.players[0]["token"])["match"]
