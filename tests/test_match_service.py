@@ -321,6 +321,10 @@ class MatchServiceTests(unittest.TestCase):
                         ).fetchone()
                     value = json.loads(answer["payload_json"])["value"]
                     for player in self.players:
+                        latest = self.raw_state()
+                        active_task = latest["tasks"][latest["current_task_index"]]
+                        if active_task["status"] != "active" or active_task.get("subphase") != "guess":
+                            break
                         if player["id"] != target["id"]:
                             self.service.submit_action(self.code, player["token"], "guess", value)
             elif kind == "live_choice":
@@ -331,11 +335,19 @@ class MatchServiceTests(unittest.TestCase):
                 else:
                     target = task["private"]["target_order"][task["live_target_index"]]
                     for player in self.players:
+                        latest = self.raw_state()
+                        active_task = latest["tasks"][latest["current_task_index"]]
+                        if active_task["status"] != "active":
+                            break
                         if player["id"] != target:
                             self.service.submit_action(self.code, player["token"], "guess", target)
             elif kind == "finale":
                 target = task["private"]["target_player_id"]
                 for player in self.players:
+                    latest = self.raw_state()
+                    active_task = latest["tasks"][latest["current_task_index"]]
+                    if active_task["status"] != "active":
+                        break
                     if player["id"] != target:
                         self.service.submit_action(self.code, player["token"], "guess", target)
         self.assertLess(guard, 200)
@@ -360,6 +372,10 @@ class MatchServiceTests(unittest.TestCase):
             self.clock.advance(task.get("deadline_at", self.clock()) - self.clock() + 2)
             self.service.get_match(self.code, self.players[0]["token"])
         self.assertEqual(self.raw_match()["status"], "completed")
+        # In a real room every player keeps polling; refresh their presence after
+        # the accelerated fake-clock timeout simulation before starting again.
+        for player in self.players:
+            self.store.get_session(player["token"])
         next_match = self.service.start_match(self.code, self.players[0]["token"])["match"]
         self.assertEqual(next_match["status"], "active")
 
