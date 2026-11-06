@@ -210,8 +210,12 @@ def make_handler(store, bus, limiter, match_service=None):
                     return self.json_response(201, result)
                 action_match = re.fullmatch(r"/api/rooms/([A-Za-z0-9]+)/match/action", path)
                 if action_match:
+                    task_sequence = data.get("task_sequence")
+                    if isinstance(task_sequence, bool) or not isinstance(task_sequence, int):
+                        raise InvalidInput("يجب إرسال رقم الجولة الحالي مع الاختيار.")
                     result = match_service.submit_action(
-                        action_match.group(1), token, data.get("action"), data.get("value")
+                        action_match.group(1), token, data.get("action"),
+                        data.get("value"), task_sequence
                     )
                     return self.json_response(200, result)
                 if path == "/api/rooms":
