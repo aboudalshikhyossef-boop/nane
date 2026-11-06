@@ -184,6 +184,7 @@ function initialMatch() {
       task_sequence: sequence,
       remaining_seconds: 70,
       content: {
+        target_name: "ليلى",
         question: {
           text_ar: "ما اللون المفضل؟",
           options: [
@@ -273,6 +274,8 @@ var timerId = 0;
 var timers = {};
 var window = {
   location: { search: "" },
+  pageYOffset: 0,
+  scrollTo: function (x, y) { this.pageYOffset = y; },
   setTimeout: function (callback) {
     timerId += 1;
     timers[timerId] = callback;
@@ -340,6 +343,7 @@ elements.startButton.onclick();
 
 assert.ok(elements.arena.className.indexOf("hidden") === -1, "Starting should open the match arena.");
 assert.ok(elementText(elements.arenaPhase).indexOf("من يعرفني") >= 0);
+assert.ok(elementText(elements.arenaContent).indexOf("دورك: خمّن إجابة ليلى") >= 0);
 assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 2);
 
 elements.arenaContent.getElementsByTagName("button")[0].onclick();
@@ -362,17 +366,27 @@ assert.ok(elementText(elements.arenaContent).indexOf("سر صغير") >= 0);
 assert.ok(elementText(elements.arenaContent).indexOf("يحب الأماكن الهادئة") >= 0);
 assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 3);
 
+matchState = matchWithTask("mystery", 421, "guess", {
+  title_ar: "رسالة تخصك", story_ar: "وصف من ملفك.",
+  revealed_clues: [{ level: 1, text_ar: "تحب القراءة." }]
+}, { can_guess: false, can_answer: false, has_submitted: false });
+fireNextTimer();
+assert.ok(elementText(elements.arenaContent).indexOf("هذه الرسالة تتعلق بك") >= 0);
+assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 0);
+
 matchState = matchWithTask("player_question", 43, "answer", {
+  asker_name: "مريم",
   question: { text_ar: "ما النشاط الذي تحبه؟", options: [{ id: "o1", text_ar: "القراءة" }, { id: "o2", text_ar: "الرياضة" }] }
 }, { can_answer: true, can_guess: false, has_submitted: false });
 fireNextTimer();
-assert.ok(elementText(elements.arenaContent).indexOf("أنت المجيب هذه المرة") >= 0);
+assert.ok(elementText(elements.arenaContent).indexOf("دورك: أجب أنت فقط") >= 0);
 assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 2);
 
 matchState = matchWithTask("player_question", 44, "guess", {
   question: { text_ar: "ما النشاط الذي تحبه؟", options: [{ id: "o1", text_ar: "القراءة" }, { id: "o2", text_ar: "الرياضة" }] }
 }, { can_answer: false, can_guess: true, has_submitted: false });
 fireNextTimer();
+assert.ok(elementText(elements.arenaContent).indexOf("دورك: خمّن إجابة المجيب") >= 0);
 assert.ok(elementText(elements.arenaContent).indexOf("ما الإجابة التي اختارها المجيب؟") >= 0);
 assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 2);
 
@@ -381,6 +395,7 @@ matchState = matchWithTask("live_choice", 45, "answer", {
 }, { can_answer: true, can_guess: false, has_submitted: false });
 fireNextTimer();
 assert.ok(elementText(elements.arenaContent).indexOf("اختر أمسيتك المثالية") >= 0);
+assert.ok(elementText(elements.arenaContent).indexOf("كل لاعب يختار إجابة واحدة") >= 0);
 assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 2);
 
 matchState = matchWithTask("live_choice", 46, "guess", {
@@ -392,6 +407,7 @@ matchState.current_task.live_guess_total = 3;
 fireNextTimer();
 assert.ok(elementText(elements.arenaContent).indexOf("البيت") >= 0);
 assert.ok(elementText(elements.arenaContent).indexOf("من صاحب الإجابة المجهولة رقم 2") >= 0);
+assert.ok(elementText(elements.arenaContent).indexOf("دورك: اكتشف صاحب الإجابة") >= 0);
 assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 3);
 
 matchState = matchWithTask("finale", 47, "guess", {
@@ -399,6 +415,7 @@ matchState = matchWithTask("finale", 47, "guess", {
 }, { can_answer: false, can_guess: true, has_submitted: false });
 fireNextTimer();
 assert.ok(elementText(elements.arenaContent).indexOf("شخص يحب البحر") >= 0);
+assert.ok(elementText(elements.arenaContent).indexOf("دورك: حلّ اللغز") >= 0);
 assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 3);
 
 /* The final screen can return to the lobby without reopening the same result. */
