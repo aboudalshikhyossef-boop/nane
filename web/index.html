@@ -1,24 +1,85 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#10172a"><title>NANE — من يعرف العائلة أكثر؟</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#10172a">
+<meta name="description" content="NANE — لعبة عائلية لاكتشاف من يعرف الآخرين أكثر.">
+<title>NANE — من يعرف العائلة أكثر؟</title>
 <link rel="stylesheet" href="/static/main.css">
 </head>
 <body>
 <main class="shell">
-<header class="top"><a class="brand" href="/"><b>N</b><span><strong>NANE</strong><small>FAMILY MIND GAME</small></span></a><span id="connection" class="connection">جارٍ الاتصال</span></header>
-<section class="hero"><div class="hero-copy"><p class="eyebrow">لعبة العائلة الجديدة</p><h1>مين يعرف<br><em>مين أكثر؟</em></h1><p>اكتشفوا تفضيلات بعضكم، اقرأوا ما بين السطور، وخمّنوا صاحب الإجابة. كل جولة تكشف جانبًا جديدًا من العائلة.</p><div class="tags"><span>3–4 لاعبين</span><span>منافسة فردية</span><span>تخمين ومفاجآت</span></div></div><div class="hero-art" aria-hidden="true"><i>؟</i><b>✦</b><span>م</span><span>ن</span><span>س</span></div></section>
-<section id="entry" class="entry">
-<article class="panel"><div class="symbol mint">✦</div><small class="eyebrow">ابدأ جلسة جديدة</small><h2>أنشئ غرفة العائلة</h2><p>أنشئ غرفة وشارك رمزها مع بقية اللاعبين.</p><label for="createName">اسمك داخل اللعبة</label><input id="createName" maxlength="18" class="field" placeholder="اكتب اسمك"><button id="createButton" class="button primary">إنشاء غرفة ←</button></article>
-<article class="panel"><div class="symbol violet">↗</div><small class="eyebrow">لديك رمز دعوة؟</small><h2>انضم إلى الغرفة</h2><p>أدخل رمز الغرفة الذي أرسله لك أحد أفراد العائلة.</p><label for="joinName">اسمك داخل اللعبة</label><input id="joinName" maxlength="18" class="field" placeholder="اكتب اسمك"><label for="roomCode">رمز الغرفة</label><input id="roomCode" maxlength="10" class="field code" placeholder="XXXXXXXXXX"><button id="joinButton" class="button secondary">انضم الآن ←</button></article>
+<header class="top">
+  <a class="brand" href="/" aria-label="NANE الصفحة الرئيسية"><b>N</b><span><strong>NANE</strong><small>FAMILY MIND GAME</small></span></a>
+  <span id="connection" class="connection">جارٍ الاتصال</span>
+</header>
+
+<section id="entry">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">لعبة العائلة الجديدة</p>
+      <h1>مين يعرف<br><em>مين أكثر؟</em></h1>
+      <p>اكتشفوا تفضيلات بعضكم، اقرأوا ما بين السطور، وخمّنوا صاحب الإجابة. خمس مراحل، ومنافسة فردية مليئة بالمفاجآت.</p>
+      <div class="tags"><span>3–4 لاعبين</span><span>منافسة فردية</span><span>5 مراحل</span></div>
+    </div>
+    <div class="hero-art" aria-hidden="true"><i>؟</i><b>✦</b><span>م</span><span>ن</span><span>س</span></div>
+  </section>
+  <section class="entry">
+    <article class="panel entry-card">
+      <div class="symbol mint">✦</div><small class="eyebrow">ابدأ جلسة جديدة</small>
+      <h2>أنشئ غرفة العائلة</h2><p>أنشئ غرفة وشارك رمزها مع بقية اللاعبين.</p>
+      <label for="createName">اسمك داخل اللعبة</label><input id="createName" maxlength="18" class="field" placeholder="اكتب اسمك" autocomplete="nickname">
+      <button id="createButton" class="button primary">إنشاء غرفة <span>←</span></button>
+    </article>
+    <article class="panel entry-card">
+      <div class="symbol violet">↗</div><small class="eyebrow">لديك رمز دعوة؟</small>
+      <h2>انضم إلى الغرفة</h2><p>أدخل رمز الغرفة الذي أرسله لك أحد أفراد العائلة.</p>
+      <label for="joinName">اسمك داخل اللعبة</label><input id="joinName" maxlength="18" class="field" placeholder="اكتب اسمك" autocomplete="nickname">
+      <label for="roomCode">رمز الغرفة</label><input id="roomCode" maxlength="10" class="field code" placeholder="XXXXXXXXXX" autocapitalize="characters">
+      <button id="joinButton" class="button secondary">انضم الآن <span>←</span></button>
+    </article>
+  </section>
 </section>
-<section id="room" class="panel room hidden"><div class="room-head"><div><small class="eyebrow">غرفتكم جاهزة للتجمع</small><h2>بانتظار أفراد العائلة</h2></div><button id="leaveButton" class="button quiet">مغادرة</button></div>
-<div class="invite"><div><small>رمز الدعوة</small><strong id="roomCodeValue">----------</strong></div><button id="copyButton" class="button copy">نسخ الرمز</button></div>
-<div class="roster-head"><h3>اللاعبون</h3><span id="count">0 / 4</span></div><div id="players" class="players"></div>
-<div class="ready-row"><button id="readyButton" class="button primary">أنا مستعد</button><p id="readyText">تحتاجون إلى 3 لاعبين على الأقل، ويجب أن يكون الجميع متصلين ومستعدين.</p></div>
-<div class="foundation"><b>✧</b><p><strong>تم تجهيز غرفة اللعب والاتصال.</strong><br>ملف الشخصية ومراحل FAMILY MIND قيد البناء وفق خطة المشروع.</p></div></section>
+
+<section id="room" class="panel room hidden">
+  <div class="room-head"><div><small class="eyebrow">غرفتكم الخاصة</small><h2>بانتظار أفراد العائلة</h2></div><button id="leaveButton" class="button quiet">مغادرة الغرفة</button></div>
+  <div class="invite"><div><small>رمز الدعوة</small><strong id="roomCodeValue">----------</strong></div><button id="copyButton" class="button copy">نسخ الرمز</button></div>
+  <div class="roster-head"><h3>اللاعبون</h3><span id="count">0 / 4</span></div>
+  <div id="players" class="players"></div>
+  <div class="profile-summary">
+    <div><small class="eyebrow">ملفك الشخصي</small><strong id="profileStatus">جارٍ تحميل الأسئلة...</strong><p>أكمل 21 اختيارًا حتى يتمكن الجميع من بدء المباراة.</p></div>
+    <button id="profileButton" class="button secondary">إكمال الملف الشخصي</button>
+  </div>
+  <div class="ready-row"><button id="readyButton" class="button primary">أنا مستعد</button><p id="readyText">تحتاجون إلى 3 لاعبين على الأقل، ويجب أن يكون الجميع متصلين ومستعدين.</p></div>
+  <div class="start-row"><button id="startButton" class="button start" disabled>ابدأوا المباراة <span>✦</span></button><p id="startText">ستبدأ المباراة عندما يكون 3 أو 4 لاعبين متصلين ومستعدين، وتكون الملفات الشخصية مكتملة.</p></div>
+</section>
+
+<section id="profile" class="panel profile-screen hidden">
+  <div class="screen-head"><div><small class="eyebrow">خطوتك الأولى في NANE</small><h2>خلّينا نتعرّف عليك</h2><p>اختر الإجابة الأقرب لك. إجاباتك خاصة ولن تظهر للآخرين كملف مكشوف.</p></div><button id="profileBack" class="button quiet">رجوع</button></div>
+  <div class="progress-wrap"><div class="progress-meta"><strong id="profileProgressText">0 من 21 إجابة</strong><span id="profileProgressPercent">0%</span></div><div class="progress-track"><span id="profileProgressBar"></span></div></div>
+  <div id="profileQuestions" class="question-groups"></div>
+  <div class="profile-bottom"><span id="profileSaveState" aria-live="polite">تُحفظ إجاباتك تلقائيًا.</span><button id="profileDone" class="button primary">العودة إلى الغرفة</button></div>
+</section>
+
+<section id="arena" class="hidden">
+  <div class="arena-head panel">
+    <div><small class="eyebrow">مباراة NANE</small><h2 id="arenaPhase">من يعرفني؟</h2><p id="arenaSubtitle">المرحلة 1 من 5</p></div>
+    <div class="timer-wrap"><span>الوقت المتبقي</span><strong id="timerValue">--</strong><div class="timer-track"><i id="timerBar"></i></div></div>
+  </div>
+  <div class="arena-layout">
+    <aside class="panel scoreboard"><div class="score-head"><h3>لوحة النقاط</h3><span>الترتيب المباشر</span></div><div id="scoreboardList"></div></aside>
+    <section class="panel task-panel">
+      <div class="task-meta"><span id="taskPhaseTag" class="phase-tag">المرحلة</span><span id="taskRound">الجولة</span></div>
+      <div id="arenaContent" aria-live="polite"></div>
+    </section>
+  </div>
+  <div id="arenaStatus" class="arena-status" aria-live="polite"></div>
+</section>
+
 <div id="notice" class="notice hidden" role="status" aria-live="polite"></div>
 <footer><strong>NANE</strong><span>لعبتكم تبدأ بمعرفة بعضكم أكثر.</span><a href="/compatibility">اختبار توافق الأجهزة</a></footer>
-</main><script src="/static/app.js"></script>
-</body></html>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>
