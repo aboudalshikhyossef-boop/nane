@@ -24,3 +24,5 @@ jobs:
         run: bash -n start_nane.sh
       - name: Legacy-compatible JavaScript syntax
         run: node --check web/js/app.js
+      - name: Browser client runtime smoke test
+        run: node tests/test_ui_runtime.js
