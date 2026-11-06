@@ -155,6 +155,70 @@ class NaneHttpApiTests(unittest.TestCase):
         self.assertEqual(status, 409)
         self.assertIn("انتهت هذه الجولة", stale["error"])
 
+    def test_four_player_room_can_start_match_through_http_without_private_leaks(self):
+        status, created, headers = self.call("POST", "/api/rooms", {"name": "لاعب أ"})
+        self.assertEqual(status, 201)
+        code = created["invite_code"]
+        cookies = [self.cookie(headers)]
+        for name in ("لاعب ب", "لاعب ج", "لاعب د"):
+            status, joined, join_headers = self.call(
+                "POST", "/api/rooms/%s/join" % code, {"name": name}
+            )
+            self.assertEqual(status, 201)
+            cookies.append(self.cookie(join_headers))
+
+        catalog = load_catalogs()
+        complete_answers = {
+            question["field_id"]: question["options"][0]["id"]
+            for question in catalog.profile_questions
+        }
+        for cookie in cookies:
+            status, saved, _ = self.call(
+                "POST", "/api/rooms/%s/profile" % code,
+                {"answers": complete_answers}, cookie=cookie
+            )
+            self.assertEqual(status, 200)
+            self.assertEqual(saved["profile"]["completed_count"], 21)
+            status, ready, _ = self.call(
+                "POST", "/api/rooms/%s/ready" % code,
+                {"ready": True}, cookie=cookie
+            )
+            self.assertEqual(status, 200)
+
+        status, room, _ = self.call(
+            "GET", "/api/rooms/%s" % code, cookie=cookies[0]
+        )
+        self.assertEqual(status, 200)
+        self.assertTrue(room["room"]["all_ready"])
+        self.assertEqual(room["room"]["occupied"], 4)
+
+        status, started, _ = self.call(
+            "POST", "/api/rooms/%s/match/start" % code,
+            {}, cookie=cookies[0]
+        )
+        self.assertEqual(status, 201)
+        self.assertEqual(started["match"]["status"], "active")
+        self.assertEqual(len(started["match"]["scoreboard"]), 4)
+
+        for cookie in cookies:
+            status, current, _ = self.call(
+                "GET", "/api/rooms/%s/match" % code, cookie=cookie
+            )
+            self.assertEqual(status, 200)
+            public_task = current["match"]["current_task"]
+            serialized = json.dumps(public_task, ensure_ascii=False)
+            self.assertNotIn("correct_option_id", serialized)
+            self.assertNotIn("field_id", serialized)
+            self.assertNotIn("private", serialized)
+            self.assertEqual(current["match"]["status"], "active")
+
+        status, locked, _ = self.call(
+            "POST", "/api/rooms/%s/profile" % code,
+            {"answers": {"favorite_color": "o2"}}, cookie=cookies[0]
+        )
+        self.assertEqual(status, 409)
+        self.assertIn("أثناء مباراة", locked["error"])
+
     def test_player_profiles_are_isolated_between_room_members(self):
         status, created, h1 = self.call("POST", "/api/rooms", {"name": "A"})
         self.assertEqual(status, 201)
