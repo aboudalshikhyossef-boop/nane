@@ -231,6 +231,58 @@ class MatchServiceTests(unittest.TestCase):
         self.assertNotIn("private_answers", raw)
         self.assertEqual(len(view["current_task"]["content"]["revealed_clues"]), 1)
 
+    def test_identity_guesser_cannot_select_themselves(self):
+        self.prepare_room(3)
+        self.service.start_match(self.code, self.players[0]["token"])
+
+        self._finish_current_phase("knowledge")
+        state = self.raw_state()
+        task = state["tasks"][state["current_task_index"]]
+        mystery_target = task["private"]["mystery"]["target_player_id"]
+        mystery_guesser = next(
+            player for player in self.players if player["id"] != mystery_target
+        )
+        with self.assertRaises(InvalidInput):
+            self.service.submit_action(
+                self.code, mystery_guesser["token"], "guess", mystery_guesser["id"]
+            )
+
+        self._finish_current_phase("mystery")
+        self._finish_current_phase("player_question")
+        state = self.raw_state()
+        self.assertEqual(state["phase"], "live_choice")
+        task = state["tasks"][state["current_task_index"]]
+        option_id = task["public"]["question"]["options"][0]["id"]
+        for player in self.players:
+            self.service.submit_action(
+                self.code, player["token"], "answer", option_id
+            )
+
+        state = self.raw_state()
+        task = state["tasks"][state["current_task_index"]]
+        self.assertEqual(task["subphase"], "guess")
+        live_target = task["private"]["target_order"][task["live_target_index"]]
+        live_guesser = next(
+            player for player in self.players if player["id"] != live_target
+        )
+        with self.assertRaises(InvalidInput):
+            self.service.submit_action(
+                self.code, live_guesser["token"], "guess", live_guesser["id"]
+            )
+
+        self._finish_current_phase("live_choice")
+        state = self.raw_state()
+        self.assertEqual(state["phase"], "finale")
+        task = state["tasks"][state["current_task_index"]]
+        finale_target = task["private"]["target_player_id"]
+        finale_guesser = next(
+            player for player in self.players if player["id"] != finale_target
+        )
+        with self.assertRaises(InvalidInput):
+            self.service.submit_action(
+                self.code, finale_guesser["token"], "guess", finale_guesser["id"]
+            )
+
     def _finish_current_phase(self, phase):
         guard = 0
         while guard < 100:
