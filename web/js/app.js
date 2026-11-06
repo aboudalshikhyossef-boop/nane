@@ -590,7 +590,7 @@ function renderActiveTask(root, task, scores) {
     root.appendChild(clueList);
     root.appendChild(make("p", "task-copy", "من صاحب هذه الرسالة؟ اختَر أحد أفراد العائلة."));
     if (mine.can_guess && !mine.has_submitted) {
-      renderPlayers(root, scores, "guess", task.task_sequence, false);
+      renderPlayers(root, scores, "guess", task.task_sequence);
     } else if (mine.can_guess) {
       renderWaiting(root, "تم تسجيل تخمينك", "قد يظهر تلميح جديد إذا لم تُحل الرسالة بعد.");
     } else {
@@ -675,13 +675,12 @@ function renderOptions(root, options, action, sequence) {
   root.appendChild(list);
 }
 
-function renderPlayers(root, scores, action, sequence, includeSelf) {
+function renderPlayers(root, scores, action, sequence) {
   var list = make("div", "player-choices");
   var count = 0;
   var i;
   for (i = 0; i < scores.length; i++) {
     var player = scores[i];
-    if (!includeSelf && player.player_id === playerId && action === "never") { continue; }
     var button = make("button", "choice-button", player.name);
     button.type = "button";
     button.onclick = makeSubmit(action, player.player_id, sequence);
@@ -793,6 +792,15 @@ function renderFinalStandings(root, standings) {
     root.appendChild(row);
   }
   root.appendChild(make("p", "task-copy", "شكرًا لمشاركتكم. يمكنكم بدء مباراة جديدة بعد العودة إلى الغرفة."));
+  var back = make("button", "button secondary", "العودة إلى الغرفة");
+  back.type = "button";
+  back.onclick = function () {
+    taskKey = "";
+    showView("room");
+    if (room) { renderRoom(room); }
+    schedule();
+  };
+  root.appendChild(back);
 }
 
 function boot() {
