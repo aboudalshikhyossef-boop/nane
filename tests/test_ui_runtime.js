@@ -360,7 +360,7 @@ matchState = matchWithTask("mystery", 42, "guess", {
 fireNextTimer();
 assert.ok(elementText(elements.arenaContent).indexOf("سر صغير") >= 0);
 assert.ok(elementText(elements.arenaContent).indexOf("يحب الأماكن الهادئة") >= 0);
-assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 2);
+assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 3);
 
 matchState = matchWithTask("player_question", 43, "answer", {
   question: { text_ar: "ما النشاط الذي تحبه؟", options: [{ id: "o1", text_ar: "القراءة" }, { id: "o2", text_ar: "الرياضة" }] }
@@ -392,14 +392,14 @@ matchState.current_task.live_guess_total = 3;
 fireNextTimer();
 assert.ok(elementText(elements.arenaContent).indexOf("البيت") >= 0);
 assert.ok(elementText(elements.arenaContent).indexOf("من صاحب الإجابة المجهولة رقم 2") >= 0);
-assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 2);
+assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 3);
 
 matchState = matchWithTask("finale", 47, "guess", {
   text_ar: "شخص يحب البحر ويختار المغامرة، من هو؟"
 }, { can_answer: false, can_guess: true, has_submitted: false });
 fireNextTimer();
 assert.ok(elementText(elements.arenaContent).indexOf("شخص يحب البحر") >= 0);
-assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 2);
+assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 3);
 
 /* The final screen can return to the lobby without reopening the same result. */
 matchState = {
