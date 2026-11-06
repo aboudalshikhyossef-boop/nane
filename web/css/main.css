@@ -152,3 +152,75 @@ footer strong{color:#bdb0f5;letter-spacing:2px}footer a{color:#9cadd0;text-decor
  .score-entry{flex-basis:100%}.result-card{padding:14px}
  footer{font-size:10px}
 }
+
+/* Readability and player guidance improvements */
+.arena-head{
+ position:-webkit-sticky;
+ position:sticky;
+ top:8px;
+ z-index:30;
+}
+.arena-head>div:first-child{flex:1;min-width:0}
+.guidance-card{
+ margin:0 0 16px;
+ padding:15px 16px;
+ border:2px solid #65779b;
+ border-right:5px solid #9ce0c4;
+ border-radius:13px;
+ color:#f7f8fc;
+ background:#202c46;
+}
+.guidance-kicker{display:block;margin:0 0 5px;color:#a9e8ca;font-size:13px;font-weight:bold}
+.guidance-title{display:block;margin:0 0 5px;color:#fff;font-size:19px;line-height:1.45}
+.guidance-detail{margin:0;color:#e2e8f2;font-size:16px;line-height:1.7;font-weight:500}
+.guidance-card.waiting{border-right-color:#c5b5ff;background:#282844}
+.guidance-card.private{border-right-color:#e6c18e;background:#332d38}
+.choice-button{
+ min-height:62px;
+ margin:5px;
+ padding:13px 16px;
+ border:2px solid #7184a9;
+ border-radius:12px;
+ color:#fff;
+ background:#1a2944;
+ font-size:17px;
+ font-weight:bold;
+ line-height:1.5;
+ -webkit-appearance:none;
+ text-align:right;
+ box-shadow:0 2px 0 rgba(0,0,0,.22);
+}
+.choice-button.selected{
+ border-color:#a7efcd;
+ color:#f1fff8;
+ background:#245541;
+ box-shadow:inset 0 0 0 1px rgba(167,239,205,.35);
+}
+.choice-button:focus{outline:3px solid #d2c6ff;outline-offset:2px}
+.option-list .choice-button,.player-choices .choice-button{
+ flex:1 1 44%;
+ min-height:66px;
+ text-align:right;
+}
+.player-choices .choice-button{flex-basis:40%}
+@media(max-width:760px){
+ .arena-head{top:5px;padding:13px 15px}
+ .timer-wrap{width:112px}
+ .timer-wrap strong{font-size:27px}
+ .guidance-card{padding:13px}
+ .guidance-title{font-size:18px}
+ .guidance-detail{font-size:15px}
+}
+@media(max-width:420px){
+ .arena-head{top:3px;padding:11px 12px}
+ .arena-head h2{font-size:18px}
+ .arena-head p{font-size:11px}
+ .timer-wrap{width:92px}
+ .timer-wrap span{font-size:10px}
+ .timer-wrap strong{font-size:23px}
+ .guidance-card{margin-bottom:13px;padding:12px}
+ .guidance-title{font-size:17px}
+ .guidance-detail{font-size:15px;line-height:1.65}
+ .choice-button{min-height:62px;padding:12px 13px;font-size:16px}
+ .option-list .choice-button,.player-choices .choice-button{flex-basis:100%;width:100%}
+}
