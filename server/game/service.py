@@ -205,6 +205,7 @@ class MatchService:
                 "phase_index": 0,
                 "phase": PHASES[0],
                 "current_task_index": 0,
+                "next_task_sequence": 0,
                 "tasks": [],
                 "revealed_fields": {},
                 "profile_field_counts": {},
@@ -220,6 +221,7 @@ class MatchService:
                 state["tasks"] = build_phase_tasks(
                     PHASES[0], players, profiles, state, seed, self.catalog
                 )
+                self._assign_task_sequences(state)
             except (MatchPlanningError, ContentSelectionError) as exc:
                 raise MatchConflict(str(exc))
             self._activate_task(state, now)
@@ -237,6 +239,14 @@ class MatchService:
             db.execute("UPDATE rooms SET updated_at = ? WHERE id = ?", (now, room_id))
             db.commit()
         return self.get_match(invite_code, token)
+
+    @staticmethod
+    def _assign_task_sequences(state: Dict[str, Any]) -> None:
+        """Give every task a match-wide key; local phase indexes restart at zero."""
+        start = int(state.get("next_task_sequence", 0))
+        for offset, task in enumerate(state["tasks"]):
+            task["sequence_no"] = start + offset
+        state["next_task_sequence"] = start + len(state["tasks"])
 
     def _activate_task(self, state: Dict[str, Any], now: int) -> None:
         task = state["tasks"][state["current_task_index"]]
@@ -586,6 +596,7 @@ class MatchService:
             state["phase"] = phase
             state["current_task_index"] = 0
             state["tasks"] = tasks
+            self._assign_task_sequences(state)
             self._activate_task(state, now)
         db.execute(
             "UPDATE matches SET phase = ?, state_json = ?, updated_at = ? WHERE id = ?",
@@ -602,25 +613,22 @@ class MatchService:
             return
         if task["status"] != "active" or now < task["deadline_at"]:
             return
-        index = state["current_task_index"]
+        sequence_no = task["sequence_no"]
         kind = task["kind"]
         if kind == "knowledge":
-            self._resolve_knowledge(db, match_row["id"], state, task, index, now)
+            self._resolve_knowledge(db, match_row["id"], state, task, sequence_no, now)
         elif kind == "mystery":
-            self._advance_mystery_clue(db, match_row["id"], state, task, index, now)
+            self._advance_mystery_clue(db, match_row["id"], state, task, sequence_no, now)
         elif kind == "player_question":
-            if task["subphase"] == "answer":
-                self._resolve_player_question(db, match_row["id"], state, task, index, now)
-            else:
-                self._resolve_player_question(db, match_row["id"], state, task, index, now)
+            self._resolve_player_question(db, match_row["id"], state, task, sequence_no, now)
         elif kind == "live_choice":
             if task["subphase"] == "answer":
                 self._switch_live_to_guess(task, now)
-                self._advance_live_target(db, match_row["id"], state, task, index, now)
+                self._advance_live_target(db, match_row["id"], state, task, sequence_no, now)
             else:
-                self._advance_live_target(db, match_row["id"], state, task, index, now)
+                self._advance_live_target(db, match_row["id"], state, task, sequence_no, now)
         elif kind == "finale":
-            self._resolve_finale(db, match_row["id"], state, task, index, now)
+            self._resolve_finale(db, match_row["id"], state, task, sequence_no, now)
         db.execute(
             "UPDATE matches SET state_json = ?, updated_at = ? WHERE id = ?",
             (self._json(state), now, match_row["id"]),
@@ -649,9 +657,10 @@ class MatchService:
                 "FROM match_players WHERE match_id = ? ORDER BY seat",
                 (match_row["id"],),
             ).fetchall()
+            current_task = self._current_task(state) if match_row["status"] == "active" else None
             submissions = self._submissions(
-                db, match_row["id"], state["current_task_index"]
-            ) if match_row["status"] == "active" else []
+                db, match_row["id"], current_task["sequence_no"]
+            ) if current_task else []
             db.commit()
         return {
             "ok": True,
@@ -833,6 +842,7 @@ class MatchService:
             if task["status"] != "active":
                 raise MatchConflict("الجولة في مرحلة كشف النتيجة.")
             index = state["current_task_index"]
+            sequence_no = task["sequence_no"]
             kind = task["kind"]
             attempt_no = 0
 
@@ -882,7 +892,7 @@ class MatchService:
                 if value not in task["eligible_guesser_ids"] and value not in self._name_map(db, match_row["id"]):
                     raise InvalidInput("اختر لاعبًا من الغرفة.")
 
-            self._save_submission(db, match_row["id"], index, viewer_id,
+            self._save_submission(db, match_row["id"], sequence_no, viewer_id,
                                   action, attempt_no, value, now)
             if action == "answer":
                 db.execute(
@@ -890,7 +900,7 @@ class MatchService:
                     "WHERE match_id = ? AND player_id = ?",
                     (match_row["id"], viewer_id),
                 )
-            self._advance_after_submission(db, match_row, state, task, index, now)
+            self._advance_after_submission(db, match_row, state, task, sequence_no, now)
             db.execute(
                 "UPDATE matches SET state_json = ?, phase = ?, updated_at = ? WHERE id = ?",
                 (self._json(state), state["phase"], now, match_row["id"]),
