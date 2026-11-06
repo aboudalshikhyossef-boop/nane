@@ -123,6 +123,11 @@ class ContentEngineTests(unittest.TestCase):
         self.assertTrue(self.engine.private_target_status(routed, routed["target_player_id"])["is_target"])
         self.assertFalse(self.engine.private_target_status(routed, "p1")["is_target"])
 
+    def test_question_routing_rejects_asker_missing_from_room(self):
+        question = self.catalog.questions[0]
+        with self.assertRaises(ContentSelectionError):
+            self.engine.route_player_question(question["id"], "not-in-room", ["p1", "p2"])
+
     def test_question_routing_rejects_unknown_question(self):
         with self.assertRaises(ContentSelectionError):
             self.engine.route_player_question("not-a-question", "p1", ["p1", "p2"])
