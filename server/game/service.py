@@ -199,7 +199,8 @@ class MatchService:
                 (room_id,),
             ).fetchone()
             if active:
-                raise MatchConflict("هناك مباراة جارية بالفعل.")
+                db.commit()
+                return self.get_match(invite_code, token)
             players, profiles = self._players_and_profiles(db, room_id)
             state = {
                 "phase_index": 0,
@@ -700,6 +701,7 @@ class MatchService:
             "subphase": task.get("subphase", "guess"),
             "round_in_phase": index + 1,
             "rounds_in_phase": len(state["tasks"]),
+            "task_sequence": task["sequence_no"],
         }
         if task["status"] == "reveal":
             task_public["result"] = task.get("result")
@@ -817,7 +819,8 @@ class MatchService:
                 self._resolve_finale(db, match_id, state, task, task_index, now)
 
     def submit_action(self, invite_code: str, token: Optional[str],
-                      action: Any, value: Any) -> Dict[str, Any]:
+                      action: Any, value: Any,
+                      expected_task_sequence: Optional[int] = None) -> Dict[str, Any]:
         if action not in ("answer", "guess"):
             raise InvalidInput("نوع المشاركة غير معروف.")
         if not isinstance(value, str) or not value:
@@ -839,6 +842,11 @@ class MatchService:
                 raise MatchConflict("انتهت المباراة أو الجولة الحالية.")
             state = self._load(refreshed["state_json"])
             task = self._current_task(state)
+            if expected_task_sequence is not None:
+                if isinstance(expected_task_sequence, bool) or not isinstance(expected_task_sequence, int):
+                    raise InvalidInput("رقم الجولة المرسل غير صالح.")
+                if expected_task_sequence != task["sequence_no"]:
+                    raise MatchConflict("انتهت هذه الجولة. حدّث شاشة المباراة قبل إرسال اختيارك.")
             if task["status"] != "active":
                 raise MatchConflict("الجولة في مرحلة كشف النتيجة.")
             index = state["current_task_index"]
