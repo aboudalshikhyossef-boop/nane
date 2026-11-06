@@ -110,6 +110,24 @@ class MatchServiceTests(unittest.TestCase):
         self.assertGreater(current["sequence_no"], 20)
         self.assertEqual(len({task["sequence_no"] for task in state["tasks"]}), len(state["tasks"]))
 
+    def test_stale_task_sequence_is_rejected_before_recording_a_submission(self):
+        self.prepare_room(3)
+        self.service.start_match(self.code, self.players[0]["token"])
+        state = self.raw_state()
+        task = state["tasks"][state["current_task_index"]]
+        before = task["sequence_no"]
+        with self.assertRaises(MatchConflict):
+            self.service.submit_action(
+                self.code, self.players[0]["token"], "guess", "o1",
+                expected_task_sequence=before + 99
+            )
+        with closing(self.store._connect()) as db:
+            count = db.execute(
+                "SELECT COUNT(*) FROM match_submissions WHERE match_id = ?",
+                (self.raw_match()["id"],)
+            ).fetchone()[0]
+        self.assertEqual(count, 0)
+
     def test_profile_requires_catalogued_options_and_is_private_to_owner(self):
         self.prepare_room(3, complete_profiles=False)
         first = self.players[0]
