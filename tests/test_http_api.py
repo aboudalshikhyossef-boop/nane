@@ -137,6 +137,29 @@ class NaneHttpApiTests(unittest.TestCase):
         self.assertNotIn("private_answer", public_json)
         self.assertNotIn("field_id", public_json)
 
+    def test_player_profiles_are_isolated_between_room_members(self):
+        status, created, h1 = self.call("POST", "/api/rooms", {"name": "A"})
+        self.assertEqual(status, 201)
+        code = created["invite_code"]
+        first_cookie = self.cookie(h1)
+        status, joined, h2 = self.call(
+            "POST", "/api/rooms/%s/join" % code, {"name": "B"}
+        )
+        self.assertEqual(status, 201)
+        second_cookie = self.cookie(h2)
+        catalog = load_catalogs()
+        first_answer = catalog.profile_questions[0]["options"][0]["id"]
+        status, saved, _ = self.call(
+            "POST", "/api/rooms/%s/profile" % code,
+            {"answers": {"favorite_color": first_answer}}, cookie=first_cookie
+        )
+        self.assertEqual(status, 200)
+        status, other_profile, _ = self.call(
+            "GET", "/api/rooms/%s/profile" % code, cookie=second_cookie
+        )
+        self.assertEqual(status, 200)
+        self.assertEqual(other_profile["profile"]["answers"], {})
+
     def test_start_match_api_rejects_missing_profiles(self):
         status, created, h1 = self.call("POST", "/api/rooms", {"name": "A"})
         self.assertEqual(status, 201)
