@@ -87,11 +87,11 @@ class ContentEngineTests(unittest.TestCase):
         bad = dict(self.answers)
         bad["favorite_color"] = "not-an-option"
         # Other valid fields remain eligible; malformed fields are ignored.
-        prompt = self.engine.choose_profile_fact(
-            "p2", bad, revealed_fields=self.catalog.profile_fields - {"favorite_color"}
-        )
-        self.assertEqual(prompt["field_id"], "favorite_color")
-        self.assertNotEqual(prompt["private_answer"]["text_ar"], "not-an-option")
+        with self.assertRaises(ContentSelectionError) as raised:
+            self.engine.choose_profile_fact(
+                "p2", bad, revealed_fields=self.catalog.profile_fields - {"favorite_color"}
+            )
+        self.assertNotIn("not-an-option", str(raised.exception))
 
     def test_target_selection_excludes_asker_and_avoids_previous_target(self):
         target = self.engine.choose_target(
