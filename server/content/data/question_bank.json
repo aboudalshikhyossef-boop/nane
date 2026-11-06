@@ -1,0 +1,5706 @@
+{
+  "schema_version": 1,
+  "description_ar": "150 سؤالًا منسقًا يجيب عنها لاعب مستهدف أو جميع اللاعبين. لا ترتبط هذه الإجابات بملف الشخصية ولا تُخزن كحقائق دائمة.",
+  "questions": [
+    {
+      "id": "live_001",
+      "text_ar": "وصلت إلى مدينة لم تزرها من قبل، ما أول مكان تحب اكتشافه؟",
+      "category": "travel",
+      "category_name_ar": "السفر والاستكشاف",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "البحر والسباحة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الجبال والطبيعة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "الأسواق والأحياء القديمة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "المتاحف والمعالم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "المقاهي والمطاعم المحلية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "travel",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_002",
+      "text_ar": "لديك يوم كامل في مدينة ساحلية، كيف تقضي معظمه؟",
+      "category": "travel",
+      "category_name_ar": "السفر والاستكشاف",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "البحر والسباحة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الجبال والطبيعة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "الأسواق والأحياء القديمة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "المتاحف والمعالم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "المقاهي والمطاعم المحلية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "travel",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_003",
+      "text_ar": "اختر وسيلة تجعل الرحلة نفسها جزءًا من المتعة.",
+      "category": "travel",
+      "category_name_ar": "السفر والاستكشاف",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "البحر والسباحة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الجبال والطبيعة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "الأسواق والأحياء القديمة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "المتاحف والمعالم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "المقاهي والمطاعم المحلية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "travel",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_004",
+      "text_ar": "في رحلة قصيرة، أي نوع من الأماكن يجذبك أكثر؟",
+      "category": "travel",
+      "category_name_ar": "السفر والاستكشاف",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "البحر والسباحة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الجبال والطبيعة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "الأسواق والأحياء القديمة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "المتاحف والمعالم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "المقاهي والمطاعم المحلية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "travel",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_005",
+      "text_ar": "وجدت طريقًا جانبيًا غير معروف في رحلتك، ما الذي يشجعك على اختياره؟",
+      "category": "travel",
+      "category_name_ar": "السفر والاستكشاف",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "البحر والسباحة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الجبال والطبيعة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "الأسواق والأحياء القديمة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "المتاحف والمعالم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "المقاهي والمطاعم المحلية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "travel",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_006",
+      "text_ar": "ما النشاط الذي تضيفه إلى برنامج رحلة عائلية؟",
+      "category": "travel",
+      "category_name_ar": "السفر والاستكشاف",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "البحر والسباحة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الجبال والطبيعة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "الأسواق والأحياء القديمة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "المتاحف والمعالم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "المقاهي والمطاعم المحلية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "travel",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_007",
+      "text_ar": "إذا تغير الطقس فجأة أثناء السفر، أي خطة بديلة تفضّل؟",
+      "category": "travel",
+      "category_name_ar": "السفر والاستكشاف",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "البحر والسباحة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الجبال والطبيعة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "الأسواق والأحياء القديمة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "المتاحف والمعالم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "المقاهي والمطاعم المحلية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "travel",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_008",
+      "text_ar": "ما الهدية التي تحب إحضارها من مكان زرته؟",
+      "category": "travel",
+      "category_name_ar": "السفر والاستكشاف",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "البحر والسباحة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الجبال والطبيعة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "الأسواق والأحياء القديمة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "المتاحف والمعالم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "المقاهي والمطاعم المحلية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "travel",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_009",
+      "text_ar": "أمامك فرصة لزيارة مكان واحد لوقت قصير، أي تجربة تختار؟",
+      "category": "travel",
+      "category_name_ar": "السفر والاستكشاف",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "البحر والسباحة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الجبال والطبيعة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "الأسواق والأحياء القديمة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "المتاحف والمعالم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "المقاهي والمطاعم المحلية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "travel",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_010",
+      "text_ar": "في رحلة بلا جدول محدد، ما الذي يجعل اليوم ناجحًا بالنسبة لك؟",
+      "category": "travel",
+      "category_name_ar": "السفر والاستكشاف",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "البحر والسباحة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الجبال والطبيعة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "الأسواق والأحياء القديمة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "المتاحف والمعالم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "المقاهي والمطاعم المحلية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "travel",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_011",
+      "text_ar": "دخلت مطعمًا جديدًا ولا تعرف قائمته، ما الذي يجذبك لتجربته؟",
+      "category": "food",
+      "category_name_ar": "الطعام والتجارب",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة طبق جديد"
+        },
+        {
+          "id": "a2",
+          "text_ar": "وجبة منزلية مألوفة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حلوى مميزة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "وجبة خفيفة وسريعة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة طعام طويلة مع الجميع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "food",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_012",
+      "text_ar": "في نزهة عائلية، ما الإضافة التي تجعل الطعام ألذ؟",
+      "category": "food",
+      "category_name_ar": "الطعام والتجارب",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة طبق جديد"
+        },
+        {
+          "id": "a2",
+          "text_ar": "وجبة منزلية مألوفة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حلوى مميزة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "وجبة خفيفة وسريعة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة طعام طويلة مع الجميع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "food",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_013",
+      "text_ar": "لو أعددت مائدة صغيرة للضيوف، ما العنصر الذي تهتم به أولًا؟",
+      "category": "food",
+      "category_name_ar": "الطعام والتجارب",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة طبق جديد"
+        },
+        {
+          "id": "a2",
+          "text_ar": "وجبة منزلية مألوفة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حلوى مميزة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "وجبة خفيفة وسريعة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة طعام طويلة مع الجميع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "food",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_014",
+      "text_ar": "أمامك طبق لم تتذوقه من قبل، ما الذي يجعلك توافق على تجربته؟",
+      "category": "food",
+      "category_name_ar": "الطعام والتجارب",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة طبق جديد"
+        },
+        {
+          "id": "a2",
+          "text_ar": "وجبة منزلية مألوفة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حلوى مميزة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "وجبة خفيفة وسريعة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة طعام طويلة مع الجميع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "food",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_015",
+      "text_ar": "أي أجواء تفضّل لوجبة نهاية الأسبوع؟",
+      "category": "food",
+      "category_name_ar": "الطعام والتجارب",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة طبق جديد"
+        },
+        {
+          "id": "a2",
+          "text_ar": "وجبة منزلية مألوفة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حلوى مميزة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "وجبة خفيفة وسريعة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة طعام طويلة مع الجميع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "food",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_016",
+      "text_ar": "لو اخترت موضوعًا لعشاء منزلي، أي فكرة تبدو ممتعة؟",
+      "category": "food",
+      "category_name_ar": "الطعام والتجارب",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة طبق جديد"
+        },
+        {
+          "id": "a2",
+          "text_ar": "وجبة منزلية مألوفة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حلوى مميزة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "وجبة خفيفة وسريعة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة طعام طويلة مع الجميع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "food",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_017",
+      "text_ar": "ما الذي تفضله في تجربة طعام جديدة؟",
+      "category": "food",
+      "category_name_ar": "الطعام والتجارب",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة طبق جديد"
+        },
+        {
+          "id": "a2",
+          "text_ar": "وجبة منزلية مألوفة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حلوى مميزة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "وجبة خفيفة وسريعة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة طعام طويلة مع الجميع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "food",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_018",
+      "text_ar": "في يوم مزدحم، ما نوع الوجبة التي يعجبك أن تنهي بها اليوم؟",
+      "category": "food",
+      "category_name_ar": "الطعام والتجارب",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة طبق جديد"
+        },
+        {
+          "id": "a2",
+          "text_ar": "وجبة منزلية مألوفة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حلوى مميزة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "وجبة خفيفة وسريعة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة طعام طويلة مع الجميع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "food",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_019",
+      "text_ar": "إذا أردت مفاجأة شخص بطعام يحبه، ما أسلوب التقديم الذي تختاره؟",
+      "category": "food",
+      "category_name_ar": "الطعام والتجارب",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة طبق جديد"
+        },
+        {
+          "id": "a2",
+          "text_ar": "وجبة منزلية مألوفة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حلوى مميزة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "وجبة خفيفة وسريعة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة طعام طويلة مع الجميع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "food",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_020",
+      "text_ar": "أمامك تذوق عدة أطباق صغيرة، كيف تحب أن تكون التجربة؟",
+      "category": "food",
+      "category_name_ar": "الطعام والتجارب",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة طبق جديد"
+        },
+        {
+          "id": "a2",
+          "text_ar": "وجبة منزلية مألوفة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حلوى مميزة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "وجبة خفيفة وسريعة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة طعام طويلة مع الجميع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "food",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_021",
+      "text_ar": "تجتمع العائلة لاختيار فيلم، أي نوع تقترحه أولًا؟",
+      "category": "entertainment",
+      "category_name_ar": "الترفيه والمشاهدة",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كوميديا خفيفة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غموض وألغاز"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مغامرة وحركة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قصة مؤثرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "خيال وعوالم غير مألوفة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "entertainment",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_022",
+      "text_ar": "لديك ساعة فراغ، أي محتوى يجعلك تنسى الوقت؟",
+      "category": "entertainment",
+      "category_name_ar": "الترفيه والمشاهدة",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كوميديا خفيفة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غموض وألغاز"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مغامرة وحركة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قصة مؤثرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "خيال وعوالم غير مألوفة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "entertainment",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_023",
+      "text_ar": "إذا شاركت في برنامج تلفزيوني، أي نوع تختار؟",
+      "category": "entertainment",
+      "category_name_ar": "الترفيه والمشاهدة",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كوميديا خفيفة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غموض وألغاز"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مغامرة وحركة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قصة مؤثرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "خيال وعوالم غير مألوفة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "entertainment",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_024",
+      "text_ar": "أي نهاية لقصة تترك لديك انطباعًا أجمل؟",
+      "category": "entertainment",
+      "category_name_ar": "الترفيه والمشاهدة",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كوميديا خفيفة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غموض وألغاز"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مغامرة وحركة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قصة مؤثرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "خيال وعوالم غير مألوفة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "entertainment",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_025",
+      "text_ar": "لو صنعت مقطعًا قصيرًا، ما طابعه الأقرب لك؟",
+      "category": "entertainment",
+      "category_name_ar": "الترفيه والمشاهدة",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كوميديا خفيفة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غموض وألغاز"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مغامرة وحركة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قصة مؤثرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "خيال وعوالم غير مألوفة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "entertainment",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_026",
+      "text_ar": "في ليلة ألعاب ومشاهدة، ما الذي تفضله أن يبدأ به السهرة؟",
+      "category": "entertainment",
+      "category_name_ar": "الترفيه والمشاهدة",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كوميديا خفيفة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غموض وألغاز"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مغامرة وحركة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قصة مؤثرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "خيال وعوالم غير مألوفة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "entertainment",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_027",
+      "text_ar": "أي شخصية في قصة تشد انتباهك عادة؟",
+      "category": "entertainment",
+      "category_name_ar": "الترفيه والمشاهدة",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كوميديا خفيفة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غموض وألغاز"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مغامرة وحركة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قصة مؤثرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "خيال وعوالم غير مألوفة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "entertainment",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_028",
+      "text_ar": "إذا تحولت قصة يومك إلى فيلم، أي أسلوب يناسبها؟",
+      "category": "entertainment",
+      "category_name_ar": "الترفيه والمشاهدة",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كوميديا خفيفة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غموض وألغاز"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مغامرة وحركة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قصة مؤثرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "خيال وعوالم غير مألوفة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "entertainment",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_029",
+      "text_ar": "ما نوع المسابقة التي تستمتع بمتابعتها؟",
+      "category": "entertainment",
+      "category_name_ar": "الترفيه والمشاهدة",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كوميديا خفيفة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غموض وألغاز"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مغامرة وحركة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قصة مؤثرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "خيال وعوالم غير مألوفة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "entertainment",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_030",
+      "text_ar": "أمامك تذكرة لعرض واحد، أي تجربة تختار؟",
+      "category": "entertainment",
+      "category_name_ar": "الترفيه والمشاهدة",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كوميديا خفيفة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غموض وألغاز"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مغامرة وحركة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قصة مؤثرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "خيال وعوالم غير مألوفة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "entertainment",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_031",
+      "text_ar": "استيقظت في يوم بلا أي التزامات، كيف تبدأه؟",
+      "category": "free_time",
+      "category_name_ar": "الوقت الحر والعادات",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الخروج واكتشاف شيء"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الراحة والهدوء"
+        },
+        {
+          "id": "a3",
+          "text_ar": "ممارسة هواية"
+        },
+        {
+          "id": "a4",
+          "text_ar": "لقاء أشخاص تحبهم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إنجاز شيء مؤجل"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "free_time",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_032",
+      "text_ar": "حصلت على ساعتين إضافيتين في يومك، أين تضعهما؟",
+      "category": "free_time",
+      "category_name_ar": "الوقت الحر والعادات",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الخروج واكتشاف شيء"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الراحة والهدوء"
+        },
+        {
+          "id": "a3",
+          "text_ar": "ممارسة هواية"
+        },
+        {
+          "id": "a4",
+          "text_ar": "لقاء أشخاص تحبهم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إنجاز شيء مؤجل"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "free_time",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_033",
+      "text_ar": "ما الذي يساعدك على استعادة نشاطك بعد أسبوع مزدحم؟",
+      "category": "free_time",
+      "category_name_ar": "الوقت الحر والعادات",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الخروج واكتشاف شيء"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الراحة والهدوء"
+        },
+        {
+          "id": "a3",
+          "text_ar": "ممارسة هواية"
+        },
+        {
+          "id": "a4",
+          "text_ar": "لقاء أشخاص تحبهم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إنجاز شيء مؤجل"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "free_time",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_034",
+      "text_ar": "تأجلت خططك فجأة، أي بديل يسعدك؟",
+      "category": "free_time",
+      "category_name_ar": "الوقت الحر والعادات",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الخروج واكتشاف شيء"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الراحة والهدوء"
+        },
+        {
+          "id": "a3",
+          "text_ar": "ممارسة هواية"
+        },
+        {
+          "id": "a4",
+          "text_ar": "لقاء أشخاص تحبهم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إنجاز شيء مؤجل"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "free_time",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_035",
+      "text_ar": "كيف تحب أن تقضي آخر ساعة قبل النوم؟",
+      "category": "free_time",
+      "category_name_ar": "الوقت الحر والعادات",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الخروج واكتشاف شيء"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الراحة والهدوء"
+        },
+        {
+          "id": "a3",
+          "text_ar": "ممارسة هواية"
+        },
+        {
+          "id": "a4",
+          "text_ar": "لقاء أشخاص تحبهم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إنجاز شيء مؤجل"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "free_time",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_036",
+      "text_ar": "إذا كان لديك صباح حر في عطلة، ما أول اختيار يخطر لك؟",
+      "category": "free_time",
+      "category_name_ar": "الوقت الحر والعادات",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الخروج واكتشاف شيء"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الراحة والهدوء"
+        },
+        {
+          "id": "a3",
+          "text_ar": "ممارسة هواية"
+        },
+        {
+          "id": "a4",
+          "text_ar": "لقاء أشخاص تحبهم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إنجاز شيء مؤجل"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "free_time",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_037",
+      "text_ar": "ما نوع الاستراحة التي تناسبك بين مهمتين؟",
+      "category": "free_time",
+      "category_name_ar": "الوقت الحر والعادات",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الخروج واكتشاف شيء"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الراحة والهدوء"
+        },
+        {
+          "id": "a3",
+          "text_ar": "ممارسة هواية"
+        },
+        {
+          "id": "a4",
+          "text_ar": "لقاء أشخاص تحبهم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إنجاز شيء مؤجل"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "free_time",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_038",
+      "text_ar": "في يوم ممطر وأنت في المنزل، ما النشاط الذي تختاره؟",
+      "category": "free_time",
+      "category_name_ar": "الوقت الحر والعادات",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الخروج واكتشاف شيء"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الراحة والهدوء"
+        },
+        {
+          "id": "a3",
+          "text_ar": "ممارسة هواية"
+        },
+        {
+          "id": "a4",
+          "text_ar": "لقاء أشخاص تحبهم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إنجاز شيء مؤجل"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "free_time",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_039",
+      "text_ar": "لو رتبت أسبوعك بنفسك، ما الذي تحرص على تخصيص وقت له؟",
+      "category": "free_time",
+      "category_name_ar": "الوقت الحر والعادات",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الخروج واكتشاف شيء"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الراحة والهدوء"
+        },
+        {
+          "id": "a3",
+          "text_ar": "ممارسة هواية"
+        },
+        {
+          "id": "a4",
+          "text_ar": "لقاء أشخاص تحبهم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إنجاز شيء مؤجل"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "free_time",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_040",
+      "text_ar": "ما الذي يجعل عطلة قصيرة تبدو أطول وأجمل؟",
+      "category": "free_time",
+      "category_name_ar": "الوقت الحر والعادات",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الخروج واكتشاف شيء"
+        },
+        {
+          "id": "a2",
+          "text_ar": "الراحة والهدوء"
+        },
+        {
+          "id": "a3",
+          "text_ar": "ممارسة هواية"
+        },
+        {
+          "id": "a4",
+          "text_ar": "لقاء أشخاص تحبهم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إنجاز شيء مؤجل"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "free_time",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_041",
+      "text_ar": "عُرضت عليك مغامرة آمنة لكنها غير مألوفة، ما نوعها الأقرب لك؟",
+      "category": "adventure",
+      "category_name_ar": "المغامرة والتحدي",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة رياضة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "حل لغز صعب"
+        },
+        {
+          "id": "a3",
+          "text_ar": "رحلة إلى مكان مجهول"
+        },
+        {
+          "id": "a4",
+          "text_ar": "تعلم مهارة أمام الآخرين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "تجربة شيء خارج الروتين"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "adventure",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_042",
+      "text_ar": "في تحدٍّ جماعي، أي مهمة تفضل أن تتولاها؟",
+      "category": "adventure",
+      "category_name_ar": "المغامرة والتحدي",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة رياضة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "حل لغز صعب"
+        },
+        {
+          "id": "a3",
+          "text_ar": "رحلة إلى مكان مجهول"
+        },
+        {
+          "id": "a4",
+          "text_ar": "تعلم مهارة أمام الآخرين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "تجربة شيء خارج الروتين"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "adventure",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_043",
+      "text_ar": "إذا وصلت إلى نشاط يحتاج شجاعة بسيطة، ما الذي قد تختاره؟",
+      "category": "adventure",
+      "category_name_ar": "المغامرة والتحدي",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة رياضة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "حل لغز صعب"
+        },
+        {
+          "id": "a3",
+          "text_ar": "رحلة إلى مكان مجهول"
+        },
+        {
+          "id": "a4",
+          "text_ar": "تعلم مهارة أمام الآخرين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "تجربة شيء خارج الروتين"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "adventure",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_044",
+      "text_ar": "ما نوع اللغز الذي يجعلك ترغب في المحاولة حتى النهاية؟",
+      "category": "adventure",
+      "category_name_ar": "المغامرة والتحدي",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة رياضة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "حل لغز صعب"
+        },
+        {
+          "id": "a3",
+          "text_ar": "رحلة إلى مكان مجهول"
+        },
+        {
+          "id": "a4",
+          "text_ar": "تعلم مهارة أمام الآخرين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "تجربة شيء خارج الروتين"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "adventure",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_045",
+      "text_ar": "أمامك تحدٍّ مدته يوم واحد، ما المجال الذي تختاره؟",
+      "category": "adventure",
+      "category_name_ar": "المغامرة والتحدي",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة رياضة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "حل لغز صعب"
+        },
+        {
+          "id": "a3",
+          "text_ar": "رحلة إلى مكان مجهول"
+        },
+        {
+          "id": "a4",
+          "text_ar": "تعلم مهارة أمام الآخرين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "تجربة شيء خارج الروتين"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "adventure",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_046",
+      "text_ar": "إذا أخفقت في المحاولة الأولى، ما الذي يشجعك على العودة؟",
+      "category": "adventure",
+      "category_name_ar": "المغامرة والتحدي",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة رياضة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "حل لغز صعب"
+        },
+        {
+          "id": "a3",
+          "text_ar": "رحلة إلى مكان مجهول"
+        },
+        {
+          "id": "a4",
+          "text_ar": "تعلم مهارة أمام الآخرين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "تجربة شيء خارج الروتين"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "adventure",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_047",
+      "text_ar": "أي تجربة تفضل أن تتعلمها مع صديق؟",
+      "category": "adventure",
+      "category_name_ar": "المغامرة والتحدي",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة رياضة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "حل لغز صعب"
+        },
+        {
+          "id": "a3",
+          "text_ar": "رحلة إلى مكان مجهول"
+        },
+        {
+          "id": "a4",
+          "text_ar": "تعلم مهارة أمام الآخرين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "تجربة شيء خارج الروتين"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "adventure",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_048",
+      "text_ar": "في مسابقة ودية، ما نوع التحدي الذي يناسبك؟",
+      "category": "adventure",
+      "category_name_ar": "المغامرة والتحدي",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة رياضة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "حل لغز صعب"
+        },
+        {
+          "id": "a3",
+          "text_ar": "رحلة إلى مكان مجهول"
+        },
+        {
+          "id": "a4",
+          "text_ar": "تعلم مهارة أمام الآخرين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "تجربة شيء خارج الروتين"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "adventure",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_049",
+      "text_ar": "لو فُتح باب لتجربة شيء جديد تمامًا، ما الأسلوب الذي تختاره؟",
+      "category": "adventure",
+      "category_name_ar": "المغامرة والتحدي",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة رياضة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "حل لغز صعب"
+        },
+        {
+          "id": "a3",
+          "text_ar": "رحلة إلى مكان مجهول"
+        },
+        {
+          "id": "a4",
+          "text_ar": "تعلم مهارة أمام الآخرين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "تجربة شيء خارج الروتين"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "adventure",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_050",
+      "text_ar": "ما الذي يجعلك تعتبر تجربة صعبة ذكرى جميلة؟",
+      "category": "adventure",
+      "category_name_ar": "المغامرة والتحدي",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تجربة رياضة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "حل لغز صعب"
+        },
+        {
+          "id": "a3",
+          "text_ar": "رحلة إلى مكان مجهول"
+        },
+        {
+          "id": "a4",
+          "text_ar": "تعلم مهارة أمام الآخرين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "تجربة شيء خارج الروتين"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "adventure",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_051",
+      "text_ar": "إذا كنت مسؤولًا عن ترتيب لقاء عائلي، ما الفكرة التي تبدأ بها؟",
+      "category": "celebration",
+      "category_name_ar": "المناسبات والاحتفال",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "جلسة منزلية دافئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "رحلة أو نزهة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مفاجأة صغيرة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نشاط أو لعبة جماعية"
+        },
+        {
+          "id": "a5",
+          "text_ar": "وجبة في مكان مميز"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "celebration",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_052",
+      "text_ar": "ما نوع المفاجآت التي تضيف بهجة إلى مناسبة؟",
+      "category": "celebration",
+      "category_name_ar": "المناسبات والاحتفال",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "جلسة منزلية دافئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "رحلة أو نزهة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مفاجأة صغيرة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نشاط أو لعبة جماعية"
+        },
+        {
+          "id": "a5",
+          "text_ar": "وجبة في مكان مميز"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "celebration",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_053",
+      "text_ar": "في احتفال بسيط، ما التفصيل الذي يهمك أكثر؟",
+      "category": "celebration",
+      "category_name_ar": "المناسبات والاحتفال",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "جلسة منزلية دافئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "رحلة أو نزهة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مفاجأة صغيرة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نشاط أو لعبة جماعية"
+        },
+        {
+          "id": "a5",
+          "text_ar": "وجبة في مكان مميز"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "celebration",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_054",
+      "text_ar": "لو اخترت مكانًا للقاء الأصدقاء، ما الأجواء التي تفضلها؟",
+      "category": "celebration",
+      "category_name_ar": "المناسبات والاحتفال",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "جلسة منزلية دافئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "رحلة أو نزهة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مفاجأة صغيرة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نشاط أو لعبة جماعية"
+        },
+        {
+          "id": "a5",
+          "text_ar": "وجبة في مكان مميز"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "celebration",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_055",
+      "text_ar": "كيف تحب أن تكون بداية يوم مميز؟",
+      "category": "celebration",
+      "category_name_ar": "المناسبات والاحتفال",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "جلسة منزلية دافئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "رحلة أو نزهة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مفاجأة صغيرة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نشاط أو لعبة جماعية"
+        },
+        {
+          "id": "a5",
+          "text_ar": "وجبة في مكان مميز"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "celebration",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_056",
+      "text_ar": "أي نشاط يجعل مناسبة عائلية أكثر تفاعلًا؟",
+      "category": "celebration",
+      "category_name_ar": "المناسبات والاحتفال",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "جلسة منزلية دافئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "رحلة أو نزهة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مفاجأة صغيرة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نشاط أو لعبة جماعية"
+        },
+        {
+          "id": "a5",
+          "text_ar": "وجبة في مكان مميز"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "celebration",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_057",
+      "text_ar": "لو أردت الاحتفال بإنجاز صغير، ماذا تختار؟",
+      "category": "celebration",
+      "category_name_ar": "المناسبات والاحتفال",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "جلسة منزلية دافئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "رحلة أو نزهة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مفاجأة صغيرة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نشاط أو لعبة جماعية"
+        },
+        {
+          "id": "a5",
+          "text_ar": "وجبة في مكان مميز"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "celebration",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_058",
+      "text_ar": "ما نوع الصور التي تحب الاحتفاظ بها من المناسبات؟",
+      "category": "celebration",
+      "category_name_ar": "المناسبات والاحتفال",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "جلسة منزلية دافئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "رحلة أو نزهة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مفاجأة صغيرة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نشاط أو لعبة جماعية"
+        },
+        {
+          "id": "a5",
+          "text_ar": "وجبة في مكان مميز"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "celebration",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_059",
+      "text_ar": "إذا كانت لديك مهمة إعداد فقرة ممتعة للضيوف، ماذا تقترح؟",
+      "category": "celebration",
+      "category_name_ar": "المناسبات والاحتفال",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "جلسة منزلية دافئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "رحلة أو نزهة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مفاجأة صغيرة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نشاط أو لعبة جماعية"
+        },
+        {
+          "id": "a5",
+          "text_ar": "وجبة في مكان مميز"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "celebration",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_060",
+      "text_ar": "ما الذي يجعل اجتماعًا عائليًا عاديًا يتحول إلى ذكرى؟",
+      "category": "celebration",
+      "category_name_ar": "المناسبات والاحتفال",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "جلسة منزلية دافئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "رحلة أو نزهة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مفاجأة صغيرة"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نشاط أو لعبة جماعية"
+        },
+        {
+          "id": "a5",
+          "text_ar": "وجبة في مكان مميز"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "celebration",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_061",
+      "text_ar": "دخلت مجلسًا يجمع أشخاصًا لا تعرف معظمهم، كيف تتصرف غالبًا؟",
+      "category": "social",
+      "category_name_ar": "المواقف الاجتماعية",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أبدأ الحديث وأتعرف عليهم"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أستمع أولًا ثم أشارك"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أقترح نشاطًا مشتركًا"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أبحث عن شخص لديه اهتمام مشابه"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أساعد في تنظيم المجموعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "social",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_062",
+      "text_ar": "بدأ نقاش حول موضوع جديد، أي دور ترتاح إليه؟",
+      "category": "social",
+      "category_name_ar": "المواقف الاجتماعية",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أبدأ الحديث وأتعرف عليهم"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أستمع أولًا ثم أشارك"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أقترح نشاطًا مشتركًا"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أبحث عن شخص لديه اهتمام مشابه"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أساعد في تنظيم المجموعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "social",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_063",
+      "text_ar": "في نشاط جماعي، كيف تحب أن تساهم؟",
+      "category": "social",
+      "category_name_ar": "المواقف الاجتماعية",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أبدأ الحديث وأتعرف عليهم"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أستمع أولًا ثم أشارك"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أقترح نشاطًا مشتركًا"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أبحث عن شخص لديه اهتمام مشابه"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أساعد في تنظيم المجموعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "social",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_064",
+      "text_ar": "قابلت شخصًا يشاركك هواية، ما الخطوة التي تفضلها؟",
+      "category": "social",
+      "category_name_ar": "المواقف الاجتماعية",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أبدأ الحديث وأتعرف عليهم"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أستمع أولًا ثم أشارك"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أقترح نشاطًا مشتركًا"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أبحث عن شخص لديه اهتمام مشابه"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أساعد في تنظيم المجموعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "social",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_065",
+      "text_ar": "إذا ساد الصمت في جلسة، ما الذي قد تفعله؟",
+      "category": "social",
+      "category_name_ar": "المواقف الاجتماعية",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أبدأ الحديث وأتعرف عليهم"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أستمع أولًا ثم أشارك"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أقترح نشاطًا مشتركًا"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أبحث عن شخص لديه اهتمام مشابه"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أساعد في تنظيم المجموعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "social",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_066",
+      "text_ar": "في لعبة جماعية، ما الدور الذي تختاره لنفسك؟",
+      "category": "social",
+      "category_name_ar": "المواقف الاجتماعية",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أبدأ الحديث وأتعرف عليهم"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أستمع أولًا ثم أشارك"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أقترح نشاطًا مشتركًا"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أبحث عن شخص لديه اهتمام مشابه"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أساعد في تنظيم المجموعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "social",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_067",
+      "text_ar": "كيف تفضل أن يبدأ التعارف بين مجموعة جديدة؟",
+      "category": "social",
+      "category_name_ar": "المواقف الاجتماعية",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أبدأ الحديث وأتعرف عليهم"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أستمع أولًا ثم أشارك"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أقترح نشاطًا مشتركًا"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أبحث عن شخص لديه اهتمام مشابه"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أساعد في تنظيم المجموعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "social",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_068",
+      "text_ar": "إذا اختلفت الآراء في خطة مشتركة، ما التصرف الأقرب لك؟",
+      "category": "social",
+      "category_name_ar": "المواقف الاجتماعية",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أبدأ الحديث وأتعرف عليهم"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أستمع أولًا ثم أشارك"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أقترح نشاطًا مشتركًا"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أبحث عن شخص لديه اهتمام مشابه"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أساعد في تنظيم المجموعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "social",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_069",
+      "text_ar": "عندما يطلب منك أحدهم اقتراح نشاط للجميع، ماذا تختار؟",
+      "category": "social",
+      "category_name_ar": "المواقف الاجتماعية",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أبدأ الحديث وأتعرف عليهم"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أستمع أولًا ثم أشارك"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أقترح نشاطًا مشتركًا"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أبحث عن شخص لديه اهتمام مشابه"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أساعد في تنظيم المجموعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "social",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_070",
+      "text_ar": "في جلسة طويلة، ما الذي يجعلك تشعر أن الجميع مرتاحون؟",
+      "category": "social",
+      "category_name_ar": "المواقف الاجتماعية",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أبدأ الحديث وأتعرف عليهم"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أستمع أولًا ثم أشارك"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أقترح نشاطًا مشتركًا"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أبحث عن شخص لديه اهتمام مشابه"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أساعد في تنظيم المجموعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "social",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_071",
+      "text_ar": "إذا استطعت إضافة مساحة جديدة إلى المنزل، ماذا تختار؟",
+      "category": "home",
+      "category_name_ar": "البيت والمساحة الشخصية",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "زاوية قراءة هادئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "مطبخ واسع ومريح"
+        },
+        {
+          "id": "a3",
+          "text_ar": "غرفة مليئة بالألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "شرفة أو حديقة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مساحة فنية للإبداع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "home",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_072",
+      "text_ar": "أي تفصيل يجعل غرفتك أكثر شبهًا بك؟",
+      "category": "home",
+      "category_name_ar": "البيت والمساحة الشخصية",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "زاوية قراءة هادئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "مطبخ واسع ومريح"
+        },
+        {
+          "id": "a3",
+          "text_ar": "غرفة مليئة بالألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "شرفة أو حديقة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مساحة فنية للإبداع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "home",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_073",
+      "text_ar": "لديك يوم لترتيب زاوية خاصة بك، ما الفكرة التي تنفذها؟",
+      "category": "home",
+      "category_name_ar": "البيت والمساحة الشخصية",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "زاوية قراءة هادئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "مطبخ واسع ومريح"
+        },
+        {
+          "id": "a3",
+          "text_ar": "غرفة مليئة بالألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "شرفة أو حديقة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مساحة فنية للإبداع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "home",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_074",
+      "text_ar": "أي مكان في المنزل يناسب جلسة طويلة ومريحة؟",
+      "category": "home",
+      "category_name_ar": "البيت والمساحة الشخصية",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "زاوية قراءة هادئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "مطبخ واسع ومريح"
+        },
+        {
+          "id": "a3",
+          "text_ar": "غرفة مليئة بالألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "شرفة أو حديقة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مساحة فنية للإبداع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "home",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_075",
+      "text_ar": "لو صممت غرفة للترفيه العائلي، ما العنصر الأهم؟",
+      "category": "home",
+      "category_name_ar": "البيت والمساحة الشخصية",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "زاوية قراءة هادئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "مطبخ واسع ومريح"
+        },
+        {
+          "id": "a3",
+          "text_ar": "غرفة مليئة بالألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "شرفة أو حديقة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مساحة فنية للإبداع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "home",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_076",
+      "text_ar": "ما الإضافة الصغيرة التي تجعل المكان أكثر دفئًا؟",
+      "category": "home",
+      "category_name_ar": "البيت والمساحة الشخصية",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "زاوية قراءة هادئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "مطبخ واسع ومريح"
+        },
+        {
+          "id": "a3",
+          "text_ar": "غرفة مليئة بالألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "شرفة أو حديقة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مساحة فنية للإبداع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "home",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_077",
+      "text_ar": "إذا امتلكت حديقة صغيرة، كيف تحب استخدامها؟",
+      "category": "home",
+      "category_name_ar": "البيت والمساحة الشخصية",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "زاوية قراءة هادئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "مطبخ واسع ومريح"
+        },
+        {
+          "id": "a3",
+          "text_ar": "غرفة مليئة بالألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "شرفة أو حديقة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مساحة فنية للإبداع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "home",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_078",
+      "text_ar": "أي ركن منزلي سيكون أول مكان تعرضه على ضيف؟",
+      "category": "home",
+      "category_name_ar": "البيت والمساحة الشخصية",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "زاوية قراءة هادئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "مطبخ واسع ومريح"
+        },
+        {
+          "id": "a3",
+          "text_ar": "غرفة مليئة بالألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "شرفة أو حديقة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مساحة فنية للإبداع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "home",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_079",
+      "text_ar": "كيف تجعل مساحة بسيطة مكانًا تحب قضاء الوقت فيه؟",
+      "category": "home",
+      "category_name_ar": "البيت والمساحة الشخصية",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "زاوية قراءة هادئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "مطبخ واسع ومريح"
+        },
+        {
+          "id": "a3",
+          "text_ar": "غرفة مليئة بالألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "شرفة أو حديقة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مساحة فنية للإبداع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "home",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_080",
+      "text_ar": "إذا اخترت ديكورًا لمكان مشترك، ما الطابع الذي تميل إليه؟",
+      "category": "home",
+      "category_name_ar": "البيت والمساحة الشخصية",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "زاوية قراءة هادئة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "مطبخ واسع ومريح"
+        },
+        {
+          "id": "a3",
+          "text_ar": "غرفة مليئة بالألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "شرفة أو حديقة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مساحة فنية للإبداع"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "home",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_081",
+      "text_ar": "أمامك نزهة في الطبيعة، أي منظر تختار أن تستيقظ عليه؟",
+      "category": "nature",
+      "category_name_ar": "الطبيعة والهواء الطلق",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "ساحل وموج"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غابة وأشجار"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جبال وهواء بارد"
+        },
+        {
+          "id": "a4",
+          "text_ar": "سماء ونجوم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "حديقة وأزهار"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "nature",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_082",
+      "text_ar": "أي صوت طبيعي يجعلك تشعر بالهدوء؟",
+      "category": "nature",
+      "category_name_ar": "الطبيعة والهواء الطلق",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "ساحل وموج"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غابة وأشجار"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جبال وهواء بارد"
+        },
+        {
+          "id": "a4",
+          "text_ar": "سماء ونجوم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "حديقة وأزهار"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "nature",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_083",
+      "text_ar": "لو قضيت يومًا في الخارج، ما البيئة التي تختارها؟",
+      "category": "nature",
+      "category_name_ar": "الطبيعة والهواء الطلق",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "ساحل وموج"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غابة وأشجار"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جبال وهواء بارد"
+        },
+        {
+          "id": "a4",
+          "text_ar": "سماء ونجوم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "حديقة وأزهار"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "nature",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_084",
+      "text_ar": "ما النشاط الذي تستمتع به في مكان أخضر؟",
+      "category": "nature",
+      "category_name_ar": "الطبيعة والهواء الطلق",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "ساحل وموج"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غابة وأشجار"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جبال وهواء بارد"
+        },
+        {
+          "id": "a4",
+          "text_ar": "سماء ونجوم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "حديقة وأزهار"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "nature",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_085",
+      "text_ar": "إذا نظمت نزهة قصيرة، أي وقت من اليوم تختار؟",
+      "category": "nature",
+      "category_name_ar": "الطبيعة والهواء الطلق",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "ساحل وموج"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غابة وأشجار"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جبال وهواء بارد"
+        },
+        {
+          "id": "a4",
+          "text_ar": "سماء ونجوم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "حديقة وأزهار"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "nature",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_086",
+      "text_ar": "أي منظر تفضل تصويره في رحلة طبيعية؟",
+      "category": "nature",
+      "category_name_ar": "الطبيعة والهواء الطلق",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "ساحل وموج"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غابة وأشجار"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جبال وهواء بارد"
+        },
+        {
+          "id": "a4",
+          "text_ar": "سماء ونجوم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "حديقة وأزهار"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "nature",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_087",
+      "text_ar": "لديك فرصة لمشاهدة ظاهرة طبيعية، ماذا تختار؟",
+      "category": "nature",
+      "category_name_ar": "الطبيعة والهواء الطلق",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "ساحل وموج"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غابة وأشجار"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جبال وهواء بارد"
+        },
+        {
+          "id": "a4",
+          "text_ar": "سماء ونجوم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "حديقة وأزهار"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "nature",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_088",
+      "text_ar": "ما المكان الذي يناسب جلسة تأمل أو تفكير؟",
+      "category": "nature",
+      "category_name_ar": "الطبيعة والهواء الطلق",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "ساحل وموج"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غابة وأشجار"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جبال وهواء بارد"
+        },
+        {
+          "id": "a4",
+          "text_ar": "سماء ونجوم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "حديقة وأزهار"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "nature",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_089",
+      "text_ar": "في رحلة تخييم بسيطة، أي جزء تتطلع إليه؟",
+      "category": "nature",
+      "category_name_ar": "الطبيعة والهواء الطلق",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "ساحل وموج"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غابة وأشجار"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جبال وهواء بارد"
+        },
+        {
+          "id": "a4",
+          "text_ar": "سماء ونجوم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "حديقة وأزهار"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "nature",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_090",
+      "text_ar": "إذا أردت الابتعاد عن ضجيج المدينة، أين تذهب؟",
+      "category": "nature",
+      "category_name_ar": "الطبيعة والهواء الطلق",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "ساحل وموج"
+        },
+        {
+          "id": "a2",
+          "text_ar": "غابة وأشجار"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جبال وهواء بارد"
+        },
+        {
+          "id": "a4",
+          "text_ar": "سماء ونجوم"
+        },
+        {
+          "id": "a5",
+          "text_ar": "حديقة وأزهار"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "nature",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_091",
+      "text_ar": "انضممت إلى ورشة مجانية ليوم واحد، أي موضوع تختار؟",
+      "category": "learning",
+      "category_name_ar": "التعلم والمهارات",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تعلم لغة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "صناعة شيء بيدي"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حل مسائل وألغاز"
+        },
+        {
+          "id": "a4",
+          "text_ar": "فن أو موسيقى"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهارة تقنية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "learning",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_092",
+      "text_ar": "ما نوع الدروس التي تجعلك متحمسًا للتعلم؟",
+      "category": "learning",
+      "category_name_ar": "التعلم والمهارات",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تعلم لغة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "صناعة شيء بيدي"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حل مسائل وألغاز"
+        },
+        {
+          "id": "a4",
+          "text_ar": "فن أو موسيقى"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهارة تقنية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "learning",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_093",
+      "text_ar": "إذا تعلمت مهارة مع أحد أفراد العائلة، ماذا تختار؟",
+      "category": "learning",
+      "category_name_ar": "التعلم والمهارات",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تعلم لغة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "صناعة شيء بيدي"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حل مسائل وألغاز"
+        },
+        {
+          "id": "a4",
+          "text_ar": "فن أو موسيقى"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهارة تقنية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "learning",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_094",
+      "text_ar": "أمامك تحدٍّ لصناعة شيء خلال ساعة، ما المجال الذي تفضله؟",
+      "category": "learning",
+      "category_name_ar": "التعلم والمهارات",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تعلم لغة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "صناعة شيء بيدي"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حل مسائل وألغاز"
+        },
+        {
+          "id": "a4",
+          "text_ar": "فن أو موسيقى"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهارة تقنية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "learning",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_095",
+      "text_ar": "أي إنجاز صغير يجعلك فخورًا بما تعلمته؟",
+      "category": "learning",
+      "category_name_ar": "التعلم والمهارات",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تعلم لغة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "صناعة شيء بيدي"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حل مسائل وألغاز"
+        },
+        {
+          "id": "a4",
+          "text_ar": "فن أو موسيقى"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهارة تقنية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "learning",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_096",
+      "text_ar": "كيف تحب أن تتعلم أمرًا جديدًا لأول مرة؟",
+      "category": "learning",
+      "category_name_ar": "التعلم والمهارات",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تعلم لغة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "صناعة شيء بيدي"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حل مسائل وألغاز"
+        },
+        {
+          "id": "a4",
+          "text_ar": "فن أو موسيقى"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهارة تقنية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "learning",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_097",
+      "text_ar": "لو أصبحت خبيرًا في مجال واحد، أي مجال تختار؟",
+      "category": "learning",
+      "category_name_ar": "التعلم والمهارات",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تعلم لغة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "صناعة شيء بيدي"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حل مسائل وألغاز"
+        },
+        {
+          "id": "a4",
+          "text_ar": "فن أو موسيقى"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهارة تقنية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "learning",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_098",
+      "text_ar": "أي نوع من الألغاز تستمتع بالتدرب عليه؟",
+      "category": "learning",
+      "category_name_ar": "التعلم والمهارات",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تعلم لغة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "صناعة شيء بيدي"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حل مسائل وألغاز"
+        },
+        {
+          "id": "a4",
+          "text_ar": "فن أو موسيقى"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهارة تقنية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "learning",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_099",
+      "text_ar": "لديك فرصة لتجربة آلة أو أداة جديدة، ماذا تختار؟",
+      "category": "learning",
+      "category_name_ar": "التعلم والمهارات",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تعلم لغة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "صناعة شيء بيدي"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حل مسائل وألغاز"
+        },
+        {
+          "id": "a4",
+          "text_ar": "فن أو موسيقى"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهارة تقنية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "learning",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_100",
+      "text_ar": "ما الذي يحفزك على الاستمرار عندما يصبح التعلم صعبًا؟",
+      "category": "learning",
+      "category_name_ar": "التعلم والمهارات",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "تعلم لغة جديدة"
+        },
+        {
+          "id": "a2",
+          "text_ar": "صناعة شيء بيدي"
+        },
+        {
+          "id": "a3",
+          "text_ar": "حل مسائل وألغاز"
+        },
+        {
+          "id": "a4",
+          "text_ar": "فن أو موسيقى"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهارة تقنية"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "learning",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_101",
+      "text_ar": "لو استيقظت ووجدت قدرة غير عادية لديك، أي قدرة تتمنى؟",
+      "category": "fantasy",
+      "category_name_ar": "الخيال والاحتمالات",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الطيران بحرية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "التحدث مع الحيوانات"
+        },
+        {
+          "id": "a3",
+          "text_ar": "السفر عبر الزمن"
+        },
+        {
+          "id": "a4",
+          "text_ar": "زيارة كوكب آخر"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إيقاف الوقت للحظات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "fantasy",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_102",
+      "text_ar": "إذا زرت عالمًا خياليًا ليوم واحد، أي نوع من العوالم تختار؟",
+      "category": "fantasy",
+      "category_name_ar": "الخيال والاحتمالات",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الطيران بحرية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "التحدث مع الحيوانات"
+        },
+        {
+          "id": "a3",
+          "text_ar": "السفر عبر الزمن"
+        },
+        {
+          "id": "a4",
+          "text_ar": "زيارة كوكب آخر"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إيقاف الوقت للحظات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "fantasy",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_103",
+      "text_ar": "لو أمكنك التحدث مع كائن واحد، من تختار؟",
+      "category": "fantasy",
+      "category_name_ar": "الخيال والاحتمالات",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الطيران بحرية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "التحدث مع الحيوانات"
+        },
+        {
+          "id": "a3",
+          "text_ar": "السفر عبر الزمن"
+        },
+        {
+          "id": "a4",
+          "text_ar": "زيارة كوكب آخر"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إيقاف الوقت للحظات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "fantasy",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_104",
+      "text_ar": "أمامك بوابة إلى زمن آخر، أي رحلة تثير فضولك؟",
+      "category": "fantasy",
+      "category_name_ar": "الخيال والاحتمالات",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الطيران بحرية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "التحدث مع الحيوانات"
+        },
+        {
+          "id": "a3",
+          "text_ar": "السفر عبر الزمن"
+        },
+        {
+          "id": "a4",
+          "text_ar": "زيارة كوكب آخر"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إيقاف الوقت للحظات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "fantasy",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_105",
+      "text_ar": "إذا امتلكت روبوتًا مساعدًا، ما المهمة التي تسندها إليه؟",
+      "category": "fantasy",
+      "category_name_ar": "الخيال والاحتمالات",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الطيران بحرية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "التحدث مع الحيوانات"
+        },
+        {
+          "id": "a3",
+          "text_ar": "السفر عبر الزمن"
+        },
+        {
+          "id": "a4",
+          "text_ar": "زيارة كوكب آخر"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إيقاف الوقت للحظات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "fantasy",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_106",
+      "text_ar": "لو أصبحت شخصية في رواية مغامرات، أي دور تختار؟",
+      "category": "fantasy",
+      "category_name_ar": "الخيال والاحتمالات",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الطيران بحرية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "التحدث مع الحيوانات"
+        },
+        {
+          "id": "a3",
+          "text_ar": "السفر عبر الزمن"
+        },
+        {
+          "id": "a4",
+          "text_ar": "زيارة كوكب آخر"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إيقاف الوقت للحظات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "fantasy",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_107",
+      "text_ar": "ما الاختراع الخيالي الذي تتمنى أن يصبح ممكنًا؟",
+      "category": "fantasy",
+      "category_name_ar": "الخيال والاحتمالات",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الطيران بحرية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "التحدث مع الحيوانات"
+        },
+        {
+          "id": "a3",
+          "text_ar": "السفر عبر الزمن"
+        },
+        {
+          "id": "a4",
+          "text_ar": "زيارة كوكب آخر"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إيقاف الوقت للحظات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "fantasy",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_108",
+      "text_ar": "لو استطعت تغيير شيء بسيط في قوانين العالم، ماذا تختار؟",
+      "category": "fantasy",
+      "category_name_ar": "الخيال والاحتمالات",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الطيران بحرية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "التحدث مع الحيوانات"
+        },
+        {
+          "id": "a3",
+          "text_ar": "السفر عبر الزمن"
+        },
+        {
+          "id": "a4",
+          "text_ar": "زيارة كوكب آخر"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إيقاف الوقت للحظات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "fantasy",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_109",
+      "text_ar": "إذا صممت جزيرة خيالية، ما الميزة التي تجعلها فريدة؟",
+      "category": "fantasy",
+      "category_name_ar": "الخيال والاحتمالات",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الطيران بحرية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "التحدث مع الحيوانات"
+        },
+        {
+          "id": "a3",
+          "text_ar": "السفر عبر الزمن"
+        },
+        {
+          "id": "a4",
+          "text_ar": "زيارة كوكب آخر"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إيقاف الوقت للحظات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "fantasy",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_110",
+      "text_ar": "أي عالم تتمنى استكشافه دون أي خطر؟",
+      "category": "fantasy",
+      "category_name_ar": "الخيال والاحتمالات",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "الطيران بحرية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "التحدث مع الحيوانات"
+        },
+        {
+          "id": "a3",
+          "text_ar": "السفر عبر الزمن"
+        },
+        {
+          "id": "a4",
+          "text_ar": "زيارة كوكب آخر"
+        },
+        {
+          "id": "a5",
+          "text_ar": "إيقاف الوقت للحظات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "fantasy",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_111",
+      "text_ar": "يمكنك تجربة جهاز جديد ليوم كامل، أي نوع تختار؟",
+      "category": "technology",
+      "category_name_ar": "التقنية والأدوات",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كاميرا ذكية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "سماعات ممتازة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جهاز ألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قارئ كتب إلكتروني"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أداة تنظم الوقت"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "technology",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_112",
+      "text_ar": "أي أداة تقنية تتمنى أن تجعل مهمة يومية أسهل؟",
+      "category": "technology",
+      "category_name_ar": "التقنية والأدوات",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كاميرا ذكية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "سماعات ممتازة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جهاز ألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قارئ كتب إلكتروني"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أداة تنظم الوقت"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "technology",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_113",
+      "text_ar": "إذا صممت تطبيقًا للعائلة، ما وظيفته الأولى؟",
+      "category": "technology",
+      "category_name_ar": "التقنية والأدوات",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كاميرا ذكية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "سماعات ممتازة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جهاز ألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قارئ كتب إلكتروني"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أداة تنظم الوقت"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "technology",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_114",
+      "text_ar": "ما الميزة التي تهمك أكثر في جهاز تستخدمه كثيرًا؟",
+      "category": "technology",
+      "category_name_ar": "التقنية والأدوات",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كاميرا ذكية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "سماعات ممتازة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جهاز ألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قارئ كتب إلكتروني"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أداة تنظم الوقت"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "technology",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_115",
+      "text_ar": "لو تعلمت صنع مشروع تقني صغير، ماذا تختار؟",
+      "category": "technology",
+      "category_name_ar": "التقنية والأدوات",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كاميرا ذكية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "سماعات ممتازة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جهاز ألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قارئ كتب إلكتروني"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أداة تنظم الوقت"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "technology",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_116",
+      "text_ar": "أي جهاز تحب أن يكون معك في رحلة طويلة؟",
+      "category": "technology",
+      "category_name_ar": "التقنية والأدوات",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كاميرا ذكية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "سماعات ممتازة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جهاز ألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قارئ كتب إلكتروني"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أداة تنظم الوقت"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "technology",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_117",
+      "text_ar": "إذا أتيح لك تطوير أداة منزلية ذكية، ما المهمة التي تؤديها؟",
+      "category": "technology",
+      "category_name_ar": "التقنية والأدوات",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كاميرا ذكية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "سماعات ممتازة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جهاز ألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قارئ كتب إلكتروني"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أداة تنظم الوقت"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "technology",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_118",
+      "text_ar": "ما نوع الألعاب الرقمية التي تفضل تجربتها؟",
+      "category": "technology",
+      "category_name_ar": "التقنية والأدوات",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كاميرا ذكية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "سماعات ممتازة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جهاز ألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قارئ كتب إلكتروني"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أداة تنظم الوقت"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "technology",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_119",
+      "text_ar": "لو قضيت يومًا بلا أجهزة، أي نشاط بديل تختار؟",
+      "category": "technology",
+      "category_name_ar": "التقنية والأدوات",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كاميرا ذكية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "سماعات ممتازة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جهاز ألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قارئ كتب إلكتروني"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أداة تنظم الوقت"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "technology",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_120",
+      "text_ar": "أي اختراع بسيط سيجعل الحياة اليومية أكثر متعة؟",
+      "category": "technology",
+      "category_name_ar": "التقنية والأدوات",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "كاميرا ذكية"
+        },
+        {
+          "id": "a2",
+          "text_ar": "سماعات ممتازة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "جهاز ألعاب"
+        },
+        {
+          "id": "a4",
+          "text_ar": "قارئ كتب إلكتروني"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أداة تنظم الوقت"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "technology",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_121",
+      "text_ar": "إذا اجتمعت العائلة دون تخطيط، ما النشاط الذي تقترحه؟",
+      "category": "family",
+      "category_name_ar": "اللحظات العائلية",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لعبة جماعية وضحك"
+        },
+        {
+          "id": "a2",
+          "text_ar": "طبخ وجبة معًا"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مشاهدة صور وذكريات"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نزهة قصيرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة حكايات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "family",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_122",
+      "text_ar": "أي ذكرى عائلية تحب أن تعيش أجواءها مرة أخرى؟",
+      "category": "family",
+      "category_name_ar": "اللحظات العائلية",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لعبة جماعية وضحك"
+        },
+        {
+          "id": "a2",
+          "text_ar": "طبخ وجبة معًا"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مشاهدة صور وذكريات"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نزهة قصيرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة حكايات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "family",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_123",
+      "text_ar": "لو أعددتم تحديًا عائليًا بسيطًا، ما فكرته؟",
+      "category": "family",
+      "category_name_ar": "اللحظات العائلية",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لعبة جماعية وضحك"
+        },
+        {
+          "id": "a2",
+          "text_ar": "طبخ وجبة معًا"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مشاهدة صور وذكريات"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نزهة قصيرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة حكايات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "family",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_124",
+      "text_ar": "ما الذي يجعل جلسة عائلية تستمر دون أن يشعر أحد بالوقت؟",
+      "category": "family",
+      "category_name_ar": "اللحظات العائلية",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لعبة جماعية وضحك"
+        },
+        {
+          "id": "a2",
+          "text_ar": "طبخ وجبة معًا"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مشاهدة صور وذكريات"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نزهة قصيرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة حكايات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "family",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_125",
+      "text_ar": "إذا صنعت تقليدًا عائليًا جديدًا، ماذا سيكون؟",
+      "category": "family",
+      "category_name_ar": "اللحظات العائلية",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لعبة جماعية وضحك"
+        },
+        {
+          "id": "a2",
+          "text_ar": "طبخ وجبة معًا"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مشاهدة صور وذكريات"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نزهة قصيرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة حكايات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "family",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_126",
+      "text_ar": "أي مهمة ممتعة تحب تنفيذها مع أحد أفراد العائلة؟",
+      "category": "family",
+      "category_name_ar": "اللحظات العائلية",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لعبة جماعية وضحك"
+        },
+        {
+          "id": "a2",
+          "text_ar": "طبخ وجبة معًا"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مشاهدة صور وذكريات"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نزهة قصيرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة حكايات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "family",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_127",
+      "text_ar": "في يوم خاص للعائلة، ما المكان الذي تختاره؟",
+      "category": "family",
+      "category_name_ar": "اللحظات العائلية",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لعبة جماعية وضحك"
+        },
+        {
+          "id": "a2",
+          "text_ar": "طبخ وجبة معًا"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مشاهدة صور وذكريات"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نزهة قصيرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة حكايات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "family",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_128",
+      "text_ar": "ما نوع الأسئلة التي تفتح أحاديث ممتعة بينكم؟",
+      "category": "family",
+      "category_name_ar": "اللحظات العائلية",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لعبة جماعية وضحك"
+        },
+        {
+          "id": "a2",
+          "text_ar": "طبخ وجبة معًا"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مشاهدة صور وذكريات"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نزهة قصيرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة حكايات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "family",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_129",
+      "text_ar": "لو صنعت ألبومًا للذكريات، ما أول شيء تضيفه؟",
+      "category": "family",
+      "category_name_ar": "اللحظات العائلية",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لعبة جماعية وضحك"
+        },
+        {
+          "id": "a2",
+          "text_ar": "طبخ وجبة معًا"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مشاهدة صور وذكريات"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نزهة قصيرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة حكايات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "family",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_130",
+      "text_ar": "كيف تحب أن تنتهي سهرة عائلية ناجحة؟",
+      "category": "family",
+      "category_name_ar": "اللحظات العائلية",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لعبة جماعية وضحك"
+        },
+        {
+          "id": "a2",
+          "text_ar": "طبخ وجبة معًا"
+        },
+        {
+          "id": "a3",
+          "text_ar": "مشاهدة صور وذكريات"
+        },
+        {
+          "id": "a4",
+          "text_ar": "نزهة قصيرة"
+        },
+        {
+          "id": "a5",
+          "text_ar": "جلسة حكايات"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "family",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_131",
+      "text_ar": "أمامك خياران جيدان لكن الوقت ضيق، كيف تحسم قرارك؟",
+      "category": "choices",
+      "category_name_ar": "الاختيارات والمواقف",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أختار الحل العملي"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أجرب الخيار الجديد"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أستشير شخصًا أثق به"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أنتظر وأجمع معلومات"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أحوّل الأمر إلى تجربة ممتعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "choices",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_132",
+      "text_ar": "إذا ظهرت فرصة غير متوقعة، ما أول ما تفعله؟",
+      "category": "choices",
+      "category_name_ar": "الاختيارات والمواقف",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أختار الحل العملي"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أجرب الخيار الجديد"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أستشير شخصًا أثق به"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أنتظر وأجمع معلومات"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أحوّل الأمر إلى تجربة ممتعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "choices",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_133",
+      "text_ar": "كيف تتعامل مع تغيير مفاجئ في خطة يومك؟",
+      "category": "choices",
+      "category_name_ar": "الاختيارات والمواقف",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أختار الحل العملي"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أجرب الخيار الجديد"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أستشير شخصًا أثق به"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أنتظر وأجمع معلومات"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أحوّل الأمر إلى تجربة ممتعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "choices",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_134",
+      "text_ar": "إذا احتجت اختيار هدية دون سؤال صاحبها، ما طريقتك؟",
+      "category": "choices",
+      "category_name_ar": "الاختيارات والمواقف",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أختار الحل العملي"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أجرب الخيار الجديد"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أستشير شخصًا أثق به"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أنتظر وأجمع معلومات"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أحوّل الأمر إلى تجربة ممتعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "choices",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_135",
+      "text_ar": "ما الذي ترجحه عندما تختار بين الراحة والتجربة الجديدة؟",
+      "category": "choices",
+      "category_name_ar": "الاختيارات والمواقف",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أختار الحل العملي"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أجرب الخيار الجديد"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أستشير شخصًا أثق به"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أنتظر وأجمع معلومات"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أحوّل الأمر إلى تجربة ممتعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "choices",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_136",
+      "text_ar": "إذا كانت أمامك عدة طرق لحل لغز، كيف تبدأ؟",
+      "category": "choices",
+      "category_name_ar": "الاختيارات والمواقف",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أختار الحل العملي"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أجرب الخيار الجديد"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أستشير شخصًا أثق به"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أنتظر وأجمع معلومات"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أحوّل الأمر إلى تجربة ممتعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "choices",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_137",
+      "text_ar": "في موقف يحتاج قرارًا جماعيًا، ما الدور الذي تتخذه؟",
+      "category": "choices",
+      "category_name_ar": "الاختيارات والمواقف",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أختار الحل العملي"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أجرب الخيار الجديد"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أستشير شخصًا أثق به"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أنتظر وأجمع معلومات"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أحوّل الأمر إلى تجربة ممتعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "choices",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_138",
+      "text_ar": "لو أخطأت في اختيار، كيف تحوّل الموقف إلى شيء إيجابي؟",
+      "category": "choices",
+      "category_name_ar": "الاختيارات والمواقف",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أختار الحل العملي"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أجرب الخيار الجديد"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أستشير شخصًا أثق به"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أنتظر وأجمع معلومات"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أحوّل الأمر إلى تجربة ممتعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "choices",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_139",
+      "text_ar": "إذا كان لديك وقت قليل لإنجاز أمر ممتع، ماذا تختار؟",
+      "category": "choices",
+      "category_name_ar": "الاختيارات والمواقف",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أختار الحل العملي"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أجرب الخيار الجديد"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أستشير شخصًا أثق به"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أنتظر وأجمع معلومات"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أحوّل الأمر إلى تجربة ممتعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "choices",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_140",
+      "text_ar": "أي نوع من المفاجآت تفضل: مخطط لها أم عفوية؟",
+      "category": "choices",
+      "category_name_ar": "الاختيارات والمواقف",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "أختار الحل العملي"
+        },
+        {
+          "id": "a2",
+          "text_ar": "أجرب الخيار الجديد"
+        },
+        {
+          "id": "a3",
+          "text_ar": "أستشير شخصًا أثق به"
+        },
+        {
+          "id": "a4",
+          "text_ar": "أنتظر وأجمع معلومات"
+        },
+        {
+          "id": "a5",
+          "text_ar": "أحوّل الأمر إلى تجربة ممتعة"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "choices",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_141",
+      "text_ar": "في سهرة مرحة، أي تحدٍّ يقنعك بالمشاركة فورًا؟",
+      "category": "playful",
+      "category_name_ar": "المرح والمفاجآت",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لغز سريع"
+        },
+        {
+          "id": "a2",
+          "text_ar": "تمثيل شخصية مضحكة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "تحدي رسم"
+        },
+        {
+          "id": "a4",
+          "text_ar": "مسابقة تخمين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهمة بحث عن شيء"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "playful",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_142",
+      "text_ar": "لو أعددت فقرة مفاجئة للعائلة، ما نوعها؟",
+      "category": "playful",
+      "category_name_ar": "المرح والمفاجآت",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لغز سريع"
+        },
+        {
+          "id": "a2",
+          "text_ar": "تمثيل شخصية مضحكة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "تحدي رسم"
+        },
+        {
+          "id": "a4",
+          "text_ar": "مسابقة تخمين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهمة بحث عن شيء"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "playful",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_143",
+      "text_ar": "أي لعبة قصيرة تصلح لكسر الملل بين نشاطين؟",
+      "category": "playful",
+      "category_name_ar": "المرح والمفاجآت",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لغز سريع"
+        },
+        {
+          "id": "a2",
+          "text_ar": "تمثيل شخصية مضحكة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "تحدي رسم"
+        },
+        {
+          "id": "a4",
+          "text_ar": "مسابقة تخمين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهمة بحث عن شيء"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "playful",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_144",
+      "text_ar": "إذا طلب منك تقليد شخصية خيالية، ما النوع الذي تختاره؟",
+      "category": "playful",
+      "category_name_ar": "المرح والمفاجآت",
+      "difficulty": 1,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لغز سريع"
+        },
+        {
+          "id": "a2",
+          "text_ar": "تمثيل شخصية مضحكة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "تحدي رسم"
+        },
+        {
+          "id": "a4",
+          "text_ar": "مسابقة تخمين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهمة بحث عن شيء"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 15,
+      "tags": [
+        "playful",
+        "direct"
+      ]
+    },
+    {
+      "id": "live_145",
+      "text_ar": "ما الهدية الرمزية التي قد تضحك الجميع؟",
+      "category": "playful",
+      "category_name_ar": "المرح والمفاجآت",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لغز سريع"
+        },
+        {
+          "id": "a2",
+          "text_ar": "تمثيل شخصية مضحكة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "تحدي رسم"
+        },
+        {
+          "id": "a4",
+          "text_ar": "مسابقة تخمين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهمة بحث عن شيء"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "playful",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_146",
+      "text_ar": "أمامك صندوق مفاجآت، أي نوع من المفاجآت تتمنى أن تجد؟",
+      "category": "playful",
+      "category_name_ar": "المرح والمفاجآت",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لغز سريع"
+        },
+        {
+          "id": "a2",
+          "text_ar": "تمثيل شخصية مضحكة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "تحدي رسم"
+        },
+        {
+          "id": "a4",
+          "text_ar": "مسابقة تخمين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهمة بحث عن شيء"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "playful",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_147",
+      "text_ar": "إذا أضفت قاعدة طريفة إلى لعبة عائلية، ما طبيعتها؟",
+      "category": "playful",
+      "category_name_ar": "المرح والمفاجآت",
+      "difficulty": 2,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لغز سريع"
+        },
+        {
+          "id": "a2",
+          "text_ar": "تمثيل شخصية مضحكة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "تحدي رسم"
+        },
+        {
+          "id": "a4",
+          "text_ar": "مسابقة تخمين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهمة بحث عن شيء"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 20,
+      "tags": [
+        "playful",
+        "contextual"
+      ]
+    },
+    {
+      "id": "live_148",
+      "text_ar": "أي مسابقة ودية تفضل أن تخوضها مع الجميع؟",
+      "category": "playful",
+      "category_name_ar": "المرح والمفاجآت",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لغز سريع"
+        },
+        {
+          "id": "a2",
+          "text_ar": "تمثيل شخصية مضحكة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "تحدي رسم"
+        },
+        {
+          "id": "a4",
+          "text_ar": "مسابقة تخمين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهمة بحث عن شيء"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "playful",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_149",
+      "text_ar": "لو ابتكرت لقبًا مضحكًا لفريق العائلة، ما فكرته؟",
+      "category": "playful",
+      "category_name_ar": "المرح والمفاجآت",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لغز سريع"
+        },
+        {
+          "id": "a2",
+          "text_ar": "تمثيل شخصية مضحكة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "تحدي رسم"
+        },
+        {
+          "id": "a4",
+          "text_ar": "مسابقة تخمين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهمة بحث عن شيء"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "playful",
+        "reflective"
+      ]
+    },
+    {
+      "id": "live_150",
+      "text_ar": "ما السؤال الطريف الذي تحب أن تسمعه في جلسة؟",
+      "category": "playful",
+      "category_name_ar": "المرح والمفاجآت",
+      "difficulty": 3,
+      "options": [
+        {
+          "id": "a1",
+          "text_ar": "لغز سريع"
+        },
+        {
+          "id": "a2",
+          "text_ar": "تمثيل شخصية مضحكة"
+        },
+        {
+          "id": "a3",
+          "text_ar": "تحدي رسم"
+        },
+        {
+          "id": "a4",
+          "text_ar": "مسابقة تخمين"
+        },
+        {
+          "id": "a5",
+          "text_ar": "مهمة بحث عن شيء"
+        }
+      ],
+      "use_in": [
+        "player_question",
+        "live_choice"
+      ],
+      "estimated_seconds": 25,
+      "tags": [
+        "playful",
+        "reflective"
+      ]
+    }
+  ]
+}
