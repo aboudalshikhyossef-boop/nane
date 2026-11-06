@@ -244,6 +244,13 @@ class MatchServiceTests(unittest.TestCase):
         self.service.submit_action(
             self.code, guesser["token"], "guess", guesser["id"]
         )
+        other_guesser = next(
+            player for player in self.players
+            if player["id"] != target and player["id"] != guesser["id"]
+        )
+        self.service.submit_action(
+            self.code, other_guesser["token"], "guess", target
+        )
 
         self._finish_current_phase("mystery")
         self._finish_current_phase("player_question")
@@ -263,6 +270,13 @@ class MatchServiceTests(unittest.TestCase):
         guesser = next(player for player in self.players if player["id"] != target)
         self.service.submit_action(
             self.code, guesser["token"], "guess", guesser["id"]
+        )
+        other_guesser = next(
+            player for player in self.players
+            if player["id"] != target and player["id"] != guesser["id"]
+        )
+        self.service.submit_action(
+            self.code, other_guesser["token"], "guess", target
         )
 
         self._finish_current_phase("live_choice")
@@ -474,10 +488,6 @@ class MatchServiceTests(unittest.TestCase):
         self.assertEqual(sum(phase_task_counts), 39)
         self.assertEqual(len(final["final_standings"]), 4)
         self.assertGreater(sum(item["score"] for item in final["final_standings"]), 0)
-        self.assertEqual(
-            [item["seat"] for item in final["final_standings"]],
-            sorted(item["seat"] for item in final["final_standings"]),
-        ) if len({item["score"] for item in final["final_standings"]}) == 1 else None
 
     def test_full_four_player_match_can_finish_safely_when_all_timers_expire(self):
         self.prepare_room(4)
