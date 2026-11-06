@@ -86,7 +86,7 @@ class ContentEngineTests(unittest.TestCase):
     def test_profile_fact_rejects_bad_answer_values_without_leaking_them(self):
         bad = dict(self.answers)
         bad["favorite_color"] = "not-an-option"
-        # Other valid fields remain eligible; malformed fields are ignored.
+        # The only unrevealed field is invalid, so selection must fail without echoing it.
         with self.assertRaises(ContentSelectionError) as raised:
             self.engine.choose_profile_fact(
                 "p2", bad, revealed_fields=self.catalog.profile_fields - {"favorite_color"}
