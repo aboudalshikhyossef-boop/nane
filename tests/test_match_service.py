@@ -407,6 +407,34 @@ class MatchServiceTests(unittest.TestCase):
         self.assertEqual(len(sequence_numbers), 30)
         self.assertGreater(sum(item["score"] for item in final["final_standings"]), 0)
 
+    def test_full_four_player_match_can_finish_safely_when_all_timers_expire(self):
+        self.prepare_room(4)
+        self.service.start_match(self.code, self.players[0]["token"])
+        phases_seen = []
+        guard = 0
+        while guard < 200:
+            guard += 1
+            row = self.raw_match()
+            if row["status"] == "completed":
+                break
+            state = json.loads(row["state_json"])
+            if not phases_seen or phases_seen[-1] != state["phase"]:
+                phases_seen.append(state["phase"])
+            task = state["tasks"][state["current_task_index"]]
+            if task["status"] == "reveal":
+                self.clock.advance(2)
+            else:
+                self.clock.advance(max(1, task["deadline_at"] - self.clock() + 1))
+            self.service.get_match(self.code, self.players[0]["token"])
+        self.assertLess(guard, 200)
+        final = self.service.get_match(self.code, self.players[0]["token"])["match"]
+        self.assertEqual(final["status"], "completed")
+        self.assertEqual(
+            phases_seen,
+            ["knowledge", "mystery", "player_question", "live_choice", "finale"],
+        )
+        self.assertEqual(len(final["final_standings"]), 4)
+
     def test_completed_match_allows_next_match_but_requires_profile_readiness(self):
         self.prepare_room(3)
         self.service.start_match(self.code, self.players[0]["token"])
