@@ -96,7 +96,7 @@ def make_handler(store, bus, limiter):
         def rate_key(self):
             value = self.headers.get("CF-Connecting-IP", "").strip()
             return value if value and len(value) <= 64 else self.client_address[0]
-        def headers(self, content_type="application/json; charset=utf-8", cache="no-store"):
+        def _send_headers(self, content_type="application/json; charset=utf-8", cache="no-store"):
             self.send_header("Content-Type", content_type)
             self.send_header("Cache-Control", cache)
             self.send_header("X-Content-Type-Options", "nosniff")
@@ -106,7 +106,7 @@ def make_handler(store, bus, limiter):
         def json_response(self, status, payload, token=None, clear_cookie=False):
             body = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
             self.send_response(status)
-            self.headers()
+            self._send_headers()
             if token:
                 self.send_header("Set-Cookie", "%s=%s; Path=/; Max-Age=604800; HttpOnly; Secure; SameSite=Lax" % (COOKIE, token))
             elif clear_cookie:
@@ -123,7 +123,7 @@ def make_handler(store, bus, limiter):
                 self.json_response(500, {"ok": False, "error": "تعذر تحميل ملف الواجهة."})
                 return
             self.send_response(200)
-            self.headers(kind, "no-cache")
+            self._send_headers(kind, "no-cache")
             self.send_header("Content-Length", str(len(body)))
             self.end_headers()
             self.wfile.write(body)
