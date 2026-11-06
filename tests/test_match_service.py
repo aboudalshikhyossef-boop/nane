@@ -84,6 +84,32 @@ class MatchServiceTests(unittest.TestCase):
             self.code, self.players[player_index]["token"], action, value
         )
 
+    def test_match_state_is_restored_from_database_by_a_new_service_instance(self):
+        self.prepare_room(3)
+        started = self.service.start_match(self.code, self.players[0]["token"])["match"]
+        restored_service = MatchService(
+            self.store, catalog=self.catalog, clock=self.clock,
+            timings={"knowledge": 4, "mystery": 4, "player_answer": 4,
+                     "player_guess": 4, "live_answer": 4, "live_guess": 4,
+                     "finale": 4, "reveal": 1},
+        )
+        restored = restored_service.get_match(self.code, self.players[1]["token"])["match"]
+        self.assertEqual(restored["id"], started["id"])
+        self.assertEqual(restored["status"], "active")
+        self.assertEqual(restored["phase"], "knowledge")
+
+    def test_match_task_sequence_is_unique_across_phase_boundaries(self):
+        self.prepare_room(3)
+        self.service.start_match(self.code, self.players[0]["token"])
+        self._finish_current_phase("knowledge")
+        self._finish_current_phase("mystery")
+        self._finish_current_phase("player_question")
+        state = self.raw_state()
+        self.assertEqual(state["phase"], "live_choice")
+        current = state["tasks"][state["current_task_index"]]
+        self.assertGreater(current["sequence_no"], 20)
+        self.assertEqual(len({task["sequence_no"] for task in state["tasks"]}), len(state["tasks"]))
+
     def test_profile_requires_catalogued_options_and_is_private_to_owner(self):
         self.prepare_room(3, complete_profiles=False)
         first = self.players[0]
@@ -281,6 +307,7 @@ class MatchServiceTests(unittest.TestCase):
         self.prepare_room(3)
         self.service.start_match(self.code, self.players[0]["token"])
         phase_order = []
+        sequence_numbers = []
         guard = 0
         while guard < 200:
             guard += 1
@@ -291,6 +318,8 @@ class MatchServiceTests(unittest.TestCase):
             if not phase_order or phase_order[-1] != state["phase"]:
                 phase_order.append(state["phase"])
             task = state["tasks"][state["current_task_index"]]
+            if task["sequence_no"] not in sequence_numbers:
+                sequence_numbers.append(task["sequence_no"])
             if task["status"] == "reveal":
                 self.clock.advance(2)
                 self.service.get_match(self.code, self.players[0]["token"])
@@ -355,6 +384,9 @@ class MatchServiceTests(unittest.TestCase):
         self.assertEqual(final["status"], "completed")
         self.assertEqual(phase_order, ["knowledge", "mystery", "player_question", "live_choice", "finale"])
         self.assertEqual(len(final["final_standings"]), 3)
+        # Sequence numbers are unique across all phase-local task lists.
+        self.assertEqual(len(set(sequence_numbers)), len(sequence_numbers))
+        self.assertEqual(len(sequence_numbers), 30)
         self.assertGreater(sum(item["score"] for item in final["final_standings"]), 0)
 
     def test_completed_match_allows_next_match_but_requires_profile_readiness(self):
