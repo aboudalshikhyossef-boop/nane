@@ -356,12 +356,14 @@ assert.ok(elementText(elements.arenaContent).indexOf("انكشفت الإجاب�
 assert.ok(elementText(elements.arenaContent).indexOf("الأزرق") >= 0);
 
 /* Exercise the renderers for the remaining phases through the real polling loop. */
+window.pageYOffset = 173;
 matchState = matchWithTask("mystery", 42, "guess", {
   title_ar: "سر صغير",
   story_ar: "هناك رسالة من أحد أفراد العائلة.",
   revealed_clues: [{ level: 1, text_ar: "يحب الأماكن الهادئة." }]
 }, { can_guess: true, can_answer: false, has_submitted: false });
 fireNextTimer();
+assert.strictEqual(window.pageYOffset, 173, "Task updates must preserve the player scroll position.");
 assert.ok(elementText(elements.arenaContent).indexOf("سر صغير") >= 0);
 assert.ok(elementText(elements.arenaContent).indexOf("يحب الأماكن الهادئة") >= 0);
 assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 3);
@@ -406,7 +408,7 @@ matchState.current_task.live_guess_number = 2;
 matchState.current_task.live_guess_total = 3;
 fireNextTimer();
 assert.ok(elementText(elements.arenaContent).indexOf("البيت") >= 0);
-assert.ok(elementText(elements.arenaContent).indexOf("من صاحب الإجابة المجهولة رقم 2") >= 0);
+assert.ok(elementText(elements.arenaContent).indexOf("الإجابة المجهولة رقم 2 من 3") >= 0);
 assert.ok(elementText(elements.arenaContent).indexOf("دورك: اكتشف صاحب الإجابة") >= 0);
 assert.strictEqual(elements.arenaContent.getElementsByTagName("button").length, 3);
 
