@@ -1,0 +1,753 @@
+{
+  "schema_version": 1,
+  "description_ar": "21 سؤالًا إلزاميًا لتكوين ملف شخصية عائلي. إجابات هذا الملف خاصة ولا تُكشف إلا ضمن مراحل اللعبة المصرح بها.",
+  "minimum_answers": 21,
+  "questions": [
+    {
+      "id": "profile_01",
+      "field_id": "favorite_color",
+      "text_ar": "ما لونك المفضل؟",
+      "category": "تفضيلات",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "الأزرق"
+        },
+        {
+          "id": "o2",
+          "text_ar": "الأخضر"
+        },
+        {
+          "id": "o3",
+          "text_ar": "الأحمر"
+        },
+        {
+          "id": "o4",
+          "text_ar": "البنفسجي"
+        },
+        {
+          "id": "o5",
+          "text_ar": "الأسود"
+        },
+        {
+          "id": "o6",
+          "text_ar": "الأبيض"
+        },
+        {
+          "id": "o7",
+          "text_ar": "الأصفر"
+        },
+        {
+          "id": "o8",
+          "text_ar": "لون آخر"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_02",
+      "field_id": "favorite_meal",
+      "text_ar": "ما الوجبة التي تختارها غالبًا؟",
+      "category": "طعام",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "المندي"
+        },
+        {
+          "id": "o2",
+          "text_ar": "البيتزا"
+        },
+        {
+          "id": "o3",
+          "text_ar": "الشاورما"
+        },
+        {
+          "id": "o4",
+          "text_ar": "المعكرونة"
+        },
+        {
+          "id": "o5",
+          "text_ar": "البرغر"
+        },
+        {
+          "id": "o6",
+          "text_ar": "السمك"
+        },
+        {
+          "id": "o7",
+          "text_ar": "الكبسة"
+        },
+        {
+          "id": "o8",
+          "text_ar": "وجبة أخرى"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_03",
+      "field_id": "favorite_dessert",
+      "text_ar": "ما الحلوى التي تحبها أكثر؟",
+      "category": "طعام",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "الشوكولاتة"
+        },
+        {
+          "id": "o2",
+          "text_ar": "الكنافة"
+        },
+        {
+          "id": "o3",
+          "text_ar": "الآيس كريم"
+        },
+        {
+          "id": "o4",
+          "text_ar": "التشيز كيك"
+        },
+        {
+          "id": "o5",
+          "text_ar": "البقلاوة"
+        },
+        {
+          "id": "o6",
+          "text_ar": "الدونات"
+        },
+        {
+          "id": "o7",
+          "text_ar": "الفواكه"
+        },
+        {
+          "id": "o8",
+          "text_ar": "حلوى أخرى"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_04",
+      "field_id": "favorite_drink",
+      "text_ar": "ما مشروبك المفضل؟",
+      "category": "طعام",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "القهوة"
+        },
+        {
+          "id": "o2",
+          "text_ar": "الشاي"
+        },
+        {
+          "id": "o3",
+          "text_ar": "العصير الطازج"
+        },
+        {
+          "id": "o4",
+          "text_ar": "الماء البارد"
+        },
+        {
+          "id": "o5",
+          "text_ar": "المشروبات الغازية"
+        },
+        {
+          "id": "o6",
+          "text_ar": "الشوكولاتة الساخنة"
+        },
+        {
+          "id": "o7",
+          "text_ar": "مشروب آخر"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_05",
+      "field_id": "favorite_animal",
+      "text_ar": "أي حيوان تحبه أكثر؟",
+      "category": "تفضيلات",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "القط"
+        },
+        {
+          "id": "o2",
+          "text_ar": "الكلب"
+        },
+        {
+          "id": "o3",
+          "text_ar": "الحصان"
+        },
+        {
+          "id": "o4",
+          "text_ar": "الدلفين"
+        },
+        {
+          "id": "o5",
+          "text_ar": "الأرنب"
+        },
+        {
+          "id": "o6",
+          "text_ar": "الصقر"
+        },
+        {
+          "id": "o7",
+          "text_ar": "حيوان آخر"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_06",
+      "field_id": "favorite_music",
+      "text_ar": "أي نوع موسيقى تميل إليه؟",
+      "category": "ترفيه",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "هادئة"
+        },
+        {
+          "id": "o2",
+          "text_ar": "حماسية"
+        },
+        {
+          "id": "o3",
+          "text_ar": "كلاسيكية"
+        },
+        {
+          "id": "o4",
+          "text_ar": "شرقية"
+        },
+        {
+          "id": "o5",
+          "text_ar": "غربية"
+        },
+        {
+          "id": "o6",
+          "text_ar": "لا أفضّل الموسيقى"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_07",
+      "field_id": "favorite_season",
+      "text_ar": "أي فصل من السنة تفضّل؟",
+      "category": "تفضيلات",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "الربيع"
+        },
+        {
+          "id": "o2",
+          "text_ar": "الصيف"
+        },
+        {
+          "id": "o3",
+          "text_ar": "الخريف"
+        },
+        {
+          "id": "o4",
+          "text_ar": "الشتاء"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_08",
+      "field_id": "ideal_day",
+      "text_ar": "كيف تقضي يوم عطلتك المثالي؟",
+      "category": "أسلوب حياة",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "الخروج والاستكشاف"
+        },
+        {
+          "id": "o2",
+          "text_ar": "الراحة في المنزل"
+        },
+        {
+          "id": "o3",
+          "text_ar": "لقاء الأصدقاء والعائلة"
+        },
+        {
+          "id": "o4",
+          "text_ar": "نشاط رياضي"
+        },
+        {
+          "id": "o5",
+          "text_ar": "مشاهدة الأفلام"
+        },
+        {
+          "id": "o6",
+          "text_ar": "رحلة قصيرة"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_09",
+      "field_id": "vacation_style",
+      "text_ar": "أي وجهة تختار للإجازة؟",
+      "category": "سفر",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "البحر"
+        },
+        {
+          "id": "o2",
+          "text_ar": "الجبال"
+        },
+        {
+          "id": "o3",
+          "text_ar": "مدينة مزدحمة"
+        },
+        {
+          "id": "o4",
+          "text_ar": "مكان ريفي هادئ"
+        },
+        {
+          "id": "o5",
+          "text_ar": "الصحراء"
+        },
+        {
+          "id": "o6",
+          "text_ar": "مكان تاريخي"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_10",
+      "field_id": "day_period",
+      "text_ar": "هل أنت أقرب إلى الصباح أم الليل؟",
+      "category": "عادات",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "الصباح الباكر"
+        },
+        {
+          "id": "o2",
+          "text_ar": "منتصف النهار"
+        },
+        {
+          "id": "o3",
+          "text_ar": "المساء"
+        },
+        {
+          "id": "o4",
+          "text_ar": "الليل المتأخر"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_11",
+      "field_id": "home_activity",
+      "text_ar": "ما النشاط الذي تستمتع به في المنزل؟",
+      "category": "هوايات",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "الطبخ"
+        },
+        {
+          "id": "o2",
+          "text_ar": "القراءة"
+        },
+        {
+          "id": "o3",
+          "text_ar": "الألعاب"
+        },
+        {
+          "id": "o4",
+          "text_ar": "مشاهدة شيء ممتع"
+        },
+        {
+          "id": "o5",
+          "text_ar": "ترتيب المكان"
+        },
+        {
+          "id": "o6",
+          "text_ar": "الاسترخاء"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_12",
+      "field_id": "travel_item",
+      "text_ar": "ما الشيء الذي تحرص على أخذه معك في السفر؟",
+      "category": "سفر",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "الهاتف والشاحن"
+        },
+        {
+          "id": "o2",
+          "text_ar": "الكاميرا"
+        },
+        {
+          "id": "o3",
+          "text_ar": "كتاب"
+        },
+        {
+          "id": "o4",
+          "text_ar": "سماعات"
+        },
+        {
+          "id": "o5",
+          "text_ar": "وسادة سفر"
+        },
+        {
+          "id": "o6",
+          "text_ar": "دفتر صغير"
+        },
+        {
+          "id": "o7",
+          "text_ar": "شيء آخر"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_13",
+      "field_id": "favorite_weather",
+      "text_ar": "أي طقس تفضّل؟",
+      "category": "تفضيلات",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "ممطر"
+        },
+        {
+          "id": "o2",
+          "text_ar": "مشمس"
+        },
+        {
+          "id": "o3",
+          "text_ar": "بارد"
+        },
+        {
+          "id": "o4",
+          "text_ar": "معتدل"
+        },
+        {
+          "id": "o5",
+          "text_ar": "ثلجي"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_14",
+      "field_id": "evening_choice",
+      "text_ar": "في أمسية حرة، ماذا تختار؟",
+      "category": "أسلوب حياة",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "الخروج إلى مكان جديد"
+        },
+        {
+          "id": "o2",
+          "text_ar": "جلسة منزلية"
+        },
+        {
+          "id": "o3",
+          "text_ar": "فيلم أو مسلسل"
+        },
+        {
+          "id": "o4",
+          "text_ar": "لعبة جماعية"
+        },
+        {
+          "id": "o5",
+          "text_ar": "مشي هادئ"
+        },
+        {
+          "id": "o6",
+          "text_ar": "لقاء الأصدقاء"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_15",
+      "field_id": "superpower",
+      "text_ar": "لو اخترت قوة خارقة واحدة، فماذا تختار؟",
+      "category": "خيال",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "الاختفاء"
+        },
+        {
+          "id": "o2",
+          "text_ar": "الطيران"
+        },
+        {
+          "id": "o3",
+          "text_ar": "قراءة الأفكار"
+        },
+        {
+          "id": "o4",
+          "text_ar": "الانتقال الفوري"
+        },
+        {
+          "id": "o5",
+          "text_ar": "إيقاف الزمن"
+        },
+        {
+          "id": "o6",
+          "text_ar": "شفاء الآخرين"
+        },
+        {
+          "id": "o7",
+          "text_ar": "التحدث بكل اللغات"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_16",
+      "field_id": "dream_home",
+      "text_ar": "أي منزل تختار؟",
+      "category": "أماكن",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "قرب البحر"
+        },
+        {
+          "id": "o2",
+          "text_ar": "في الجبال"
+        },
+        {
+          "id": "o3",
+          "text_ar": "وسط المدينة"
+        },
+        {
+          "id": "o4",
+          "text_ar": "في الريف"
+        },
+        {
+          "id": "o5",
+          "text_ar": "قرب الغابة"
+        },
+        {
+          "id": "o6",
+          "text_ar": "بيت صغير متنقل"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_17",
+      "field_id": "fun_spending",
+      "text_ar": "لو حصلت على مبلغ للمتعة فقط، على ماذا تنفقه؟",
+      "category": "اختيارات",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "رحلة وتجربة جديدة"
+        },
+        {
+          "id": "o2",
+          "text_ar": "أجهزة وهوايات"
+        },
+        {
+          "id": "o3",
+          "text_ar": "كتب ودورات"
+        },
+        {
+          "id": "o4",
+          "text_ar": "طعام وتجارب مطاعم"
+        },
+        {
+          "id": "o5",
+          "text_ar": "هدايا للعائلة"
+        },
+        {
+          "id": "o6",
+          "text_ar": "شيء أجمعه"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_18",
+      "field_id": "wanted_skill",
+      "text_ar": "ما المهارة التي تتمنى تعلمها؟",
+      "category": "اهتمامات",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "لغة جديدة"
+        },
+        {
+          "id": "o2",
+          "text_ar": "العزف"
+        },
+        {
+          "id": "o3",
+          "text_ar": "الطبخ الاحترافي"
+        },
+        {
+          "id": "o4",
+          "text_ar": "التصوير"
+        },
+        {
+          "id": "o5",
+          "text_ar": "الرسم"
+        },
+        {
+          "id": "o6",
+          "text_ar": "البرمجة"
+        },
+        {
+          "id": "o7",
+          "text_ar": "رياضة جديدة"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_19",
+      "field_id": "group_role",
+      "text_ar": "أي دور تميل إليه في المجموعة؟",
+      "category": "شخصية خفيفة",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "المنظّم"
+        },
+        {
+          "id": "o2",
+          "text_ar": "صاحب الأفكار"
+        },
+        {
+          "id": "o3",
+          "text_ar": "المستكشف"
+        },
+        {
+          "id": "o4",
+          "text_ar": "صانع الأجواء"
+        },
+        {
+          "id": "o5",
+          "text_ar": "المراقب الهادئ"
+        },
+        {
+          "id": "o6",
+          "text_ar": "حلّال المشكلات"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_20",
+      "field_id": "favorite_movies",
+      "text_ar": "أي نوع أفلام تختار غالبًا؟",
+      "category": "ترفيه",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "كوميديا"
+        },
+        {
+          "id": "o2",
+          "text_ar": "مغامرات"
+        },
+        {
+          "id": "o3",
+          "text_ar": "غموض وتحقيق"
+        },
+        {
+          "id": "o4",
+          "text_ar": "خيال علمي"
+        },
+        {
+          "id": "o5",
+          "text_ar": "دراما"
+        },
+        {
+          "id": "o6",
+          "text_ar": "وثائقي"
+        },
+        {
+          "id": "o7",
+          "text_ar": "رسوم متحركة"
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "profile_21",
+      "field_id": "instant_mastery",
+      "text_ar": "لو أمكنك إتقان شيء فورًا، فماذا تختار؟",
+      "category": "خيال واهتمامات",
+      "answer_type": "single_choice",
+      "options": [
+        {
+          "id": "o1",
+          "text_ar": "التحدث بأي لغة"
+        },
+        {
+          "id": "o2",
+          "text_ar": "العزف على أي آلة"
+        },
+        {
+          "id": "o3",
+          "text_ar": "أي رياضة"
+        },
+        {
+          "id": "o4",
+          "text_ar": "حل الألغاز"
+        },
+        {
+          "id": "o5",
+          "text_ar": "اختراع الأشياء"
+        },
+        {
+          "id": "o6",
+          "text_ar": "رسم أي شيء"
+        },
+        {
+          "id": "o7",
+          "text_ar": "الطبخ"
+        }
+      ],
+      "required": true
+    }
+  ]
+}
