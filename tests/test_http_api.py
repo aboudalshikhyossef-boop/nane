@@ -128,14 +128,32 @@ class NaneHttpApiTests(unittest.TestCase):
         self.assertEqual(started["match"]["status"], "active")
         self.assertEqual(started["match"]["phase"], "knowledge")
 
+        # Starting twice is idempotent: return the existing active match.
+        status, started_again, _ = self.call(
+            "POST", "/api/rooms/%s/match/start" % code, {}, cookie=cookies[0]
+        )
+        self.assertEqual(status, 201)
+        self.assertEqual(started_again["match"]["id"], started["match"]["id"])
+
         status, current, _ = self.call(
             "GET", "/api/rooms/%s/match" % code, cookie=cookies[1]
         )
         self.assertEqual(status, 200)
-        public_json = json.dumps(current["match"]["current_task"], ensure_ascii=False)
+        current_task = current["match"]["current_task"]
+        self.assertIsInstance(current_task["task_sequence"], int)
+        public_json = json.dumps(current_task, ensure_ascii=False)
         self.assertNotIn("correct_option_id", public_json)
         self.assertNotIn("private_answer", public_json)
         self.assertNotIn("field_id", public_json)
+
+        status, stale, _ = self.call(
+            "POST", "/api/rooms/%s/match/action" % code,
+            {"action": "guess", "value": "o1",
+             "task_sequence": current_task["task_sequence"] + 100},
+            cookie=cookies[1],
+        )
+        self.assertEqual(status, 409)
+        self.assertIn("انتهت هذه الجولة", stale["error"])
 
     def test_player_profiles_are_isolated_between_room_members(self):
         status, created, h1 = self.call("POST", "/api/rooms", {"name": "A"})
