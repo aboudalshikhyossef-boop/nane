@@ -11,6 +11,7 @@ var busy = false;
 var polling = false;
 var pollTimer = null;
 var taskKey = "";
+var scoreboardKey = "";
 var profileSaving = false;
 var pendingProfileAnswers = {};
 
@@ -480,7 +481,15 @@ function profileBack() {
 function renderScoreboard(match) {
   var list = byId("scoreboardList");
   var scores = match.scoreboard || match.final_standings || [];
+  var nextKey = [];
   var i;
+  for (i = 0; i < scores.length; i++) {
+    nextKey.push([scores[i].player_id, scores[i].name, scores[i].score,
+      scores[i].correct_guesses].join("|"));
+  }
+  nextKey = nextKey.join(";");
+  if (nextKey === scoreboardKey) { return; }
+  scoreboardKey = nextKey;
   clear(list);
   for (i = 0; i < scores.length; i++) {
     var item = make("div", "score-entry");
@@ -493,8 +502,11 @@ function renderScoreboard(match) {
 
 function taskIdentity(task) {
   var clues = task.content && task.content.revealed_clues ? task.content.revealed_clues.length : 0;
+  var mine = task.my_state || {};
   return [task.task_sequence, task.kind, task.status, task.subphase, clues,
-    task.live_guess_number || 0].join(":");
+    task.live_guess_number || 0, mine.can_answer ? 1 : 0, mine.can_guess ? 1 : 0,
+    mine.has_submitted ? 1 : 0, mine.is_target ? 1 : 0,
+    mine.is_answer_owner ? 1 : 0].join(":");
 }
 
 function phaseDuration(task) {
@@ -543,44 +555,98 @@ function renderArena(match) {
   var nextKey = taskIdentity(task);
   if (nextKey !== taskKey) {
     taskKey = nextKey;
-    clear(content);
-    if (task.status === "reveal") { renderTaskResult(content, task); }
-    else { renderActiveTask(content, task, match.scoreboard || []); }
+    preserveViewport(function () {
+      clear(content);
+      if (task.status === "reveal") { renderTaskResult(content, task); }
+      else { renderActiveTask(content, task, match.scoreboard || []); }
+    });
   }
   if (task.status === "reveal") {
-    setText(byId("arenaStatus"), "تم كشف النتيجة. الجولة التالية تبدأ تلقائيًا.");
+    setText(byId("arenaStatus"), "انتهى هذا الدور. راجعوا النتيجة؛ الجولة التالية تبدأ تلقائيًا.");
+  } else if (task.my_state && task.my_state.has_submitted) {
+    setText(byId("arenaStatus"), "تم تسجيل مشاركتك. انتظر الخطوة التالية.");
+  } else if (task.my_state && task.my_state.can_answer) {
+    setText(byId("arenaStatus"), "دورك الآن: أرسل إجابتك.");
+  } else if (task.my_state && task.my_state.can_guess) {
+    setText(byId("arenaStatus"), "دورك الآن: اختر تخمينك.");
   } else {
-    setText(byId("arenaStatus"), task.my_state && task.my_state.has_submitted ?
-      "تم تسجيل اختيارك. انتظر بقية أفراد العائلة." : "اختر إجابتك قبل انتهاء الوقت.");
+    setText(byId("arenaStatus"), "لا يلزمك اختيار الآن. تابع التوجيه أعلى السؤال.");
   }
+}
+
+function viewportTop() {
+  if (typeof window.pageYOffset === "number") { return window.pageYOffset; }
+  if (document.documentElement && document.documentElement.scrollTop) {
+    return document.documentElement.scrollTop;
+  }
+  return document.body && document.body.scrollTop ? document.body.scrollTop : 0;
+}
+
+function preserveViewport(render) {
+  var top = viewportTop();
+  render();
+  if (window.scrollTo) { window.scrollTo(0, top); }
+}
+
+function appendGuidance(root, title, detail, state) {
+  var card = make("section", "guidance-card" + (state ? " " + state : ""));
+  card.setAttribute("aria-label", "توجيه الدور الحالي");
+  card.appendChild(make("span", "guidance-kicker", "ماذا يحدث الآن؟"));
+  card.appendChild(make("strong", "guidance-title", title));
+  card.appendChild(make("p", "guidance-detail", detail));
+  root.appendChild(card);
 }
 
 function renderActiveTask(root, task, scores) {
   var content = task.content || {};
   var mine = task.my_state || {};
-  var heading;
+  var question;
+  var targetName;
+  var askerName;
+  var clues;
+  var clueNumber;
+
   if (task.kind === "knowledge") {
-    heading = make("h2", "task-title", "من يعرفني؟");
-    root.appendChild(heading);
-    root.appendChild(make("p", "task-copy", "تعرّفوا على صاحب الاختيار الصحيح."));
-    root.appendChild(make("div", "task-question", content.question ? content.question.text_ar : ""));
-    if (mine.can_guess && !mine.has_submitted) {
-      renderOptions(root, content.question ? content.question.options : [], "guess", task.task_sequence);
-    } else if (mine.can_guess) {
-      renderWaiting(root, "وصل اختيارك", "ننتظر بقية التخمينات حتى نكشف الإجابة.");
+    question = content.question || {};
+    targetName = content.target_name || "اللاعب المختار";
+    root.appendChild(make("h2", "task-title", "من يعرفني؟"));
+    if (mine.can_guess) {
+      if (mine.has_submitted) {
+        appendGuidance(root, "تم تسجيل تخمينك", "السؤال عن " + targetName + ". اختيارك محفوظ؛ لا تحتاج إلى الضغط مرة أخرى. انتظر بقية اللاعبين ثم سيظهر صاحب الإجابة الصحيحة.", "waiting");
+      } else {
+        appendGuidance(root, "دورك: خمّن إجابة " + targetName, "اقرأ السؤال واختر الإجابة التي تعتقد أن " + targetName + " اختارها في ملفه الشخصي. " + targetName + " نفسه لا يشارك في تخمين هذا السؤال.", "your-turn");
+      }
     } else {
-      renderWaiting(root, "هذه الجولة عنك!", "راقب تخمينات العائلة واكتشف من يعرفك فعلًا.");
+      appendGuidance(root, "السؤال عنك أنت", "لا تختر أي إجابة في هذه الجولة. بقية أفراد العائلة يحاولون معرفة اختيارك، وستظهر النتيجة بعد انتهاء التخمينات.", "private");
+    }
+    root.appendChild(make("div", "task-question", question.text_ar || ""));
+    if (mine.can_guess && !mine.has_submitted) {
+      renderOptions(root, question.options || [], "guess", task.task_sequence);
+    } else if (mine.can_guess) {
+      renderWaiting(root, "أنت في وضع الانتظار", "تم حفظ تخمينك. انتظر الكشف أو انتقال الجولة.");
+    } else {
+      renderWaiting(root, "راقب تخمينات العائلة", "هذه الجولة عنك، ولا يلزمك اختيار شيء.");
     }
     return;
   }
 
   if (task.kind === "mystery") {
+    clues = content.revealed_clues || [];
+    clueNumber = clues.length || 1;
     root.appendChild(make("h2", "task-title", "الرسالة المجهولة"));
-    root.appendChild(make("div", "story-card"));
-    var story = root.lastChild;
+    var story = make("div", "story-card");
     story.appendChild(make("h3", "", content.title_ar || "قصة غامضة"));
     story.appendChild(make("p", "", content.story_ar || ""));
-    var clues = content.revealed_clues || [];
+    root.appendChild(story);
+    if (mine.can_guess) {
+      if (mine.has_submitted) {
+        appendGuidance(root, "تخمينك لهذا التلميح مسجّل", "أنت اخترت صاحب الرسالة في مستوى التلميح الحالي. انتظر: قد يظهر تلميح أوضح تلقائيًا إذا لم تُحل الرسالة.", "waiting");
+      } else {
+        appendGuidance(root, "دورك: اكتشف صاحب الرسالة", "التلميحات كلها تخص شخصًا واحدًا. اقرأ القصة والتلميح رقم " + clueNumber + " من 3، ثم اختر اسم الشخص الذي تنطبق عليه. لديك تخمين واحد في هذا المستوى.", "your-turn");
+      }
+    } else {
+      appendGuidance(root, "هذه الرسالة تتعلق بك", "بُنيت الرسالة من حقائق في ملفك الشخصي. لا تختَر اسمًا؛ تابع التلميحات وتخمينات العائلة، ثم ستظهر لك النتيجة.", "private");
+    }
     var clueList = make("div", "clue-list");
     var i;
     for (i = 0; i < clues.length; i++) {
@@ -590,61 +656,98 @@ function renderActiveTask(root, task, scores) {
       clueList.appendChild(clue);
     }
     root.appendChild(clueList);
-    root.appendChild(make("p", "task-copy", "من صاحب هذه الرسالة؟ اختَر أحد أفراد العائلة."));
     if (mine.can_guess && !mine.has_submitted) {
+      root.appendChild(make("p", "task-copy", "اختر صاحب الرسالة من الأسماء التالية:"));
       renderPlayers(root, scores, "guess", task.task_sequence);
     } else if (mine.can_guess) {
-      renderWaiting(root, "تم تسجيل تخمينك", "قد يظهر تلميح جديد إذا لم تُحل الرسالة بعد.");
+      renderWaiting(root, "انتظر التلميح التالي أو الكشف", "لا يمكن تغيير تخمين هذا المستوى بعد تسجيله.");
     } else {
-      renderWaiting(root, "هذه الرسالة عنك", "راقب محاولات الآخرين. هويتك مخفية عنهم.");
+      renderWaiting(root, "أنت صاحب الرسالة", "لا يلزمك أي اختيار في هذه المهمة.");
     }
     return;
   }
 
   if (task.kind === "player_question") {
+    question = content.question || {};
+    askerName = content.asker_name || "أحد أفراد العائلة";
     root.appendChild(make("h2", "task-title", "سؤال من لاعب"));
-    root.appendChild(make("p", "task-copy", "سؤال اختاره أحد أفراد العائلة ووصل سرًا إلى لاعب آخر."));
-    var question = content.question || {};
+    if (task.subphase === "answer") {
+      if (mine.can_answer) {
+        if (mine.has_submitted) {
+          appendGuidance(root, "أنت المجيب وقد أرسلت إجابتك", "هذا السؤال اختاره " + askerName + ". وصلت إجابتك بسرية؛ انتهى دورك في الإجابة، وانتظر تخمين العائلة لاحقًا.", "waiting");
+        } else {
+          appendGuidance(root, "دورك: أجب أنت فقط", askerName + " اختار هذا السؤال، والنظام وجّهه إليك سرًا. اختر إجابتك بصراحة؛ لا يحتاج بقية اللاعبين إلى الإجابة الآن.", "your-turn");
+        }
+      } else {
+        appendGuidance(root, "انتظر المجيب المختار سرًا", askerName + " اختار السؤال، لكن لاعبًا آخر هو الذي يجيب الآن. لا تختَر شيئًا في هذه الخطوة؛ بعد الإجابة سيظهر دور التخمين للجميع عدا المجيب.", "waiting");
+      }
+    } else if (mine.can_guess) {
+      if (mine.has_submitted) {
+        appendGuidance(root, "تخمينك مسجّل", "المجيب أجاب عن سؤال " + askerName + ". اختيارك محفوظ؛ انتظر بقية التخمينات ثم الكشف.", "waiting");
+      } else {
+        appendGuidance(root, "دورك: خمّن إجابة المجيب", "السؤال اختاره " + askerName + " وأُرسل سرًا إلى لاعب آخر. اختر الآن الإجابة التي تعتقد أن المجيب اختارها.", "your-turn");
+      }
+    } else {
+      appendGuidance(root, "أنت المجيب في هذه الجولة", "سبق أن أرسلت إجابتك السرية. لا تخمّن إجابتك بنفسك؛ انتظر محاولات أفراد العائلة ثم اكشف النتيجة معهم.", "private");
+    }
     root.appendChild(make("div", "task-question", question.text_ar || ""));
     if (task.subphase === "answer") {
       if (mine.can_answer && !mine.has_submitted) {
-        root.appendChild(make("p", "task-copy", "أنت المجيب هذه المرة. اختر إجابتك بصراحة."));
         renderOptions(root, question.options || [], "answer", task.task_sequence);
+      } else if (mine.can_answer) {
+        renderWaiting(root, "تم حفظ إجابتك", "لن تظهر إجابتك للآخرين قبل مرحلة الكشف.");
       } else {
-        renderWaiting(root, "تم اختيار المجيب سرًا", "على المجيب المختار أن يجيب أولًا، ثم يخمّن الباقون.");
+        renderWaiting(root, "المجيب يختار الآن", "ستظهر مرحلة التخمين تلقائيًا بعد أن يجيب اللاعب المختار أو تنتهي المهلة.");
       }
     } else if (mine.can_guess && !mine.has_submitted) {
       root.appendChild(make("p", "task-copy", "ما الإجابة التي اختارها المجيب؟"));
       renderOptions(root, question.options || [], "guess", task.task_sequence);
     } else if (mine.can_guess) {
-      renderWaiting(root, "تم تسجيل تخمينك", "ننتظر اكتمال التخمينات.");
+      renderWaiting(root, "انتظر بقية التخمينات", "تم تسجيل اختيارك ولا يمكن تغييره.");
     } else {
-      renderWaiting(root, "إجابتك سُجلت", "العائلة تحاول الآن تخمين اختيارك.");
+      renderWaiting(root, "لا تخمّن إجابتك", "أنت المجيب؛ بقية اللاعبين يحاولون معرفة ما اخترته.");
     }
     return;
   }
 
   if (task.kind === "live_choice") {
+    question = content.question || {};
     root.appendChild(make("h2", "task-title", "من اختار هذا؟"));
-    var liveQuestion = content.question || {};
-    root.appendChild(make("div", "task-question small", liveQuestion.text_ar || ""));
     if (task.subphase === "answer") {
       if (mine.has_submitted) {
-        renderWaiting(root, "تم حفظ اختيارك بسرية", "سنكشف الإجابات دون أسماء، واحدة تلو الأخرى.");
+        appendGuidance(root, "إجابتك السرية محفوظة", "الجميع يجيب عن السؤال نفسه. اختيارك لا يظهر لأحد الآن؛ انتظر حتى ينتهي الجميع ثم تبدأ الإجابات المجهولة بالظهور واحدة تلو الأخرى.", "waiting");
       } else {
-        root.appendChild(make("p", "task-copy", "أجب عن السؤال. لن يعرف أحد اختيارك قبل التخمين."));
-        renderOptions(root, liveQuestion.options || [], "answer", task.task_sequence);
+        appendGuidance(root, "دورك: أجب عن السؤال", "كل لاعب يختار إجابة واحدة لنفس السؤال وبشكل سري. لن تظهر إجابات الآخرين الآن، وبعد اكتمال الإجابات ستخمنون أصحابها واحدًا تلو الآخر.", "your-turn");
       }
     } else {
-      root.appendChild(make("p", "task-copy", "من صاحب الإجابة المجهولة رقم " + task.live_guess_number + "؟"));
-      root.appendChild(make("div", "live-answer"));
-      setText(root.lastChild, task.anonymous_answer || "لم تصل إجابة لهذا الدور.");
+      targetName = "الإجابة المجهولة رقم " + (task.live_guess_number || 1) + " من " + (task.live_guess_total || scores.length);
+      if (mine.can_guess) {
+        if (mine.has_submitted) {
+          appendGuidance(root, "تخمينك مسجّل", targetName + " ظهرت دون اسم صاحبها. تم حفظ اختيارك؛ انتظر بقية التخمينات ثم تنتقل اللعبة للإجابة التالية.", "waiting");
+        } else {
+          appendGuidance(root, "دورك: اكتشف صاحب الإجابة", targetName + " معروضة دون اسم. اختر من تعتقد أنه صاحبها. صاحب هذه الإجابة لا يخمّن نفسه.", "your-turn");
+        }
+      } else {
+        appendGuidance(root, "هذه إجابتك أنت", "الإجابة المعروضة هي اختيارك السري. لا تختَر اسمًا ولا تحاول تخمين نفسك؛ انتظر تخمينات العائلة ثم ستظهر الإجابة التالية.", "private");
+      }
+    }
+    root.appendChild(make("div", "task-question small", question.text_ar || ""));
+    if (task.subphase === "answer") {
+      if (!mine.has_submitted) {
+        renderOptions(root, question.options || [], "answer", task.task_sequence);
+      } else {
+        renderWaiting(root, "انتظر اكتمال إجابات العائلة", "إجابتك محفوظة بسرية. لن تحتاج إلى إرسالها مرة ثانية.");
+      }
+    } else {
+      root.appendChild(make("p", "task-copy", targetName + ":"));
+      root.appendChild(make("div", "live-answer", task.anonymous_answer || "لم تصل إجابة لهذا الدور."));
       if (mine.can_guess && !mine.has_submitted) {
+        root.appendChild(make("p", "task-copy", "اختر اسم صاحب الإجابة:"));
         renderPlayers(root, scores, "guess", task.task_sequence, false);
       } else if (mine.can_guess) {
-        renderWaiting(root, "تم تسجيل تخمينك", "ننتظر بقية اللاعبين.");
+        renderWaiting(root, "انتظر كشف صاحب الإجابة", "تخمينك مسجّل لهذا الدور.");
       } else {
-        renderWaiting(root, "هذه إجابتك المجهولة", "راقب تخمينات الآخرين دون كشف اختيارك.");
+        renderWaiting(root, "لا تخمّن هذه الإجابة", "أنت صاحبها؛ اترك الآخرين يحاولون معرفتك.");
       }
     }
     return;
@@ -652,14 +755,23 @@ function renderActiveTask(root, task, scores) {
 
   if (task.kind === "finale") {
     root.appendChild(make("h2", "task-title", "المواجهة الأخيرة"));
-    root.appendChild(make("p", "task-copy", "اجمعوا الخيطين… من صاحب هذين الاختيارين؟"));
+    if (mine.can_guess) {
+      if (mine.has_submitted) {
+        appendGuidance(root, "تم تسجيل اختيارك", "هذا اللغز يجمع حقيقتين من ملف لاعب واحد. اختيارك محفوظ؛ انتظر الكشف والنتيجة.", "waiting");
+      } else {
+        appendGuidance(root, "دورك: حلّ اللغز", "الوصف يربط حقيقتين لشخص واحد. اقرأ الجزأين معًا، ثم اختر اسم الشخص الذي تنطبق عليه العبارتان.", "your-turn");
+      }
+    } else {
+      appendGuidance(root, "هذه المواجهة عنك أنت", "اللغز مبني على حقيقتين من ملفك الشخصي. لا تختَر اسمًا؛ بقية اللاعبين يحاولون اكتشافك.", "private");
+    }
     root.appendChild(make("div", "task-question", content.text_ar || ""));
     if (mine.can_guess && !mine.has_submitted) {
+      root.appendChild(make("p", "task-copy", "من الشخص الذي تنطبق عليه الحقيقتان؟"));
       renderPlayers(root, scores, "guess", task.task_sequence, false);
     } else if (mine.can_guess) {
-      renderWaiting(root, "تم تسجيل تخمينك", "لحظات ونكشف صاحب الاختيارين.");
+      renderWaiting(root, "انتظر كشف النتيجة", "تم حفظ تخمينك ولا يمكن تغييره.");
     } else {
-      renderWaiting(root, "هذه المواجهة عنك", "العائلة تحاول معرفة صاحب الاختيارين.");
+      renderWaiting(root, "راقب تخمينات العائلة", "لا يوجد اختيار مطلوب منك في هذه المهمة.");
     }
   }
 }
