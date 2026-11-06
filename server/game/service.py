@@ -22,13 +22,13 @@ class MatchConflict(StoreError):
 
 
 PHASE_TIMINGS = {
-    "knowledge": 75,
-    "mystery": 30,
-    "player_answer": 60,
-    "player_guess": 60,
-    "live_answer": 60,
-    "live_guess": 35,
-    "finale": 70,
+    "knowledge": 85,
+    "mystery": 32,
+    "player_answer": 65,
+    "player_guess": 65,
+    "live_answer": 65,
+    "live_guess": 37,
+    "finale": 80,
     "reveal": 12,
 }
 
