@@ -116,7 +116,12 @@ class ContentEngineTests(unittest.TestCase):
         routed = self.engine.route_player_question(question["id"], "p1", ["p1", "p2", "p3"])
         self.assertEqual(routed["asker_player_id"], "p1")
         self.assertIn(routed["target_player_id"], {"p2", "p3"})
-        self.assertEqual(routed["private_target"], routed["target_player_id"])
+        public = self.engine.public_routed_question(routed)
+        self.assertNotIn("target_player_id", public)
+        self.assertNotIn("private_target", public)
+        self.assertEqual(public["asker_player_id"], "p1")
+        self.assertTrue(self.engine.private_target_status(routed, routed["target_player_id"])["is_target"])
+        self.assertFalse(self.engine.private_target_status(routed, "p1")["is_target"])
 
     def test_question_routing_rejects_unknown_question(self):
         with self.assertRaises(ContentSelectionError):
