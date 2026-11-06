@@ -31,6 +31,12 @@ Object.defineProperty(FakeElement.prototype, "firstChild", {
   }
 });
 
+Object.defineProperty(FakeElement.prototype, "lastChild", {
+  get: function () {
+    return this.childNodes.length ? this.childNodes[this.childNodes.length - 1] : null;
+  }
+});
+
 FakeElement.prototype.appendChild = function (node) {
   this.childNodes.push(node);
   node.parentNode = this;
