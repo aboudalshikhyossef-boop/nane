@@ -1,6 +1,7 @@
 """Load and validate NANE's versioned Arabic content catalog."""
 from __future__ import annotations
 
+import copy
 import json
 from dataclasses import dataclass
 from pathlib import Path
@@ -28,13 +29,13 @@ class ContentCatalog:
     def profile_question(self, field_id: str):
         for item in self.profile_questions:
             if item["field_id"] == field_id:
-                return item
+                return copy.deepcopy(item)
         return None
 
     def question(self, question_id: str):
         for item in self.questions:
             if item["id"] == question_id:
-                return item
+                return copy.deepcopy(item)
         return None
 
 
