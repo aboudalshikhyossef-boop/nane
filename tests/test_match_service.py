@@ -231,21 +231,19 @@ class MatchServiceTests(unittest.TestCase):
         self.assertNotIn("private_answers", raw)
         self.assertEqual(len(view["current_task"]["content"]["revealed_clues"]), 1)
 
-    def test_identity_guesser_cannot_select_themselves(self):
+    def test_valid_self_candidate_is_not_blocked_for_identity_guessers(self):
         self.prepare_room(3)
         self.service.start_match(self.code, self.players[0]["token"])
 
         self._finish_current_phase("knowledge")
         state = self.raw_state()
         task = state["tasks"][state["current_task_index"]]
-        mystery_target = task["private"]["mystery"]["target_player_id"]
-        mystery_guesser = next(
-            player for player in self.players if player["id"] != mystery_target
+        target = task["private"]["mystery"]["target_player_id"]
+        guesser = next(player for player in self.players if player["id"] != target)
+        # The hidden target is unknown to the guesser; their own ID remains a valid candidate.
+        self.service.submit_action(
+            self.code, guesser["token"], "guess", guesser["id"]
         )
-        with self.assertRaises(InvalidInput):
-            self.service.submit_action(
-                self.code, mystery_guesser["token"], "guess", mystery_guesser["id"]
-            )
 
         self._finish_current_phase("mystery")
         self._finish_current_phase("player_question")
@@ -261,27 +259,21 @@ class MatchServiceTests(unittest.TestCase):
         state = self.raw_state()
         task = state["tasks"][state["current_task_index"]]
         self.assertEqual(task["subphase"], "guess")
-        live_target = task["private"]["target_order"][task["live_target_index"]]
-        live_guesser = next(
-            player for player in self.players if player["id"] != live_target
+        target = task["private"]["target_order"][task["live_target_index"]]
+        guesser = next(player for player in self.players if player["id"] != target)
+        self.service.submit_action(
+            self.code, guesser["token"], "guess", guesser["id"]
         )
-        with self.assertRaises(InvalidInput):
-            self.service.submit_action(
-                self.code, live_guesser["token"], "guess", live_guesser["id"]
-            )
 
         self._finish_current_phase("live_choice")
         state = self.raw_state()
         self.assertEqual(state["phase"], "finale")
         task = state["tasks"][state["current_task_index"]]
-        finale_target = task["private"]["target_player_id"]
-        finale_guesser = next(
-            player for player in self.players if player["id"] != finale_target
+        target = task["private"]["target_player_id"]
+        guesser = next(player for player in self.players if player["id"] != target)
+        self.service.submit_action(
+            self.code, guesser["token"], "guess", guesser["id"]
         )
-        with self.assertRaises(InvalidInput):
-            self.service.submit_action(
-                self.code, finale_guesser["token"], "guess", finale_guesser["id"]
-            )
 
     def _finish_current_phase(self, phase):
         guard = 0
@@ -458,6 +450,34 @@ class MatchServiceTests(unittest.TestCase):
         self.assertEqual(len(set(sequence_numbers)), len(sequence_numbers))
         self.assertEqual(len(sequence_numbers), 30)
         self.assertGreater(sum(item["score"] for item in final["final_standings"]), 0)
+
+    def test_full_four_player_match_completes_all_five_phases_with_submissions(self):
+        self.prepare_room(4)
+        self.service.start_match(self.code, self.players[0]["token"])
+        expected_phases = [
+            "knowledge", "mystery", "player_question", "live_choice", "finale"
+        ]
+        phase_task_counts = []
+        for phase in expected_phases:
+            state = self.raw_state()
+            self.assertEqual(state["phase"], phase)
+            phase_task_counts.append(len(state["tasks"]))
+            self._finish_current_phase(phase)
+
+        row = self.raw_match()
+        self.assertEqual(row["status"], "completed")
+        final = self.service.get_match(self.code, self.players[0]["token"])["match"]
+        self.assertEqual(final["status"], "completed")
+        self.assertEqual(
+            phase_task_counts, [12, 8, 8, 3, 8]
+        )
+        self.assertEqual(sum(phase_task_counts), 39)
+        self.assertEqual(len(final["final_standings"]), 4)
+        self.assertGreater(sum(item["score"] for item in final["final_standings"]), 0)
+        self.assertEqual(
+            [item["seat"] for item in final["final_standings"]],
+            sorted(item["seat"] for item in final["final_standings"]),
+        ) if len({item["score"] for item in final["final_standings"]}) == 1 else None
 
     def test_full_four_player_match_can_finish_safely_when_all_timers_expire(self):
         self.prepare_room(4)
