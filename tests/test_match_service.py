@@ -257,7 +257,7 @@ class MatchServiceTests(unittest.TestCase):
                         with closing(self.store._connect()) as db:
                             row = db.execute(
                                 "SELECT payload_json FROM match_submissions WHERE match_id = ? AND task_index = ? AND player_id = ? AND kind = 'answer'",
-                                (row["id"], task_index, target_id)
+                                (row["id"], task["sequence_no"], target_id)
                             ).fetchone()
                             answer = json.loads(row["payload_json"])["value"]
                     for player in self.players:
