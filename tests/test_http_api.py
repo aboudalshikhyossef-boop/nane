@@ -55,6 +55,21 @@ class NaneHttpApiTests(unittest.TestCase):
         self.assertEqual(response.status, 200)
         self.assertIn("NANE", response.read().decode("utf-8"))
 
+    def test_static_assets_and_device_diagnostic_are_served_locally(self):
+        checks = [
+            ("/static/main.css", "text/css", "touch-action:manipulation"),
+            ("/static/app.js", "application/javascript", "new XMLHttpRequest()"),
+            ("/compatibility", "text/html", 'dir="rtl"'),
+        ]
+        for path, content_type, expected in checks:
+            response = self.opener.open(self.base + path, timeout=5)
+            self.assertEqual(response.status, 200)
+            self.assertIn(content_type, response.headers.get("Content-Type", ""))
+            body = response.read().decode("utf-8")
+            self.assertIn(expected, body)
+            self.assertNotIn("https://fonts.googleapis.com", body)
+            self.assertNotIn("https://cdn.", body)
+
     def test_create_and_recover_authenticated_session(self):
         status, created, headers = self.call("POST", "/api/rooms", {"name": "يوسف"})
         self.assertEqual(status, 201)
