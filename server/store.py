@@ -245,7 +245,7 @@ class NaneStore:
         ).fetchone()
         if row is None:
             return
-        if self._has_active_match(db, row["room_id"]):
+        if _has_active_match(db, row["room_id"]):
             raise RoomNotOpen("لا يمكنك مغادرة الغرفة أو نقل جلستك أثناء المباراة.")
         db.execute("DELETE FROM sessions WHERE token_hash = ?", (token_hash,))
         db.execute("DELETE FROM players WHERE id = ?", (row["id"],))
