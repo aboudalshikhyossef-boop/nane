@@ -6,6 +6,7 @@ var playerId = null;
 var profileData = null;
 var currentMatch = null;
 var currentView = "entry";
+var dismissedMatchId = null;
 var busy = false;
 var polling = false;
 var pollTimer = null;
@@ -236,7 +237,7 @@ function refresh() {
       api("GET", "/api/rooms/" + encodeURIComponent(room.code) + "/match", null, function (matchPayload, matchStatus) {
         polling = false;
         if (matchStatus === 200 && matchPayload.ok && matchPayload.match &&
-            (matchPayload.match.status === "active" || matchPayload.match.status === "completed")) {
+            (matchPayload.match.status === "active" || (matchPayload.match.status === "completed" && matchPayload.match.id !== dismissedMatchId))) {
           currentMatch = matchPayload.match;
           taskKey = "";
           showView("arena");
@@ -313,6 +314,7 @@ function startMatch() {
     busy = false;
     if ((status === 201 || status === 200) && payload.ok && payload.match) {
       currentMatch = payload.match;
+      dismissedMatchId = null;
       taskKey = "";
       showView("arena");
       renderArena(currentMatch);
@@ -795,6 +797,7 @@ function renderFinalStandings(root, standings) {
   var back = make("button", "button secondary", "العودة إلى الغرفة");
   back.type = "button";
   back.onclick = function () {
+    dismissedMatchId = currentMatch ? currentMatch.id : null;
     taskKey = "";
     showView("room");
     if (room) { renderRoom(room); }
