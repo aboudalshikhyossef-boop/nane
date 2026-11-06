@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101221"><title>NANE — اختبار توافق الأجهزة</title>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:15px;color:#f5f5fa;background:#101221;font:16px/1.55 Arial,Tahoma,sans-serif}
+main{max-width:560px;margin:0 auto}.panel{margin-bottom:13px;padding:16px;border:1px solid #343850;border-radius:14px;background:#191d32}
+h1{margin:0 0 8px;font-size:24px}h2{margin:0 0 8px;color:#d9c8ff;font-size:18px}.muted{color:#b9bfd3;font-size:13px}
+.status,.metric{display:block;margin:8px 0;padding:10px;border:1px solid #49506d;border-radius:9px;background:#222842;overflow-wrap:break-word}
+.good{border-color:#39866c;background:#18372f}.bad{border-color:#a34b5b;background:#40212c}
+input,button{display:block;width:100%;min-height:48px;margin-top:9px;padding:10px 12px;border-radius:9px;font:16px Arial,Tahoma,sans-serif}
+input{border:1px solid #626b8c;color:#15172a;background:#fff;text-align:right}
+button{border:1px solid #9272eb;color:white;background:#6743c5;font-weight:bold}
+#feed{padding-right:20px}#feed li{margin:7px 0;padding:8px;border-radius:8px;background:#242944;overflow-wrap:break-word}
+</style></head><body><main>
+<section class="panel"><h1>NANE — اختبار الاتصال</h1><p class="muted">صفحة تشخيص فقط لفحص الخادم، حجم الشاشة، اللمس، والرسائل المشتركة بين الأجهزة.</p><div id="server" class="status">جارٍ الاتصال...</div></section>
+<section class="panel"><h2>أبعاد الشاشة</h2><div class="metric">العرض: <b id="width">...</b> CSS px</div><div class="metric">الارتفاع: <b id="height">...</b> CSS px</div><div id="layout" class="status">جارٍ الفحص...</div></section>
+<section class="panel"><h2>اختبار اللمس</h2><button id="tap">اضغط هنا</button><div class="metric">عدد الضغطات: <b id="count">0</b></div></section>
+<section class="panel"><h2>رسالة مشتركة</h2><input id="message" maxlength="120" value="مرحباً من الهاتف"><button id="send">إرسال إلى الخادم</button><div id="sendStatus" class="status">لم ترسل رسالة بعد.</div></section>
+<section class="panel"><h2>الرسائل التي استلمها الخادم</h2><ul id="feed"><li>بانتظار الرسائل...</li></ul><p class="muted">افتح هذه الصفحة على اللابتوب أيضًا لترى الرسائل القادمة من الهاتف.</p></section>
+</main>
+<script>
+(function(){var taps=0,last=0,polling=false;function by(id){return document.getElementById(id);}function status(id,value,kind){var n=by(id);n.className="status"+(kind?" "+kind:"");while(n.firstChild){n.removeChild(n.firstChild);}n.appendChild(document.createTextNode(value));}
+function xhr(method,path,data,done){var x=new XMLHttpRequest();x.open(method,path,true);x.timeout=6000;if(method==="POST"){x.setRequestHeader("Content-Type","application/json; charset=UTF-8");}x.onreadystatechange=function(){if(x.readyState===4){var p={};try{p=JSON.parse(x.responseText||"{}");}catch(ignore){}done(p,x.status);}};x.onerror=function(){done({},0);};x.send(data?JSON.stringify(data):null);}
+function dimensions(){var w=window.innerWidth||document.documentElement.clientWidth;var h=window.innerHeight||document.documentElement.clientHeight;var sw=document.documentElement.scrollWidth;by("width").innerHTML=String(w);by("height").innerHTML=String(h);status("layout",sw<=w+1?"لا يوجد تجاوز أفقي ظاهر.":"يوجد تجاوز أفقي بمقدار "+(sw-w)+" CSS px.",sw<=w+1?"good":"bad");}
+function add(item){var ul=by("feed");if(ul.firstChild&&ul.firstChild.innerHTML==="بانتظار الرسائل..."){ul.removeChild(ul.firstChild);}var li=document.createElement("li");li.appendChild(document.createTextNode("رسالة #"+item.id+": "+item.message));ul.appendChild(li);while(ul.children.length>30){ul.removeChild(ul.firstChild);}last=Math.max(last,item.id);}
+function poll(){if(polling){window.setTimeout(poll,1000);return;}polling=true;xhr("GET","/api/messages?after_id="+last,null,function(p,s){polling=false;if(s===200&&p.messages){for(var i=0;i<p.messages.length;i++){add(p.messages[i]);}}window.setTimeout(poll,1400);});}
+by("tap").onclick=function(){taps+=1;by("count").innerHTML=String(taps);};
+by("send").onclick=function(){status("sendStatus","جارٍ الإرسال...","");by("send").disabled=true;xhr("POST","/api/messages",{message:by("message").value},function(p,s){by("send").disabled=false;status("sendStatus",s===201?"حفظ الخادم الرسالة بنجاح.":(p.error||"تعذر الإرسال."),s===201?"good":"bad");});};
+xhr("GET","/api/health",null,function(p,s){status("server",s===200?"متصل بالخادم المركزي. إصدار Python: "+p.python:"تعذر الاتصال بالخادم.",""+(s===200?"good":"bad"));});
+if(window.addEventListener){window.addEventListener("resize",dimensions,false);window.addEventListener("orientationchange",dimensions,false);}dimensions();poll();
+}());
+</script></body></html>
