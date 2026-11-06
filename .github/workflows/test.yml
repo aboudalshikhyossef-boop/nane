@@ -1,0 +1,26 @@
+name: NANE checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Compile Python
+        run: python -m compileall -q server tests
+      - name: Unit and HTTP tests
+        run: python -m unittest discover -s tests -v
+      - name: Shell syntax
+        run: bash -n start_nane.sh
+      - name: Legacy-compatible JavaScript syntax
+        run: node --check web/js/app.js
