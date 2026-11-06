@@ -734,7 +734,7 @@ class MatchService:
                     task_public["live_guess_number"] = target_index + 1
                     task_public["live_guess_total"] = len(task["private"]["target_order"])
         task_public["my_state"] = self._viewer_action_state(
-            task, viewer_id, index, submissions
+            task, viewer_id, task["sequence_no"], submissions
         )
         base["current_task"] = task_public
         base["last_result"] = state.get("last_result")
