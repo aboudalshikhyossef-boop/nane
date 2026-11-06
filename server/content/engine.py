@@ -236,8 +236,30 @@ class ContentEngine:
             "question": copy.deepcopy(question),
             "asker_player_id": asker_player_id,
             "target_player_id": target,
-            "private_target": target,
         }
+
+    @staticmethod
+    def public_routed_question(route: Mapping[str, Any]) -> Dict[str, Any]:
+        """Expose the chosen prompt and asker, but never the secretly routed target."""
+        question = route.get("question")
+        if not isinstance(question, Mapping):
+            raise ContentSelectionError("بيانات السؤال الموجّه غير صالحة.")
+        public_question = {
+            key: copy.deepcopy(question[key])
+            for key in ("id", "text_ar", "category", "category_name_ar",
+                        "difficulty", "options", "estimated_seconds")
+            if key in question
+        }
+        return {
+            "asker_player_id": route.get("asker_player_id"),
+            "question": public_question,
+        }
+
+    @staticmethod
+    def private_target_status(route: Mapping[str, Any], viewer_player_id: str) -> Dict[str, bool]:
+        """Tell only the current viewer whether they are the secret respondent."""
+        target = route.get("target_player_id")
+        return {"is_target": bool(viewer_player_id and viewer_player_id == target)}
 
     def build_mystery(self, target_player_id: str,
                       profile_answers: Mapping[str, Any],
