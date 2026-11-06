@@ -863,10 +863,8 @@ class MatchService:
             elif kind == "mystery":
                 if action != "guess" or viewer_id not in task["eligible_guesser_ids"]:
                     raise MatchConflict("هذا الدور مخصص لتخمين صاحب الرسالة.")
-                if value not in self._name_map(db, match_row["id"]):
+                if value not in task["eligible_guesser_ids"] and value not in self._name_map(db, match_row["id"]):
                     raise InvalidInput("اختر لاعبًا من الغرفة.")
-                if value == viewer_id:
-                    raise InvalidInput("لا يمكنك تخمين نفسك.")
                 attempt_no = task["clue_level"]
             elif kind == "player_question":
                 target = task["private"]["target_player_id"]
@@ -895,16 +893,12 @@ class MatchService:
                         raise MatchConflict("صاحب الإجابة لا يخمّن نفسه.")
                     if value not in task["private"]["target_order"]:
                         raise InvalidInput("اختر لاعبًا من الغرفة.")
-                    if value == viewer_id:
-                        raise InvalidInput("لا يمكنك تخمين نفسك.")
                     attempt_no = task["live_target_index"] + 1
             elif kind == "finale":
                 if action != "guess" or viewer_id not in task["eligible_guesser_ids"]:
                     raise MatchConflict("هذا الدور مخصص لتخمين صاحب الاختيارات.")
-                if value not in self._name_map(db, match_row["id"]):
+                if value not in task["eligible_guesser_ids"] and value not in self._name_map(db, match_row["id"]):
                     raise InvalidInput("اختر لاعبًا من الغرفة.")
-                if value == viewer_id:
-                    raise InvalidInput("لا يمكنك تخمين نفسك.")
 
             self._save_submission(db, match_row["id"], sequence_no, viewer_id,
                                   action, attempt_no, value, now)
