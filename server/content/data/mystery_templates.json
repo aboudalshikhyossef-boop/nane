@@ -1,0 +1,1367 @@
+{
+  "schema_version": 1,
+  "description_ar": "40 قالبًا قصصيًا لصناعة رسائل مجهولة من إجابات حقيقية في ملف اللاعب. يجب عدم استخدام أي حقل سبق كشفه.",
+  "minimum_templates": 40,
+  "templates": [
+    {
+      "id": "mystery_001",
+      "title_ar": "حقيبة الرحلة المفاجئة",
+      "story_ar": "شخص يجهّز رحلة قصيرة، لكنه لم يخبر أحدًا بعد. هناك ثلاث علامات صغيرة تكشف ذوقه في السفر.",
+      "category": "travel",
+      "difficulty": 1,
+      "required_fields": [
+        "vacation_style",
+        "travel_item",
+        "favorite_weather"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "vacation_style",
+          "text_template": "أول ما يلفت النظر في هذه الخطة هو ميل صاحبها إلى {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "travel_item",
+          "text_template": "وعندما يختار تفصيلًا يناسبه، فإنه يتجه غالبًا إلى {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "favorite_weather",
+          "text_template": "أما القرينة الأقرب إلى ذوقه الشخصي فهي {value}."
+        }
+      ],
+      "tags": [
+        "travel",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_002",
+      "title_ar": "دعوة إلى عشاء خاص",
+      "story_ar": "وصلت دعوة لعشاء اختيرت تفاصيله بعناية، وصاحبها ترك إشارات من ذوقه المعتاد.",
+      "category": "food",
+      "difficulty": 2,
+      "required_fields": [
+        "favorite_meal",
+        "favorite_drink",
+        "favorite_dessert"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "favorite_meal",
+          "text_template": "في بداية الحكاية تظهر علامة مرتبطة بـ {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_drink",
+          "text_template": "التفصيل الثاني يوضح أن صاحب الخطة يفضّل {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "favorite_dessert",
+          "text_template": "والخيط الأخير يقود إلى اختيار واضح: {value}."
+        }
+      ],
+      "tags": [
+        "food",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_003",
+      "title_ar": "ليلة بلا خطة",
+      "story_ar": "شخص وجد أمسية خالية من الالتزامات، وبدأ يخطط لها على طريقته.",
+      "category": "evening",
+      "difficulty": 3,
+      "required_fields": [
+        "evening_choice",
+        "favorite_movies",
+        "day_period"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "evening_choice",
+          "text_template": "صاحب الدعوة لا يختار عشوائيًا؛ أحد ميوله هو {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_movies",
+          "text_template": "ومن عاداته في مثل هذا الموقف اختيار {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "day_period",
+          "text_template": "أما أكثر ما يعبّر عن ذوقه في هذه القصة فهو {value}."
+        }
+      ],
+      "tags": [
+        "evening",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_004",
+      "title_ar": "بيت الأحلام",
+      "story_ar": "هناك شخص يتخيل منزلًا يناسبه تمامًا، وتظهر ملامحه من اختياراته الصغيرة.",
+      "category": "home",
+      "difficulty": 1,
+      "required_fields": [
+        "dream_home",
+        "favorite_color",
+        "home_activity"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "dream_home",
+          "text_template": "في الخلفية تفصيل صغير: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_color",
+          "text_template": "كلما اقتربنا من صاحب الرسالة، تظهر إشارة أخرى هي {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "home_activity",
+          "text_template": "والتفصيل الذي يكمل الصورة: {value}."
+        }
+      ],
+      "tags": [
+        "home",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_005",
+      "title_ar": "رسالة من مكان بعيد",
+      "story_ar": "كاتب الرسالة يصف مكانًا يتمنى العودة إليه، وتظهر شخصيته بين السطور.",
+      "category": "travel",
+      "difficulty": 2,
+      "required_fields": [
+        "vacation_style",
+        "favorite_season",
+        "travel_item"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "vacation_style",
+          "text_template": "الخطة تبدأ من اختيار يميل إليه صاحبها: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_season",
+          "text_template": "ثم نكتشف أنه يضيف عادةً شيئًا مثل {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "travel_item",
+          "text_template": "وأخيرًا يظهر تفضيله الأوضح: {value}."
+        }
+      ],
+      "tags": [
+        "travel",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_006",
+      "title_ar": "مفاجأة يوم الميلاد",
+      "story_ar": "شخص يخطط لمفاجأة بسيطة لشخص يحبه، لكنه اختارها وفق ذوقه هو.",
+      "category": "celebration",
+      "difficulty": 3,
+      "required_fields": [
+        "ideal_day",
+        "favorite_dessert",
+        "group_role"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "ideal_day",
+          "text_template": "أول تلميح ليس عن الاسم، بل عن ذوقه: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_dessert",
+          "text_template": "التلميح التالي يضيّق الاحتمالات؛ فهو يختار {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "group_role",
+          "text_template": "أما التلميح الأخير فيكشف جانبًا آخر: {value}."
+        }
+      ],
+      "tags": [
+        "celebration",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_007",
+      "title_ar": "صندوق الذكريات",
+      "story_ar": "صندوق غامض يحتوي أشياء اختارها شخص بعناية، وكل اختيار يشير إليه.",
+      "category": "memory",
+      "difficulty": 1,
+      "required_fields": [
+        "favorite_animal",
+        "favorite_music",
+        "favorite_color"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "favorite_animal",
+          "text_template": "هناك شيء يختاره صاحب الفكرة قبل غيره، وهو {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_music",
+          "text_template": "وفي التفاصيل التي لا يلاحظها الجميع، يظهر {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "favorite_color",
+          "text_template": "والعلامة الأخيرة التي تركها هي {value}."
+        }
+      ],
+      "tags": [
+        "memory",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_008",
+      "title_ar": "موعد في الطبيعة",
+      "story_ar": "هناك شخص دعا الجميع إلى نزهة، واختار تفاصيلها بما يناسبه.",
+      "category": "nature",
+      "difficulty": 2,
+      "required_fields": [
+        "favorite_weather",
+        "favorite_season",
+        "ideal_day"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "favorite_weather",
+          "text_template": "تبدأ القصة بإشارة إلى ما يفضّله هذا الشخص: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_season",
+          "text_template": "وتكشف الخطوة التالية أنه يميل أيضًا إلى {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "ideal_day",
+          "text_template": "أما آخر تفصيل فيقربنا من الإجابة: {value}."
+        }
+      ],
+      "tags": [
+        "nature",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_009",
+      "title_ar": "مهمة سرية في المدينة",
+      "story_ar": "شخص يخطط لمهمة ممتعة في المدينة، ويترك تلميحات عن طريقته في الاختيار.",
+      "category": "adventure",
+      "difficulty": 3,
+      "required_fields": [
+        "group_role",
+        "favorite_movies",
+        "vacation_style"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "group_role",
+          "text_template": "أول ما يلفت النظر في هذه الخطة هو ميل صاحبها إلى {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_movies",
+          "text_template": "وعندما يختار تفصيلًا يناسبه، فإنه يتجه غالبًا إلى {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "vacation_style",
+          "text_template": "أما القرينة الأقرب إلى ذوقه الشخصي فهي {value}."
+        }
+      ],
+      "tags": [
+        "adventure",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_010",
+      "title_ar": "ركن القراءة والهدوء",
+      "story_ar": "شخص يصمم ركنًا خاصًا به بعيدًا عن الضجيج، وهذه التفاصيل تكشف هويته.",
+      "category": "home",
+      "difficulty": 1,
+      "required_fields": [
+        "home_activity",
+        "favorite_color",
+        "day_period"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "home_activity",
+          "text_template": "في بداية الحكاية تظهر علامة مرتبطة بـ {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_color",
+          "text_template": "التفصيل الثاني يوضح أن صاحب الخطة يفضّل {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "day_period",
+          "text_template": "والخيط الأخير يقود إلى اختيار واضح: {value}."
+        }
+      ],
+      "tags": [
+        "home",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_011",
+      "title_ar": "رحلة تذوق",
+      "story_ar": "أحدهم يريد تجربة أطعمة جديدة في جولة قصيرة، لكن خياراته المفضلة تفضحه.",
+      "category": "food",
+      "difficulty": 2,
+      "required_fields": [
+        "favorite_meal",
+        "favorite_drink",
+        "favorite_dessert"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "favorite_meal",
+          "text_template": "صاحب الدعوة لا يختار عشوائيًا؛ أحد ميوله هو {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_drink",
+          "text_template": "ومن عاداته في مثل هذا الموقف اختيار {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "favorite_dessert",
+          "text_template": "أما أكثر ما يعبّر عن ذوقه في هذه القصة فهو {value}."
+        }
+      ],
+      "tags": [
+        "food",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_012",
+      "title_ar": "برنامج نهاية الأسبوع",
+      "story_ar": "هناك شخص وضع برنامج عطلة مثاليًا من ثلاث محطات، وكل محطة تشبهه.",
+      "category": "weekend",
+      "difficulty": 3,
+      "required_fields": [
+        "ideal_day",
+        "evening_choice",
+        "favorite_season"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "ideal_day",
+          "text_template": "في الخلفية تفصيل صغير: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "evening_choice",
+          "text_template": "كلما اقتربنا من صاحب الرسالة، تظهر إشارة أخرى هي {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "favorite_season",
+          "text_template": "والتفصيل الذي يكمل الصورة: {value}."
+        }
+      ],
+      "tags": [
+        "weekend",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_013",
+      "title_ar": "بطاقة من المستقبل",
+      "story_ar": "رسالة قصيرة تتخيل حياة صاحبها بعد سنوات، وتلمّح إلى ما يقدّره.",
+      "category": "future",
+      "difficulty": 1,
+      "required_fields": [
+        "wanted_skill",
+        "instant_mastery",
+        "group_role"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "wanted_skill",
+          "text_template": "الخطة تبدأ من اختيار يميل إليه صاحبها: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "instant_mastery",
+          "text_template": "ثم نكتشف أنه يضيف عادةً شيئًا مثل {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "group_role",
+          "text_template": "وأخيرًا يظهر تفضيله الأوضح: {value}."
+        }
+      ],
+      "tags": [
+        "future",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_014",
+      "title_ar": "مخيم تحت النجوم",
+      "story_ar": "شخص يختار مكانًا لليلة في الهواء الطلق، وترك إشارات عن تفضيلاته.",
+      "category": "nature",
+      "difficulty": 2,
+      "required_fields": [
+        "dream_home",
+        "favorite_weather",
+        "travel_item"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "dream_home",
+          "text_template": "أول تلميح ليس عن الاسم، بل عن ذوقه: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_weather",
+          "text_template": "التلميح التالي يضيّق الاحتمالات؛ فهو يختار {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "travel_item",
+          "text_template": "أما التلميح الأخير فيكشف جانبًا آخر: {value}."
+        }
+      ],
+      "tags": [
+        "nature",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_015",
+      "title_ar": "دعوة إلى عرض",
+      "story_ar": "شخص اختار عرضًا للجميع، وتفاصيل الدعوة تكشف ما يحب مشاهدته.",
+      "category": "entertainment",
+      "difficulty": 3,
+      "required_fields": [
+        "favorite_movies",
+        "favorite_music",
+        "favorite_color"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "favorite_movies",
+          "text_template": "هناك شيء يختاره صاحب الفكرة قبل غيره، وهو {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_music",
+          "text_template": "وفي التفاصيل التي لا يلاحظها الجميع، يظهر {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "favorite_color",
+          "text_template": "والعلامة الأخيرة التي تركها هي {value}."
+        }
+      ],
+      "tags": [
+        "entertainment",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_016",
+      "title_ar": "هدية بلا اسم",
+      "story_ar": "وصلت هدية مجهولة، لكن طريقة اختيارها تحمل ملامح صاحبها.",
+      "category": "gift",
+      "difficulty": 1,
+      "required_fields": [
+        "fun_spending",
+        "favorite_color",
+        "wanted_skill"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "fun_spending",
+          "text_template": "تبدأ القصة بإشارة إلى ما يفضّله هذا الشخص: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_color",
+          "text_template": "وتكشف الخطوة التالية أنه يميل أيضًا إلى {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "wanted_skill",
+          "text_template": "أما آخر تفصيل فيقربنا من الإجابة: {value}."
+        }
+      ],
+      "tags": [
+        "gift",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_017",
+      "title_ar": "مقهى صغير",
+      "story_ar": "شخص يبحث عن مقهى يقضي فيه وقتًا طويلًا، واختياراته تفضحه.",
+      "category": "evening",
+      "difficulty": 2,
+      "required_fields": [
+        "favorite_drink",
+        "home_activity",
+        "day_period"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "favorite_drink",
+          "text_template": "أول ما يلفت النظر في هذه الخطة هو ميل صاحبها إلى {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "home_activity",
+          "text_template": "وعندما يختار تفصيلًا يناسبه، فإنه يتجه غالبًا إلى {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "day_period",
+          "text_template": "أما القرينة الأقرب إلى ذوقه الشخصي فهي {value}."
+        }
+      ],
+      "tags": [
+        "evening",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_018",
+      "title_ar": "مغامرة ليوم واحد",
+      "story_ar": "هناك شخص اختار تحديًا جديدًا، وكتب ثلاث إشارات عن دوافعه.",
+      "category": "adventure",
+      "difficulty": 3,
+      "required_fields": [
+        "superpower",
+        "wanted_skill",
+        "group_role"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "superpower",
+          "text_template": "في بداية الحكاية تظهر علامة مرتبطة بـ {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "wanted_skill",
+          "text_template": "التفصيل الثاني يوضح أن صاحب الخطة يفضّل {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "group_role",
+          "text_template": "والخيط الأخير يقود إلى اختيار واضح: {value}."
+        }
+      ],
+      "tags": [
+        "adventure",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_019",
+      "title_ar": "جزيرة خيالية",
+      "story_ar": "صاحب الرسالة يرسم جزيرة يتمنى زيارتها، وفي تفاصيلها تظهر اختياراته.",
+      "category": "fantasy",
+      "difficulty": 1,
+      "required_fields": [
+        "superpower",
+        "favorite_animal",
+        "favorite_weather"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "superpower",
+          "text_template": "صاحب الدعوة لا يختار عشوائيًا؛ أحد ميوله هو {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_animal",
+          "text_template": "ومن عاداته في مثل هذا الموقف اختيار {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "favorite_weather",
+          "text_template": "أما أكثر ما يعبّر عن ذوقه في هذه القصة فهو {value}."
+        }
+      ],
+      "tags": [
+        "fantasy",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_020",
+      "title_ar": "مطبخ الأحلام",
+      "story_ar": "شخص يصمم مطبخًا يليق به، وما يضعه فيه يكشف ذوقه.",
+      "category": "food",
+      "difficulty": 2,
+      "required_fields": [
+        "favorite_meal",
+        "favorite_dessert",
+        "home_activity"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "favorite_meal",
+          "text_template": "في الخلفية تفصيل صغير: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_dessert",
+          "text_template": "كلما اقتربنا من صاحب الرسالة، تظهر إشارة أخرى هي {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "home_activity",
+          "text_template": "والتفصيل الذي يكمل الصورة: {value}."
+        }
+      ],
+      "tags": [
+        "food",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_021",
+      "title_ar": "رسالة صوتية لم تُرسل",
+      "story_ar": "هناك تسجيل قصير يصف خطة ممتعة، لكن صاحبه لم يذكر اسمه.",
+      "category": "message",
+      "difficulty": 3,
+      "required_fields": [
+        "favorite_music",
+        "evening_choice",
+        "ideal_day"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "favorite_music",
+          "text_template": "الخطة تبدأ من اختيار يميل إليه صاحبها: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "evening_choice",
+          "text_template": "ثم نكتشف أنه يضيف عادةً شيئًا مثل {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "ideal_day",
+          "text_template": "وأخيرًا يظهر تفضيله الأوضح: {value}."
+        }
+      ],
+      "tags": [
+        "message",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_022",
+      "title_ar": "جولة في موسم مفضل",
+      "story_ar": "شخص ينظم جولة تناسب الطقس الذي يحبه والأنشطة التي يفضلها.",
+      "category": "nature",
+      "difficulty": 1,
+      "required_fields": [
+        "favorite_season",
+        "favorite_weather",
+        "vacation_style"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "favorite_season",
+          "text_template": "أول تلميح ليس عن الاسم، بل عن ذوقه: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_weather",
+          "text_template": "التلميح التالي يضيّق الاحتمالات؛ فهو يختار {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "vacation_style",
+          "text_template": "أما التلميح الأخير فيكشف جانبًا آخر: {value}."
+        }
+      ],
+      "tags": [
+        "nature",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_023",
+      "title_ar": "تذكرة باتجاه واحد",
+      "story_ar": "شخص حصل على تذكرة مفتوحة، وترك أدلة عن الوجهة التي تناسبه.",
+      "category": "travel",
+      "difficulty": 2,
+      "required_fields": [
+        "vacation_style",
+        "dream_home",
+        "fun_spending"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "vacation_style",
+          "text_template": "هناك شيء يختاره صاحب الفكرة قبل غيره، وهو {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "dream_home",
+          "text_template": "وفي التفاصيل التي لا يلاحظها الجميع، يظهر {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "fun_spending",
+          "text_template": "والعلامة الأخيرة التي تركها هي {value}."
+        }
+      ],
+      "tags": [
+        "travel",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_024",
+      "title_ar": "استراحة بين مهمتين",
+      "story_ar": "شخص اختار لنفسه استراحة قصيرة تكشف كيف يعيد شحن طاقته.",
+      "category": "routine",
+      "difficulty": 3,
+      "required_fields": [
+        "home_activity",
+        "favorite_drink",
+        "day_period"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "home_activity",
+          "text_template": "تبدأ القصة بإشارة إلى ما يفضّله هذا الشخص: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_drink",
+          "text_template": "وتكشف الخطوة التالية أنه يميل أيضًا إلى {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "day_period",
+          "text_template": "أما آخر تفصيل فيقربنا من الإجابة: {value}."
+        }
+      ],
+      "tags": [
+        "routine",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_025",
+      "title_ar": "ليلة ألعاب عائلية",
+      "story_ar": "شخص اختار برنامج ليلة ألعاب، وتفاصيله تكشف دوره في المجموعة.",
+      "category": "family",
+      "difficulty": 1,
+      "required_fields": [
+        "group_role",
+        "evening_choice",
+        "favorite_movies"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "group_role",
+          "text_template": "أول ما يلفت النظر في هذه الخطة هو ميل صاحبها إلى {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "evening_choice",
+          "text_template": "وعندما يختار تفصيلًا يناسبه، فإنه يتجه غالبًا إلى {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "favorite_movies",
+          "text_template": "أما القرينة الأقرب إلى ذوقه الشخصي فهي {value}."
+        }
+      ],
+      "tags": [
+        "family",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_026",
+      "title_ar": "ورشة سرية",
+      "story_ar": "هناك شخص سجّل في ورشة جديدة، والقرائن تكشف ما يتمنى تعلمه.",
+      "category": "learning",
+      "difficulty": 2,
+      "required_fields": [
+        "wanted_skill",
+        "instant_mastery",
+        "favorite_music"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "wanted_skill",
+          "text_template": "في بداية الحكاية تظهر علامة مرتبطة بـ {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "instant_mastery",
+          "text_template": "التفصيل الثاني يوضح أن صاحب الخطة يفضّل {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "favorite_music",
+          "text_template": "والخيط الأخير يقود إلى اختيار واضح: {value}."
+        }
+      ],
+      "tags": [
+        "learning",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_027",
+      "title_ar": "مصور الرحلة",
+      "story_ar": "صاحب الكاميرا يلتقط أشياء تعكس المكان والجو الذي يحبه.",
+      "category": "travel",
+      "difficulty": 3,
+      "required_fields": [
+        "vacation_style",
+        "favorite_animal",
+        "favorite_weather"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "vacation_style",
+          "text_template": "صاحب الدعوة لا يختار عشوائيًا؛ أحد ميوله هو {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_animal",
+          "text_template": "ومن عاداته في مثل هذا الموقف اختيار {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "favorite_weather",
+          "text_template": "أما أكثر ما يعبّر عن ذوقه في هذه القصة فهو {value}."
+        }
+      ],
+      "tags": [
+        "travel",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_028",
+      "title_ar": "نافذة على المدينة",
+      "story_ar": "شخص اختار شرفة تطل على مشهد يحبه، وهناك ثلاثة أدلة عن ذوقه.",
+      "category": "home",
+      "difficulty": 1,
+      "required_fields": [
+        "dream_home",
+        "favorite_season",
+        "favorite_color"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "dream_home",
+          "text_template": "في الخلفية تفصيل صغير: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_season",
+          "text_template": "كلما اقتربنا من صاحب الرسالة، تظهر إشارة أخرى هي {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "favorite_color",
+          "text_template": "والتفصيل الذي يكمل الصورة: {value}."
+        }
+      ],
+      "tags": [
+        "home",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_029",
+      "title_ar": "خطة إنقاذ لطيفة",
+      "story_ar": "شخص يريد تحسين يوم صديق، واختار طريقة تعكس شخصيته.",
+      "category": "social",
+      "difficulty": 2,
+      "required_fields": [
+        "group_role",
+        "favorite_dessert",
+        "ideal_day"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "group_role",
+          "text_template": "الخطة تبدأ من اختيار يميل إليه صاحبها: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_dessert",
+          "text_template": "ثم نكتشف أنه يضيف عادةً شيئًا مثل {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "ideal_day",
+          "text_template": "وأخيرًا يظهر تفضيله الأوضح: {value}."
+        }
+      ],
+      "tags": [
+        "social",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_030",
+      "title_ar": "مفاتيح العالم",
+      "story_ar": "ثلاثة مفاتيح خيالية تفتح أماكن وأنشطة تناسب صاحبها.",
+      "category": "fantasy",
+      "difficulty": 3,
+      "required_fields": [
+        "superpower",
+        "vacation_style",
+        "wanted_skill"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "superpower",
+          "text_template": "أول تلميح ليس عن الاسم، بل عن ذوقه: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "vacation_style",
+          "text_template": "التلميح التالي يضيّق الاحتمالات؛ فهو يختار {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "wanted_skill",
+          "text_template": "أما التلميح الأخير فيكشف جانبًا آخر: {value}."
+        }
+      ],
+      "tags": [
+        "fantasy",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_031",
+      "title_ar": "قائمة تشغيل مجهولة",
+      "story_ar": "هناك قائمة موسيقية أعدها شخص لرحلة، وتكشف اختياراته.",
+      "category": "entertainment",
+      "difficulty": 1,
+      "required_fields": [
+        "favorite_music",
+        "favorite_movies",
+        "day_period"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "favorite_music",
+          "text_template": "هناك شيء يختاره صاحب الفكرة قبل غيره، وهو {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_movies",
+          "text_template": "وفي التفاصيل التي لا يلاحظها الجميع، يظهر {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "day_period",
+          "text_template": "والعلامة الأخيرة التي تركها هي {value}."
+        }
+      ],
+      "tags": [
+        "entertainment",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_032",
+      "title_ar": "رسالة من حديقة",
+      "story_ar": "صاحب الرسالة يصف مكانًا أخضر يريد قضاء يوم فيه.",
+      "category": "nature",
+      "difficulty": 2,
+      "required_fields": [
+        "favorite_animal",
+        "favorite_weather",
+        "ideal_day"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "favorite_animal",
+          "text_template": "تبدأ القصة بإشارة إلى ما يفضّله هذا الشخص: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_weather",
+          "text_template": "وتكشف الخطوة التالية أنه يميل أيضًا إلى {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "ideal_day",
+          "text_template": "أما آخر تفصيل فيقربنا من الإجابة: {value}."
+        }
+      ],
+      "tags": [
+        "nature",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_033",
+      "title_ar": "مشتريات صغيرة",
+      "story_ar": "شخص دخل متجرًا ليشتري ثلاث أشياء للمتعة فقط.",
+      "category": "gift",
+      "difficulty": 3,
+      "required_fields": [
+        "fun_spending",
+        "favorite_color",
+        "favorite_dessert"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "fun_spending",
+          "text_template": "أول ما يلفت النظر في هذه الخطة هو ميل صاحبها إلى {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_color",
+          "text_template": "وعندما يختار تفصيلًا يناسبه، فإنه يتجه غالبًا إلى {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "favorite_dessert",
+          "text_template": "أما القرينة الأقرب إلى ذوقه الشخصي فهي {value}."
+        }
+      ],
+      "tags": [
+        "gift",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_034",
+      "title_ar": "دعوة إلى بيت جديد",
+      "story_ar": "شخص يدعو أصدقاءه إلى منزله المتخيل، ويكشف تفاصيله المفضلة.",
+      "category": "home",
+      "difficulty": 1,
+      "required_fields": [
+        "dream_home",
+        "home_activity",
+        "favorite_drink"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "dream_home",
+          "text_template": "في بداية الحكاية تظهر علامة مرتبطة بـ {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "home_activity",
+          "text_template": "التفصيل الثاني يوضح أن صاحب الخطة يفضّل {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "favorite_drink",
+          "text_template": "والخيط الأخير يقود إلى اختيار واضح: {value}."
+        }
+      ],
+      "tags": [
+        "home",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_035",
+      "title_ar": "خريطة البحث عن الكنز",
+      "story_ar": "شخص صمم مسارًا للبحث عن كنز، وكل خطوة تناسب اهتماماته.",
+      "category": "adventure",
+      "difficulty": 2,
+      "required_fields": [
+        "group_role",
+        "wanted_skill",
+        "favorite_animal"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "group_role",
+          "text_template": "صاحب الدعوة لا يختار عشوائيًا؛ أحد ميوله هو {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "wanted_skill",
+          "text_template": "ومن عاداته في مثل هذا الموقف اختيار {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "favorite_animal",
+          "text_template": "أما أكثر ما يعبّر عن ذوقه في هذه القصة فهو {value}."
+        }
+      ],
+      "tags": [
+        "adventure",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_036",
+      "title_ar": "صباح مختلف",
+      "story_ar": "شخص خطط لصباح خارج الروتين، وتظهر عاداته من التفاصيل.",
+      "category": "routine",
+      "difficulty": 3,
+      "required_fields": [
+        "day_period",
+        "favorite_drink",
+        "ideal_day"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "day_period",
+          "text_template": "في الخلفية تفصيل صغير: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_drink",
+          "text_template": "كلما اقتربنا من صاحب الرسالة، تظهر إشارة أخرى هي {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "ideal_day",
+          "text_template": "والتفصيل الذي يكمل الصورة: {value}."
+        }
+      ],
+      "tags": [
+        "routine",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_037",
+      "title_ar": "عرض المواهب",
+      "story_ar": "شخص سجّل في عرض صغير، والقرائن تكشف ما يريد إظهاره.",
+      "category": "learning",
+      "difficulty": 1,
+      "required_fields": [
+        "wanted_skill",
+        "instant_mastery",
+        "group_role"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "wanted_skill",
+          "text_template": "الخطة تبدأ من اختيار يميل إليه صاحبها: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "instant_mastery",
+          "text_template": "ثم نكتشف أنه يضيف عادةً شيئًا مثل {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "group_role",
+          "text_template": "وأخيرًا يظهر تفضيله الأوضح: {value}."
+        }
+      ],
+      "tags": [
+        "learning",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_038",
+      "title_ar": "مغامرة عبر الزمن",
+      "story_ar": "كاتب الخطة اختار زمنًا بعيدًا وأشياء يتمنى تجربتها.",
+      "category": "fantasy",
+      "difficulty": 2,
+      "required_fields": [
+        "instant_mastery",
+        "favorite_movies",
+        "favorite_season"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "instant_mastery",
+          "text_template": "أول تلميح ليس عن الاسم، بل عن ذوقه: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_movies",
+          "text_template": "التلميح التالي يضيّق الاحتمالات؛ فهو يختار {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "favorite_season",
+          "text_template": "أما التلميح الأخير فيكشف جانبًا آخر: {value}."
+        }
+      ],
+      "tags": [
+        "fantasy",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_039",
+      "title_ar": "سهرة تحت المطر",
+      "story_ar": "شخص رتب سهرة تناسب طقسه المفضل ونوع الترفيه الذي يحبه.",
+      "category": "evening",
+      "difficulty": 3,
+      "required_fields": [
+        "favorite_weather",
+        "favorite_movies",
+        "favorite_drink"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "favorite_weather",
+          "text_template": "هناك شيء يختاره صاحب الفكرة قبل غيره، وهو {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_movies",
+          "text_template": "وفي التفاصيل التي لا يلاحظها الجميع، يظهر {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "favorite_drink",
+          "text_template": "والعلامة الأخيرة التي تركها هي {value}."
+        }
+      ],
+      "tags": [
+        "evening",
+        "three_clue",
+        "family_safe"
+      ]
+    },
+    {
+      "id": "mystery_040",
+      "title_ar": "بطاقة تعريف بلا اسم",
+      "story_ar": "ثلاث حقائق بسيطة تصف شخصًا من العائلة دون ذكر أي معلومة مباشرة عن اسمه.",
+      "category": "mystery",
+      "difficulty": 1,
+      "required_fields": [
+        "favorite_color",
+        "favorite_meal",
+        "group_role"
+      ],
+      "clues": [
+        {
+          "level": 1,
+          "field_id": "favorite_color",
+          "text_template": "تبدأ القصة بإشارة إلى ما يفضّله هذا الشخص: {value}."
+        },
+        {
+          "level": 2,
+          "field_id": "favorite_meal",
+          "text_template": "وتكشف الخطوة التالية أنه يميل أيضًا إلى {value}."
+        },
+        {
+          "level": 3,
+          "field_id": "group_role",
+          "text_template": "أما آخر تفصيل فيقربنا من الإجابة: {value}."
+        }
+      ],
+      "tags": [
+        "mystery",
+        "three_clue",
+        "family_safe"
+      ]
+    }
+  ]
+}
